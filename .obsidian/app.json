@@ -1,4 +1,10 @@
 {
   "attachmentFolderPath": "./attachement",
-  "showRibbon": false
+  "showRibbon": false,
+  "pdfExportSettings": {
+    "pageSize": "Tabloid",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
