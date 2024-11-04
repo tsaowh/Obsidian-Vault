@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence/法學英 4堂/法學英.md",
+                "file": "Piano/5. 曲目(currently 21 pieces to be played)/5-0. 曲目目錄.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "法學英"
+              "title": "5-0. 曲目目錄"
             }
           }
         ],
@@ -67,8 +67,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#各大調音階",
-                "matchingCase": true,
+                "query": "",
+                "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -178,10 +178,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ffb117703543a2d2",
+  "active": "e19ff13ab68b09eb",
   "lastOpenFiles": [
-    "Jurisprudence/15 Constitution (憲) 18堂/15 Constitution (憲).md",
     "Jurisprudence/法學英 4堂/法學英.md",
+    "Jurisprudence/15 Constitution (憲) 18堂/15 Constitution (憲).md",
     "Jurisprudence/14 Public International Law (國際公) 6堂/14 Public International Law (國際公).md",
     "Jurisprudence/13 Private International Law (國際私) 6堂/13 Private International Law (國際私).md",
     "Jurisprudence/12 Intellectual Property Law (智財) 17堂/12 Intellectual Property Law (智財).md",
