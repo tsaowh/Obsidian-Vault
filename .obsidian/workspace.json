@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Obsidian使用方法/使用方法.md",
+                "file": "Jurisprudence 263堂（version 1 已完成 0堂）completion rate 0%/1 Civil Code (民) 30堂/1-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "使用方法"
+              "title": "1-1"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 0堂）completion rate 0%/1 Civil Code (民) 30堂/1-1.md",
+                "file": "Obsidian使用方法/使用方法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1-1"
+              "title": "使用方法"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,10 +176,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "ffb117703543a2d2",
+  "active": "bfce4f2440ea86e9",
   "lastOpenFiles": [
-    "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/5-0. 曲目目錄(目前35首).md",
+    "Obsidian使用方法/使用方法.md",
     "Jurisprudence 263堂（version 1 已完成 0堂）completion rate 0%/1 Civil Code (民) 30堂/1-1.md",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 36 pieces to be played)/5-0. 曲目目錄(36首).md",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13%/4. 伴奏/4-5. 琶音伴奏（音與音的距離）.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/5-1. LEE MU JIN---Episode.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/未命名 1.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/未命名 20.md",
@@ -203,8 +204,6 @@
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/未命名 3.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 35 pieces to be played)/未命名 2.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/4. 伴奏/4-3. 阿爾貝替低音.md",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-7. Phrygian, Lydian 調式.md",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-6. Ionian, Dorian, Aeolian 調式.md",
     "attachement/截圖 2024-10-19 下午12.20.40.png",
     "attachement/截圖 2024-10-19 下午12.19.23.png",
     "attachement/截圖 2024-10-19 下午12.25.14.png",
