@@ -25,12 +25,14 @@
             "id": "a9b68bfd005f962b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "曲目目錄(36首).pdf"
+                "file": "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 2-1 juristic act 2 & rights (法律行為 2 & 權利).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "曲目目錄(36首)"
+              "icon": "lucide-file",
+              "title": "Civil Code (民) 2-1 juristic act 2 & rights (法律行為 2 & 權利)"
             }
           }
         ],
@@ -65,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#身份法",
+                "query": "tag:#哀愁",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -175,14 +177,14 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "a9b68bfd005f962b",
+  "active": "e19ff13ab68b09eb",
   "lastOpenFiles": [
-    "基礎樂理 1-0 to 1-5.pdf",
-    "Civil Code (民) 1-1 three principles (3大原則).pdf",
-    "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 2-1 juristic act 2 (法律行為 2).md",
     "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
-    "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 1-1 three principles (3大原則).md",
+    "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 2-1 juristic act 2 & rights (法律行為 2 & 權利).md",
+    "Civil Code (民) 1-1 three principles (3大原則).pdf",
     "曲目目錄(36首).pdf",
+    "基礎樂理 1-0 to 1-5.pdf",
+    "Jurisprudence 263堂（version 1 已完成 0.5堂）completion rate 0.2%/1 Civil Code (民) 30堂/Civil Code (民) 1-1 three principles (3大原則).md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/5. 曲目(currently 36 pieces to be played)/5-0. 曲目目錄(36首).md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-6. Ionian, Dorian, Aeolian 調式.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-5. 七種調式.md",
