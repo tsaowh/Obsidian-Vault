@@ -39,12 +39,14 @@
             "id": "3e18720651015205",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 4-2  personality rights (人格權).pdf"
+                "file": "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Civil Code (民) 4-2  personality rights (人格權)"
+              "icon": "lucide-file",
+              "title": "Civil Code (民) 6-2  object of rights 3 (權利客體)"
             }
           }
         ],
@@ -191,6 +193,8 @@
   },
   "active": "3e18720651015205",
   "lastOpenFiles": [
+    "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 4-2  personality rights (人格權).pdf",
+    "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/tmp",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 5-1  corporate capacity (法人的能力).pdf",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 5-2  object of rights (權利客體).pdf",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 6-1  object of rights 2 (權利客體).pdf",
@@ -211,7 +215,6 @@
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-14. 五度圈.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-5. 七種調式.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/1-4. 大調與小調.md",
-    "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 4-2  personality rights (人格權).pdf",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/Civil Code (民) 4-2  personality rights (人格權).md",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 2-1 juristic act 2 (法律行為 2).pdf",
     "Jurisprudence 263堂（version 1 已完成 5.5堂）completion rate 2.1%/1 Civil Code (民) 30堂（version 1 已完成 5.5堂）completion rate 18.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 1-2 juristic act 1 (法律行為 1).pdf",
