@@ -25,12 +25,14 @@
             "id": "a9b68bfd005f962b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "1-1. 和弦代號.pdf"
+                "file": "5-42.  hometown cha cha cha OST(海岸村恰恰恰 OST)---kassy---one sunny day 1.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "1-1. 和弦代號"
+              "icon": "lucide-file",
+              "title": "5-42.  hometown cha cha cha OST(海岸村恰恰恰 OST)---kassy---one sunny day 1"
             }
           }
         ],
@@ -90,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 617.5
+    "width": 449.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -177,23 +179,26 @@
   },
   "active": "a9b68bfd005f962b",
   "lastOpenFiles": [
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/海岸村恰恰恰2.png",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-44. hometown cha cha cha OST(海岸村恰恰恰 OST)---Seungmin---here always.md",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/海岸村恰恰恰3.png",
-    "1-1. 和弦代號.pdf",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/Pasted image 20250121000432.png",
-    "5-44. hometown cha cha cha OST(海岸村恰恰恰 OST)---Seungmin---here always.pdf",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory.md",
+    "5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory 1.md",
+    "5-44. hometown cha cha cha OST(海岸村恰恰恰 OST)---Seungmin---here always 1.md",
+    "5-42.  hometown cha cha cha OST(海岸村恰恰恰 OST)---kassy---one sunny day 1.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-42.  hometown cha cha cha OST(海岸村恰恰恰 OST)---kassy---one sunny day.md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-0. 曲目目錄(42首).md",
-    "5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory.pdf",
-    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/1. 基礎樂理 14節（version 1 已完成 6節）completion rate 43%/1-7. Phrygian, Lydian 調式.md",
-    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 10-1  extinctive prescription (消滅時效).md",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-44. hometown cha cha cha OST(海岸村恰恰恰 OST)---Seungmin---here always.md",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory.md",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-1  extinctive prescription (消滅時效).pdf",
+    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 10-1  extinctive prescription (消滅時效).md",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 8-2 special elements of effectiveness (特殊生效要件).md",
-    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 8-2 special elements of effectiveness (特殊生效要件).pdf",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 9-1  borrowing other’s name for registration (借名登記).md",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 9-2  (un)authorized agency (有無權代理).md",
+    "1-1. 和弦代號.pdf",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/海岸村恰恰恰2.png",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/海岸村恰恰恰3.png",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/Pasted image 20250121000432.png",
+    "5-44. hometown cha cha cha OST(海岸村恰恰恰 OST)---Seungmin---here always.pdf",
+    "5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory.pdf",
+    "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/1. 基礎樂理 14節（version 1 已完成 6節）completion rate 43%/1-7. Phrygian, Lydian 調式.md",
+    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 8-2 special elements of effectiveness (特殊生效要件).pdf",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 8-1 defective manifestation (意思表示瑕疵).md",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 7-1  subject matter (法律標的).md",
     "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 9-2  (un)authorized agency (有無權代理).pdf",
@@ -214,8 +219,6 @@
     "5-42.  hometown cha cha cha OST(海岸村恰恰恰 OST)---kassy---one sunny day.pdf",
     "1-2. 音程名稱.pdf",
     "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/5. 曲目(currently 42 pieces)/attachement/海岸村恰恰恰1.png",
-    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 3-1  legal capacity (權利能力).md",
-    "Jurisprudence 263堂（version 1 已完成 9.5堂）/1 Civil Code (民) 30堂（version 1 已完成 9.5堂）completion rate 31.7%/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
     "Piano 44節 （version 1 已完成 6節）completion rate 13.6%/1. 基礎樂理 14節（version 1 已完成 6節）completion rate 43%/attachement/Scarborough Fair紅底處為 D Dorian 的大六度音.png",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/attachement/Scarborough Fair.png",
     "Piano 44節 （version 1 已完成 6節）completion rate 13%/1. 基礎樂理/attachement/Pasted image 20241229224417.png",
