@@ -39,12 +39,14 @@
             "id": "908923c86cf45dd2",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 2-1 juristic act 2 (法律行為 2).pdf"
+                "file": "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Civil Code (民) 2-1 juristic act 2 (法律行為 2)"
+              "icon": "lucide-file",
+              "title": "Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用)"
             }
           }
         ],
@@ -192,13 +194,16 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e19ff13ab68b09eb",
+  "active": "908923c86cf45dd2",
   "lastOpenFiles": [
+    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).pdf",
+    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 14-1  tort (侵權行為).md",
+    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
+    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 13-1  unjust enrichment (不當得利).md",
+    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 2-1 juristic act 2 (法律行為 2).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 13-1  unjust enrichment (不當得利).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 12-2  management of affairs without mandate (無因管理).pdf",
-    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
-    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 12-2  management of affairs without mandate (無因管理).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 12-1  adhesion contract (定型化契約).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 4-2  personality rights (人格權).md",
@@ -221,14 +226,12 @@
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 11-2  sources of obligations (債之發生).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 11-1  exercise of rights (權利之行使).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-2 extinctive prescription 2 (消滅時效 2).pdf",
-    "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 14-1  tort (侵權行為).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/Civil Code (民) 10-2 extinctive prescription 2 (消滅時效 2).md",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-2  sources of obligations (債之發生).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-1  extinctive prescription (消滅時效).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 8-1 defective manifestation (意思表示瑕疵).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 6-2  object of rights 3 (權利客體).pdf",
     "Jurisprudence 263堂（version 1 已完成 12.5堂）/1 Civil Code (民) 30堂（version 1 已完成 12.5堂）completion rate 41.6%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-1  exercise of rights (權利之行使).pdf",
-    "5-43.  hometown cha cha cha OST(海岸村恰恰恰 OST)---sandeul---the image of you remains in my memory.pdf",
     "Piano 44節 （version 1 已完成 7節）completion rate 16%/1. 基礎樂理 14節（version 1 已完成 7節）completion rate 50%/attachement/用升四音的不協和，製造滑稽的感覺.png",
     "Piano 44節 （version 1 已完成 7節）completion rate 16%/1. 基礎樂理 14節（version 1 已完成 7節）completion rate 50%/attachement/切換 C 和 D 和弦，有「宇宙浩瀚」感.png",
     "Piano 44節 （version 1 已完成 7節）completion rate 16%/1. 基礎樂理 14節（version 1 已完成 7節）completion rate 50%/attachement/C Lydian 的音三度三度疊起來.png",
