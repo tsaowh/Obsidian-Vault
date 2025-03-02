@@ -4,53 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "2fe9b6b6b72410ac",
+        "id": "1a606d432ebbb503",
         "type": "tabs",
         "children": [
           {
-            "id": "bfce4f2440ea86e9",
+            "id": "e606fa059b18e425",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 2.5堂）completion rate 1%/1 Civil Code (民) 30堂（version 1 已完成 2.5堂）completion rate 8%/Civil Code (民) 1-1 three principles (3大原則).md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Civil Code (民) 1-1 three principles (3大原則)"
+              "title": "新分頁"
             }
           },
           {
-            "id": "a9b68bfd005f962b",
+            "id": "255d021d842c0956",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 13-1  unjust enrichment (不當得利).md",
+                "file": "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Civil Code (民) 13-1  unjust enrichment (不當得利)"
-            }
-          },
-          {
-            "id": "908923c86cf45dd2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1  tortious liability 1 (侵權責任 1).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Civil Code (民) 15-1  tortious liability 1 (侵權責任 1)"
+              "title": "Civil Code (民) 15-2  tortious liability 2 (侵權責任 2)"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 538.5
+    "width": 431.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -194,14 +176,23 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "908923c86cf45dd2",
+  "active": "255d021d842c0956",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
-    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 8-1 defective manifestation (意思表示瑕疵).md",
+    "IMG_0631.MOV",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1  tortious liability 1 (侵權責任 1).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 14-1  tort 1 (侵權行為 1).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 14-2  tort 2 (侵權行為 2).md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 14-1  tort 1 (侵權行為 1).pdf",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).pdf",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 14-2  tort 2 (侵權行為 2).pdf",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 16-1  tortious liability 3 (侵權責任 3).md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1-1  tortious liability 1 (侵權責任 1) 1.md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1-1  tortious liability 1 (侵權責任 1) 1 1.md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 16-2  effects of obligations (債之效力).md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 13-1  unjust enrichment (不當得利).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 7-1  subject matter (法律標的).md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 8-1 defective manifestation (意思表示瑕疵).md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/4. 伴奏 6節/4-6. 再論抒情伴奏.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/4. 伴奏 6節/4-5. 琶音伴奏（音與音的距離）.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/4. 伴奏 6節/4-4. 理查克萊德曼伴奏.md",
@@ -216,12 +207,6 @@
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-5. 半音階.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-4. 把弦律編成各種配置（三個音的和弦配置）.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-3. 低音程限制.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-1. 調式音階與和弦的對應.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/2. 進階樂理 14節/2-14. 非功能和聲.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/2. 進階樂理 14節/2-13. 共同音轉調法.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/2. 進階樂理 14節/2-11. 大和弦中的第十一度音.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/2. 進階樂理 14節/2-10. 大和弦的四種類型.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/2. 進階樂理 14節/2-9. 小十一和弦.md",
     "5-0. 曲目目錄(42首).pdf",
     "1-11. 拍子, 切分節奏, 終止式.pdf",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/F → C：阿們.png",
@@ -238,9 +223,6 @@
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-2  sources of obligations (債之發生).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-1  exercise of rights (權利之行使).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-2 extinctive prescription 2 (消滅時效 2).pdf",
-    "1-10. 五線譜.pdf",
-    "1-9. 五聲音階.pdf",
-    "1-8. Mixolydian, Locrian 調式.pdf",
-    "1-7. Phrygian, Lydian 調式.pdf"
+    "1-10. 五線譜.pdf"
   ]
 }
