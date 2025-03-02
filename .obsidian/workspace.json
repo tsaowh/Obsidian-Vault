@@ -11,10 +11,14 @@
             "id": "e606fa059b18e425",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/1-12. 數字低音, 走路低音.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "1-12. 數字低音, 走路低音"
             }
           },
           {
@@ -23,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
+                "file": "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/1-11. 拍子, 切分節奏, 終止式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Civil Code (民) 15-2  tortious liability 2 (侵權責任 2)"
+              "title": "1-11. 拍子, 切分節奏, 終止式"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -176,16 +179,18 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "255d021d842c0956",
+  "active": "e606fa059b18e425",
   "lastOpenFiles": [
     "IMG_0631.MOV",
+    "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/1-12. 數字低音, 走路低音.md",
+    "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/1-11. 拍子, 切分節奏, 終止式.md",
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1  tortious liability 1 (侵權責任 1).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 14-1  tort 1 (侵權行為 1).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 14-2  tort 2 (侵權行為 2).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 14-1  tort 1 (侵權行為 1).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 14-2  tort 2 (侵權行為 2).pdf",
-    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-2  tortious liability 2 (侵權責任 2).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 16-1  tortious liability 3 (侵權責任 3).md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1-1  tortious liability 1 (侵權責任 1) 1.md",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/Civil Code (民) 15-1-1  tortious liability 1 (侵權責任 1) 1 1.md",
@@ -205,8 +210,6 @@
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-7. 隨機和弦上寫弦律.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-6. Dorian即興.md",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-5. 半音階.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-4. 把弦律編成各種配置（三個音的和弦配置）.md",
-    "Piano 44節 （version 1 已完成 11節）completion rate 25%/chapters to be written/3. 即興作曲 10節/3-3. 低音程限制.md",
     "5-0. 曲目目錄(42首).pdf",
     "1-11. 拍子, 切分節奏, 終止式.pdf",
     "Piano 44節 （version 1 已完成 11節）completion rate 25%/1. 基礎樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/F → C：阿們.png",
@@ -222,7 +225,6 @@
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 12-2  management of affairs without mandate (無因管理).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-2  sources of obligations (債之發生).pdf",
     "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 11-1  exercise of rights (權利之行使).pdf",
-    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-2 extinctive prescription 2 (消滅時效 2).pdf",
-    "1-10. 五線譜.pdf"
+    "Jurisprudence 263堂（version 1 已完成 13堂）/1 Civil Code (民) 30堂（version 1 已完成 13堂）completion rate 43.3%/可閱讀之pdf檔（由markdown檔匯出，於桌機或筆電可以直接在github上閱覽）/Civil Code (民) 10-2 extinctive prescription 2 (消滅時效 2).pdf"
   ]
 }
