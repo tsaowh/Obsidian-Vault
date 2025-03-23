@@ -25,16 +25,32 @@
             "id": "d5c9edcd5cca3c9e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "1-2. 音程名稱.pdf"
+                "file": "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "1-2. 音程名稱"
+              "icon": "lucide-file",
+              "title": "Civil Code (民) 18-1  delay of performance 2 (給付延遲 2)"
+            }
+          },
+          {
+            "id": "f560c2e0f86d1faa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Self-build/廚房.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "廚房"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -178,21 +194,27 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e19ff13ab68b09eb",
+  "active": "f560c2e0f86d1faa",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 17-1  impossibility of performance (給付不能).pdf",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 16-2  effects of obligations (債之效力).pdf",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 15-1  tortious liability 1 (侵權責任 1).pdf",
+    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
+    "Self-build/廚房.md",
+    "Self-build",
+    "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-14. 五度圈.md",
+    "1-14. 五度圈.pdf",
+    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 16-2  effects of obligations (債之效力).pdf",
+    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 17-2  delay of performance 1 (給付延遲 1).pdf",
+    "1-13.  12小節藍調.pdf",
+    "1-12. 走路低音.pdf",
+    "1-11. 拍子, 切分節奏, 終止式.pdf",
+    "1-10. 五線譜.pdf",
+    "1-9. 五聲音階.pdf",
+    "1-8. Mixolydian, Locrian 調式.pdf",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 17-1  impossibility of performance (給付不能).md",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 17-2  delay of performance 1 (給付延遲 1).md",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 9-1  borrowing other’s name for registration (借名登記).md",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 5-1  corporate capacity (法人的能力).md",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 20-1  extinction of obligations (債之消滅).md",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/1 Civil Code (民).md",
-    "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-14. 五度圈.md",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔",
-    "1-14. 五度圈.pdf",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-13.  12小節藍調.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-11. 拍子, 切分節奏, 終止式.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-9. 五聲音階.md",
@@ -200,7 +222,6 @@
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-6. Ionian, Dorian, Aeolian 調式.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-3. 和弦功能.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-1. 和弦代號.md",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 17-2  delay of performance 1 (給付延遲 1).pdf",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-12. 走路低音.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-10. 五線譜.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-8. Mixolydian, Locrian 調式.md",
@@ -219,10 +240,6 @@
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/chapters to be written/2. 進階樂理 14節/2-3. 借用和弦.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/chapters to be written/2. 進階樂理 14節/2-2. 三全音代理.md",
     "Piano 44節 （version 1 已完成 14節）completion rate 32%/chapters to be written/2. 進階樂理 14節/2-0. 進階樂理目錄.md",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 16-1  tortious liability 3 (侵權責任 3).pdf",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 14-2  tort 2 (侵權行為 2).pdf",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 14-1  tort 1 (侵權行為 1).pdf",
-    "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) pdf檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).pdf",
     "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 16-2  effects of obligations (債之效力).md",
     "Jurisprudence 263堂（version 1 已完成 15堂）/1 Civil Code (民) 30堂（version 1 已完成 15堂）completion rate 50%/16-2.md"
   ]
