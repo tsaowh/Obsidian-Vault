@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
+                "file": "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Civil Code (民) 23-2 hire of work 3 (承攬契約 3)"
+              "title": "Civil Code (民) 22-2 hire of work 1 (承攬契約 1)"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "受領遲延",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 385.5
+    "width": 417.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -194,16 +194,21 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e19ff13ab68b09eb",
+  "active": "f560c2e0f86d1faa",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 10-1  extinctive prescription 1 (消滅時效 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-2 sale (買賣契約).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 19-2  transfer of obligations (債之移轉).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 22-1  lease 2 (租賃契約 2).pdf",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).pdf",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).pdf",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-1  extinction of obligations (債之消滅).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 10-1  extinctive prescription 1 (消滅時效 1).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-2 sale (買賣契約).md",
+    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 19-2  transfer of obligations (債之移轉).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
@@ -211,7 +216,6 @@
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 18-2  effects of contract (契約之效力).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 2-1 juristic act 2 (法律行為 2).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 11-2  sources of obligations (債之發生).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 21-1 warranty (擔保).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
     "2-2. 三全音代理.pdf",
@@ -233,14 +237,9 @@
     "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/這裡的 E7，就是一個「副屬和弦」.png",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 21-1 warranty (擔保).pdf",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 20-2 sale (買賣契約).pdf",
-    "Jurisprudence 263堂（version 1 已完成 19堂）/1 Civil Code (民) 30堂（version 1 已完成 19堂）completion rate 63.3%/Civil Code (民) md檔/20-2.md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-1  extinction of obligations (債之消滅).md",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 20-1  extinction of obligations (債之消滅).pdf",
     "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 21-2 lease 1 (租賃契約 1).pdf",
-    "2-1. 副屬和弦.pdf",
-    "5-0. 曲目目錄(42首).pdf",
     "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/紅字部分為副屬和弦.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/沒有副屬和弦的版本.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement"
+    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/沒有副屬和弦的版本.png"
   ]
 }
