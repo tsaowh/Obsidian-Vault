@@ -25,32 +25,16 @@
             "id": "d5c9edcd5cca3c9e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 17堂）/1 Civil Code (民) 30堂（version 1 已完成 17堂）completion rate 56.6%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
-                "mode": "source",
-                "source": false
+                "file": "Self-build/entryway（version 1）.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Civil Code (民) 18-1  delay of performance 2 (給付延遲 2)"
-            }
-          },
-          {
-            "id": "f560c2e0f86d1faa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Civil Code (民) 22-2 hire of work 1 (承攬契約 1)"
+              "icon": "lucide-file-text",
+              "title": "entryway（version 1）"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 417.5
+    "width": 503.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -194,52 +178,52 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "f560c2e0f86d1faa",
+  "active": "d5c9edcd5cca3c9e",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 22-1  lease 2 (租賃契約 2).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-1  extinction of obligations (債之消滅).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 10-1  extinctive prescription 1 (消滅時效 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 20-2 sale (買賣契約).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 19-2  transfer of obligations (債之移轉).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 17-1  impossibility of performance (給付不能).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 18-2  effects of contract (契約之效力).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 2-1 juristic act 2 (法律行為 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 11-2  sources of obligations (債之發生).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 21-1 warranty (擔保).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
+    "Self-build/entryway（version 1）.md",
+    "Self-build/entryway（version 1）.pdf",
+    "2-5. 屬十一和弦.pdf",
+    "2-3. 借用和弦.pdf",
     "2-2. 三全音代理.pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 5-1  corporate capacity (法人的能力).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 14-2  tort 2 (侵權行為 2).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 16-2  effects of obligations (債之效力).md",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) md檔/Civil Code (民) 7-1  subject matter (法律標的).md",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/5. 曲目(currently 48 pieces)/5-0. 曲目目錄(48首).md",
-    "5-0. 曲目目錄(48首).pdf",
-    "5-0. 曲目目錄(46首).pdf",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/2-2. 三全音代理.md",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/各種帶著變化音的屬和弦都可以.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/在 Am7 前面，插入比 A 高半音的屬七和弦，也就是 Bb7.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/在 Fmaj7 前面，插入比 F 高半音的屬七和弦.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/E7 與 Bb7 和弦含有相同的三全音組合.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/G7 與 Db7 和弦含有相同的三全音組合.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/`B` 和 `F` 接到 `C` 和 `E`.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/G7 和弦裡面的三全音就是 B 和 F.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/這裡的 E7，就是一個「副屬和弦」.png",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 21-1 warranty (擔保).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 20-2 sale (買賣契約).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 20-1  extinction of obligations (債之消滅).pdf",
-    "Jurisprudence 263堂（version 1 已完成 21堂）/1 Civil Code (民) 30堂（version 1 已完成 21堂）completion rate 70%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 21-2 lease 1 (租賃契約 1).pdf",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/紅字部分為副屬和弦.png",
-    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/沒有副屬和弦的版本.png"
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/2-5. 屬十一和弦.md",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/古典、流行、更流行.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/G11 和弦完整的樣子.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/G9sus 其實就是 Dm7G.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/Dm7G 其實就是省略了三度音的 G11 和弦.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/FG 其實是省略了三度音和五度音的 G11 和弦.png",
+    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/Pasted image 20250531142726.png",
+    "Piano 44節 （version 1 已完成 16節）completion rate 36%/2. 進階樂理 14節（version 1 已完成 2節）completion rate 14%/attachement/Pasted image 20250531142733.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/G7 到 C 比較古典；FG 到 C(add2) 比較流行.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/2-4. 屬七和弦.md",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/2-3. 借用和弦.md",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/B F 不舒服，接到 C E 才舒服.png",
+    "Piano 44節 （version 1 已完成 18節）completion rate 41%/2. 進階樂理 14節（version 1 已完成 4節）completion rate 28%/attachement/G7 接 C 的結尾，聽起來「古典味」好重.png",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).pdf",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).pdf",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 22-1  lease 2 (租賃契約 2).pdf",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).pdf",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 21-2 lease 1 (租賃契約 1).pdf",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 18-1  delay of performance 2 (給付延遲 2).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 20-1  extinction of obligations (債之消滅).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 10-1  extinctive prescription 1 (消滅時效 1).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 20-2 sale (買賣契約).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 19-2  transfer of obligations (債之移轉).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 5-2  object of rights 1 (權利客體).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 17-1  impossibility of performance (給付不能).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 18-2  effects of contract (契約之效力).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 2-1 juristic act 2 (法律行為 2).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 11-2  sources of obligations (債之發生).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 21-1 warranty (擔保).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 5-1  corporate capacity (法人的能力).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 14-2  tort 2 (侵權行為 2).md",
+    "5-0. 曲目目錄(48首).pdf"
   ]
 }
