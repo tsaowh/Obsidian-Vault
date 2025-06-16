@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "對世",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -194,11 +195,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "6be4d4b582091d94",
+  "active": "b6fe10dd230972b9",
   "lastOpenFiles": [
     "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 25-1 extinction of property (物權消滅).md",
-    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 25-2 ownership of the real property (不動產所有權).md",
     "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 24-2 employment guaranty (人事保證契約).md",
+    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 25-2 ownership of the real property (不動產所有權).md",
     "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 24-1 hire of work 4 (承攬契約 4).md",
     "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 24-1 hire of work 4 (承攬契約 4).pdf",
     "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
