@@ -39,12 +39,14 @@
             "id": "6be4d4b582091d94",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Self-build/餐廳 ＆ 廚房（version 1140622）.pdf"
+                "file": "Self-build/floor plan 平面圖 (version 1140622).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "餐廳 ＆ 廚房（version 1140622）"
+              "icon": "lucide-file",
+              "title": "floor plan 平面圖 (version 1140622)"
             }
           }
         ],
@@ -194,8 +196,8 @@
   },
   "active": "6be4d4b582091d94",
   "lastOpenFiles": [
-    "Self-build/entryway 玄關（version 1140615）.pdf",
     "Self-build/餐廳 ＆ 廚房（version 1140622）.pdf",
+    "Self-build/entryway 玄關（version 1140615）.pdf",
     "Self-build/floor plan 平面圖 (version 1140622).pdf",
     "Self-build/floor plan 平面圖 (version 1140622).md",
     "Self-build/entryway 玄關（version 1140615）.md",
