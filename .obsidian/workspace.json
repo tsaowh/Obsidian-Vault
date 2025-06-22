@@ -39,11 +39,13 @@
             "id": "6be4d4b582091d94",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Self-build/floor plan 平面圖 (version 1140622).pdf"
+                "file": "Self-build/floor plan 平面圖 (version 1140622).md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
+              "icon": "lucide-file",
               "title": "floor plan 平面圖 (version 1140622)"
             }
           }
@@ -194,10 +196,10 @@
   },
   "active": "6be4d4b582091d94",
   "lastOpenFiles": [
+    "Self-build/floor plan 平面圖 (version 1140622).pdf",
     "Self-build/floor plan 平面圖 (version 1140622).md",
     "Self-build/attachement/2F參考格局.png",
     "Self-build/餐廳 ＆ 廚房（version 1140622）.pdf",
-    "Self-build/floor plan 平面圖 (version 1140622).pdf",
     "2-6. 屬十三和弦.pdf",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 26-1 co-ownership (共有).md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 25-2 ownership of the real property (不動產所有權).md",
