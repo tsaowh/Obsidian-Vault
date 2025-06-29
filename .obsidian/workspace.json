@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 26-1 co-ownership (共有).md",
+                "file": "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 26-2 separate and distinct shares of property (應有部分).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Civil Code (民) 26-1 co-ownership (共有)"
+              "title": "Civil Code (民) 26-2 separate and distinct shares of property (應有部分)"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "因法律行為",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 388.5
+    "width": 411.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -194,10 +194,21 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "6be4d4b582091d94",
+  "active": "e19ff13ab68b09eb",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 25-2 ownership of the real property (不動產所有權).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 26-2 separate and distinct shares of property (應有部分).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 26-1 co-ownership (共有).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 25-2 ownership of the real property (不動產所有權).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 1-1 three principles (3大原則).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 24-2 employment guaranty (人事保證契約).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 8-2 special elements of effectiveness (特殊生效要件).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 6-1  object of rights 2 (權利客體).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 16-2  effects of obligations (債之效力).md",
     "Self-build/floor plan 平面圖 (version 1140622).pdf",
     "Self-build/floor plan 平面圖 (version 1140622).md",
     "Self-build/attachement/2F參考格局.png",
@@ -227,19 +238,9 @@
     "Self-build/前後院（version ）.md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 24-1 hire of work 4 (承攬契約 4).pdf",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 25-1 extinction of property (物權消滅).md",
-    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 24-2 employment guaranty (人事保證契約).md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 24-1 hire of work 4 (承攬契約 4).md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 23-2 hire of work 3 (承攬契約 3).md",
     "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 23-1 hire of work 2 (承攬契約 2).md",
-    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md",
-    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/25-1 (2).md",
-    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/25-1 (1).md",
-    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/24-2.md",
-    "Self-build/衛浴（version ）.md",
-    "Self-build/walk in closet 衣帽間（version ）.md",
-    "Self-build/utility room 家事間（version ）.md",
-    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
-    "Jurisprudence 263堂（version 1 已完成 23堂）/1 Civil Code (民) 30堂（version 1 已完成 23堂）completion rate 77%/Civil Code (民) md檔/25-1.md",
-    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 2-1 juristic act 2 (法律行為 2).md"
+    "Jurisprudence 263堂（version 1 已完成 25堂）/1 Civil Code (民) 30堂（version 1 已完成 25堂）completion rate 83%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md"
   ]
 }
