@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "權利質權",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -181,14 +182,17 @@
   },
   "active": "255d021d842c0956",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 28-1 the partition of the thing held in indivision (共有物分割).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 29-2 mortgage 1 (抵押權 1).md",
+    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 17-1  impossibility of performance (給付不能).md",
+    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
+    "Self-build/floor plan 平面圖 (version 1140801).md",
+    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 29-1 servitude of real property (不動產役權).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
     "Self-build/floor plan 平面圖 (version 1140801).pdf",
     "Self-build/前後院（version 1140801）.pdf",
     "Self-build/前後院（version 1140801）.md",
-    "Self-build/floor plan 平面圖 (version 1140801).md",
     "Self-build/attachement/前庭.png",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 26-2 separate and distinct shares of property (應有部分).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 26-1 co-ownership (共有).md",
@@ -201,7 +205,6 @@
     "Self-build/utility room 家事間（version 1140801）.md",
     "Self-build/utility room 家事間（version 1140801）.pdf",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 28-2 joint ownership (公同共有).md",
-    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 28-1 the partition of the thing held in indivision (共有物分割).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 22-1  lease 2 (租賃契約 2).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 25-1 extinction of property (物權消滅).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 6-1  object of rights 2 (權利客體).md",
@@ -214,9 +217,7 @@
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/Civil Code (民) 24-2 employment guaranty (人事保證契約).md",
     "Piano 44節 （version 1 已完成 21節）completion rate 48%/5. 曲目(currently 50 pieces)/5-0. 曲目目錄(50首 version 1140622).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/28-2 (1) (1).md",
-    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/28-2 (1).md",
     "Self-build/floor plan 平面圖 (version 1140727).pdf",
-    "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/28-2.md",
     "Self-build/floor plan 平面圖 (version 1140720).pdf",
     "Self-build/attachement/海想民宿.png",
     "Self-build/attachement/承造人.png",
