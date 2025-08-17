@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "小音階",
+                "query": "護",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -194,15 +194,21 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3cf7c6be3050d7b6",
+  "active": "e19ff13ab68b09eb",
   "lastOpenFiles": [
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 29-2 mortgage 1 (抵押權 1).md",
+    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 1-1 three principles (3大原則).md",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 30-1 mortgage 2 (抵押權 2).md",
+    "Piano 44節 （version 1 已完成 22節）completion rate 50%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-11. 拍子, 切分節奏, 終止式.md",
+    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
+    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 29-2 mortgage 1 (抵押權 1).md",
+    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 30-2 pledge (質權).md",
+    "2-7. 屬七和弦 搭配 三和弦.pdf",
+    "2-8. Altered Scale.pdf",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 28-1 the partition of the thing held in indivision (共有物分割).pdf",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 28-2 joint ownership (公同共有).pdf",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 29-1 servitude of real property (不動產役權).pdf",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) pdf檔（Ｗindows 作業系統 才不會產生 unable to render code block 的問題）/Civil Code (民) 29-2 mortgage 1 (抵押權 1).pdf",
-    "2-8. Altered Scale.pdf",
     "Piano 44節 （version 1 已完成 22節）completion rate 50%/2. 進階樂理 14節（version 1 已完成 8節）completion rate 57%/2-8. Altered Scale.md",
     "Piano 44節 （version 1 已完成 22節）completion rate 50%/2. 進階樂理 14節（version 1 已完成 8節）completion rate 57%/attachement/12 個 Altered Scale，搭配屬七和弦的練習.png",
     "Piano 44節 （version 1 已完成 22節）completion rate 50%/2. 進階樂理 14節（version 1 已完成 8節）completion rate 57%/attachement/把全音音階的第二音「分裂」成上下半音，就得到 Altered Scale.png",
@@ -217,7 +223,6 @@
     "Piano 44節 （version 1 已完成 22節）completion rate 50%/2. 進階樂理 14節（version 1 已完成 8節）completion rate 57%/attachement/C Mixolydian 在 C7 和弦上.png",
     "Piano 44節 （version 1 已完成 22節）completion rate 50%/1. 基礎樂理 14節（version 1 已完成 14節）completion rate 100%/1-8. Mixolydian, Locrian 調式.md",
     "Self-build/前後院（version 1140801）.md",
-    "2-7. 屬七和弦 搭配 三和弦.pdf",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 28-1 the partition of the thing held in indivision (共有物分割).md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/28-1-1.md",
     "Jurisprudence 263堂（version 1 已完成 27堂）/1 Civil Code (民) 30堂（version 1 已完成 27堂）completion rate 90%/Civil Code (民) md檔/28-1.md",
@@ -235,12 +240,7 @@
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 17-1  impossibility of performance (給付不能).md",
     "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 13-2  mutatis mutandis of unjust enrichment (不當得利之準用).md",
     "Self-build/floor plan 平面圖 (version 1140801).md",
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 21-2 lease 1 (租賃契約 1).md",
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 1-2 juristic act 1 (法律行為 1).md",
     "Self-build/attachement/前庭.png",
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 26-1 co-ownership (共有).md",
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 22-2 hire of work 1 (承攬契約 1).md",
-    "Jurisprudence 263堂（version 1 已完成 29堂）/1 Civil Code (民) 30堂（version 1 已完成 29堂）completion rate 97%/Civil Code (民) md檔/Civil Code (民) 1-1 three principles (3大原則).md",
     "Self-build/attachement/後院.png"
   ]
 }
