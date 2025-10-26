@@ -67,12 +67,14 @@
             "id": "74f4327c16ce2d43",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/`B` 和 `F` 接到 `C` 和 `E`.png"
+                "file": "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-1 jurisdiction 1（管轄 1）.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "`B` 和 `F` 接到 `C` 和 `E`"
+              "icon": "lucide-file",
+              "title": "Code of Civil Procedure（民訴）4-1 jurisdiction 1（管轄 1）"
             }
           },
           {
@@ -147,7 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 591.5
+    "width": 392.5
   },
   "right": {
     "id": "f20d22c644c6fd24",
@@ -237,9 +239,11 @@
   },
   "active": "74f4327c16ce2d43",
   "lastOpenFiles": [
+    "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）3-2 parties to the litigation（訴訟主體）.md",
+    "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-1 jurisdiction 1（管轄 1）.md",
+    "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/`B` 和 `F` 接到 `C` 和 `E`.png",
     "2-11. 大和弦中的第十一度音.pdf",
     "2-10. 大和弦的四種新類型.pdf",
-    "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）3-2 parties to the litigation（訴訟主體）.md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）3-1 right to be heard（聽審請求權）.md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）2-1 principle of party presentation（辯論主義）.md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）pdf檔/Code of Civil Procedure（民訴）2-1 principle of party presentation（辯論主義）.pdf",
@@ -256,7 +260,6 @@
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/比較 拉丁風（bossa nova 風）.png",
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/加上 大六度音、大九度音.png",
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/加上 大六度音.png",
-    "Piano 44節 （version 1 已完成 23節）completion rate 52%/2. 進階樂理 14節（version 1 已完成 9節）completion rate 63%/attachement/截圖 2025-10-25 上午11.59.44.png",
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/2-8. Altered Scale.md",
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/2-14. 非功能和聲.md",
     "Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/2-12. 再論終止式.md",
