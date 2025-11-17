@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "合併",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -180,7 +181,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e19ff13ab68b09eb",
+  "active": "b6fe10dd230972b9",
   "lastOpenFiles": [
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-2 jurisdiction 2（管轄 2）.md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-1 litigant 1（當事人 1）.md",
