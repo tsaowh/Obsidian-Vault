@@ -11,12 +11,14 @@
             "id": "8523c0f1dc9164b7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "1-14. 五度圈.pdf"
+                "file": "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-2 litigant 2（當事人 2）.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "1-14. 五度圈"
+              "icon": "lucide-file",
+              "title": "Code of Civil Procedure（民訴）5-2 litigant 2（當事人 2）"
             }
           },
           {
@@ -208,6 +210,7 @@
   },
   "active": "8523c0f1dc9164b7",
   "lastOpenFiles": [
+    "1-14. 五度圈.pdf",
     "1-1. 和弦代號.pdf",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-2 litigant 2（當事人 2）.md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/5-2.md",
@@ -252,7 +255,6 @@
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）pdf檔/Code of Civil Procedure（民訴）3-1 right to be heard（聽審請求權）.pdf",
     "5-0. 曲目目錄(65首).pdf",
     "5-0. 曲目目錄(61首).pdf",
-    "5-0. 曲目目錄(63首).pdf",
-    "5-0. 曲目目錄(59首 version 1140808).pdf"
+    "5-0. 曲目目錄(63首).pdf"
   ]
 }
