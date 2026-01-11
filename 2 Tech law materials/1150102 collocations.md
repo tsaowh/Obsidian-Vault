@@ -138,3 +138,38 @@
 | advocate the creation of sovereign AIs | 主張建立主權型人工智慧                                                                                  |
 | confine commitments to best efforts    | 將承諾限縮為盡力義務                                                                                   |
 | refrain from binding obligations       | 避免承擔具拘束力義務<br>（刻意避免承擔具有法律拘束力、可被執行或可被制裁的義務，而選擇較為彈性或非強制性的承諾形式。<br>refrain 初始含義是 “用韁繩勒住、控制或抑制”） |
+
+### 顯性高階名詞搭配
+
+| 英文動詞搭配                       | 中文                                                                                                                                                                      |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ethical AI principles        | 倫理人工智慧原則                                                                                                                                                                |
+| multilateralism              | 多邊主義                                                                                                                                                                    |
+| global AI treaty             | 全球人工智慧條約                                                                                                                                                                |
+| dispute-settlement process   | 爭端解決機制                                                                                                                                                                  |
+| regulatory accountability    | 監管問責<br>（制定、執行與監督規範的公共機關，必須對其決策、行為與結果負責，並能被檢視、質疑與糾正）                                                                                                                    |
+| regulatory frameworks        | 監管架構                                                                                                                                                                    |
+| regulatory harmonization     | 監管協調<br>（不同國家或法域透過共同標準、相似規則或一致原則，降低 AI 法規差異，以促進跨境合規、貿易與治理一致性）                                                                                                           |
+| regulatory interoperability  | 監管互通性<br>（不同國家或法域即使維持各自的監管制度，仍能讓 AI 系統、合規程序與監管結果在跨境情境中被理解、承接或對接<br><br>Regulatory harmonization ⊂ Regulatory interoperability 若規則已協調（harmonized），自然可以互通（interoperable）） |
+| Free Trade Agreements (FTAs) | 自由貿易協定                                                                                                                                                                  |
+
+### 顯性高階動詞搭配
+
+| 英文動詞搭配                                                 | 中文                                                                                                                                                        |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| regulate digital services and data-driven technologies | 規範 數位服務 及 資料驅動技術                                                                                                                                          |
+| extend its reach to digital technologies               | 將制度觸及範圍延伸至數位技術                                                                                                                                            |
+| embed interoperability into trade agreements           | 將互通性嵌入貿易協定<br>（在自由貿易協定或多邊貿易協定中，納入制度設計與法律條款，使各國即使維持不同的監管制度，仍能在跨境貿易與服務中相互理解、承接或對接彼此的法規要求，而不必進行全面的法規協調。）                                                     |
+| embed accountability into global trade                 | 將問責性嵌入全球貿易<br>（透過貿易協定與多邊貿易制度的法律設計，使國家或監管機關在制定與執行影響跨境貿易（特別是數位服務與 AI）的規範時，須承擔透明、可審查、可質疑與可糾正的責任。）                                                            |
+| harmonize AI regulation                                | 協調人工智慧監管<br>（透過國際、區域或跨國制度安排，使不同國家在人工智慧監管的核心規則、風險分類與合規義務上趨於一致或高度相似，以降低法規差異並建立可預期的治理框架）                                                                     |
+| enable predictable and lawful AI trade                 | 促成可預測且合法的 AI 貿易<br>（透過清楚、穩定且可執行的法律與制度安排，使人工智慧相關產品與服務能在跨境交易中，於可預期且符合法規的條件下進行。）                                                                             |
+| integrate chips into data center networks              | 將晶片整合進資料中心網路<br>（將各類半導體晶片（特別是 AI 加速器、CPU、GPU、NPU、網路晶片）在硬體、網路與軟體層面進行整合，使其能在資料中心內高效互連、協同運算並對外提供雲端與 AI 服務。）                                                  |
+| power computational infrastructures                    | 為計算基礎設施提供運算能力                                                                                                                                             |
+| train models on vast datasets                          | 以大量資料訓練模型                                                                                                                                                 |
+| deploy AI models across markets                        | 在各市場部署 AI 模型<br>（將人工智慧模型在不同國家或法域中實際上線、提供服務或嵌入產品，並確保其在各市場中同時符合當地法規、技術要求與商業條件。）                                                                             |
+| limit access to advanced chips                         | 限制取得先進晶片                                                                                                                                                  |
+| dictate how training material is handled               | 規定訓練資料的處理方式<br>（由法律、監管或制度規範明確規定人工智慧模型在蒐集、使用、保存、分享與刪除訓練資料（training material）時，必須遵循的方式與界線。）<br><br>dictate <br>字根：反覆說<br>中文解釋：命令、規定、強制要求<br>使用時機：規範 法律義務與行為 |
+| dedicate a stand-alone article to AI                   | 設立人工智慧專章條款<br>（在一項法律、條約或協定中，設立一個「專門且獨立的條款（article）」只用來規範人工智慧，而不是將 AI 零散地分散在其他章節或條款之中。）<br><br>dedicate <br>字根：正式宣告<br>中文解釋：指定、專門配置、設立用途<br>使用時機：宣告 法律架構設計 |
+| promote responsible use                                | 促進負責任使用<br>（透過原則、政策、制度或引導性措施，鼓勵相關行為者以安全、合乎倫理、合法且可被問責的方式使用某項技術或資源，而非僅追求效率或利益最大化）                                                                           |
+| assume binding obligations                             | 承擔具拘束力義務<br>（自願或依法承擔具有法律拘束力的義務，並接受在不履行該等義務時可能產生的法律後果或責任）<br><br>assume 承擔、接受、負起（責任或義務）<br>assume obligations<br>assume liability（法律責任）                    |
+
