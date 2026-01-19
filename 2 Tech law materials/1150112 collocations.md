@@ -13,4 +13,57 @@
 | infrastructure buildout | 基礎設施建置                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | data center buildout    | 資料中心擴建                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
+### 隱性高階動詞搭配
 
+
+企業策略與競爭判斷
+
+| English                               | 中文對照               |
+| ------------------------------------- | ------------------ |
+| bet its AI future on a partnership    | 將其 AI 未來押注於一項合作    |
+| be agreed to have Gemini power Siri   | 同意由 Gemini 驅動 Siri |
+| chose to license from the incumbent   | 選擇向既有業者授權          |
+| cannot mount an independent AI effort | 無法發起獨立的 AI 競爭      |
+
+市場結構與商品化判斷
+
+| English                          | 中文對照         |
+| -------------------------------- | ------------ |
+| models compete primarily on cost | 模型主要以成本競爭    |
+| model layer is commoditizing     | 模型層正在商品化     |
+| won the contract partly on price | 部分因價格優勢而贏得合約 |
+| converge in capability           | 在能力上趨於收斂     |
+| switch providers based on price  | 依價格更換供應商     |
+| narrows the field                | 縮小競爭場域       |
+| consolidating as predicted       | 如預期般持續集中     |
+
+資本與基礎設施論證
+
+| English                                    | 中文對照             |
+| ------------------------------------------ | ---------------- |
+| billions are flowing into improving models | 數千億資金正流入模型改進     |
+| run the Gemini model on its own servers    | 在自有伺服器上運行 Gemini |
+| justify the capital expenditure            | 合理化資本支出          |
+| looks increasingly precarious              | 顯得愈發不穩定          |
+
+價值分配與層級轉移
+
+| English                          | 中文對照      |
+| -------------------------------- | --------- |
+| value accrues elsewhere          | 價值轉移至其他層面 |
+| capture value elsewhere          | 在他處攫取價值   |
+| extract rents from developers    | 向開發者攫取租值  |
+| move up the stack                | 向技術堆疊上層移動 |
+| cover the investment             | 覆蓋投資成本    |
+
+分析與論證操作
+
+| English                             | 中文對照    |
+| ----------------------------------- | ------- |
+| compare that to                     | 將其與……對比 |
+| raises a question                   | 提出一個問題  |
+| argued elsewhere                    | 曾於他處主張  |
+| worth pausing on                    | 值得停下來檢視 |
+| watch whether                       | 觀察是否    |
+| reveals where differentiation lives | 揭示差異化所在 |
+| sharpens the question               | 使問題更加尖銳 |
