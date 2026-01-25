@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-2 litigant 4（當事人 4）.md",
+                "file": "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-1 litigant 3（當事人 3）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Code of Civil Procedure（民訴）6-2 litigant 4（當事人 4）"
+              "title": "Code of Civil Procedure（民訴）6-1 litigant 3（當事人 3）"
+            }
+          },
+          {
+            "id": "055185e9eec4f9d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "同一事件",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -181,20 +195,24 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "6bc76611e6b04515",
+  "active": "055185e9eec4f9d0",
   "lastOpenFiles": [
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-2 litigant 4（當事人 4）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-1 litigant 3（當事人 3）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-2 litigant 2（當事人 2）.md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-1 litigant 1（當事人 1）.md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-2 jurisdiction 2（管轄 2）.md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）3-1 right to be heard（聽審請求權）.md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 6-2  object of rights 3 (權利客體).md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 7-1  subject matter (法律標的).md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）1-2 principle of cooperation（協同主義）.md",
     "2 Tech law materials/1150112 collocations.md",
     "2 Tech law materials/1150102 collocations.md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-2 litigant 4（當事人 4）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）9-1 joint litigation 1（共同訴訟 1）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）8-2 litigant 8（當事人 8）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）8-1 litigant 7（當事人 7）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-2 litigant 6（當事人 6）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）5-1 litigant 1（當事人 1）.md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-2 jurisdiction 2（管轄 2）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）4-1 jurisdiction 1（管轄 1）.md",
     "2 Tech law materials/1150105 collocations.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）1-1 principle of litigation（訴訟法理）.md",
@@ -215,10 +233,6 @@
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）pdf檔/Code of Civil Procedure（民訴）5-1 litigant 1（當事人 1）.pdf",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/5-2 (1).md",
     "Jurisprudence 263堂（version 1 已完成 33堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 3堂）completion rate 9%/Code of Civil Procedure（民訴）md檔/5-2.md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 6-1  object of rights 2 (權利客體).md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 29-1 servitude of real property (不動產役權).md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 1-1 three principles (3大原則).md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/1 Civil Code (民) 30堂（version 1 已完成 30堂）completion rate 100%/Civil Code (民) md檔/Civil Code (民) 4-2  personality rights (人格權).md",
     "3 Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/`B` 和 `F` 接到 `C` 和 `E`.png",
     "3 Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/C G 完全五度.png",
     "3 Piano 44節 （version 1 已完成 25節）completion rate 56%/2. 進階樂理 14節（version 1 已完成 11節）completion rate 78%/attachement/升 第十一度音.png",
