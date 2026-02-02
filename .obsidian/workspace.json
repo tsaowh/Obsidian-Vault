@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "訴訟標的",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -145,7 +145,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -237,7 +238,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "bf6d29007f555605",
+  "active": "b6fe10dd230972b9",
   "lastOpenFiles": [
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-2 litigant 4（當事人 4）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
