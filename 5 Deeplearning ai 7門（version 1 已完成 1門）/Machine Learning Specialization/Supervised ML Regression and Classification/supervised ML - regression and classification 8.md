@@ -1,0 +1,7 @@
+- ### cost function for logistic regression
+	- #### cost function for logistic regression
+	- #### simplified cost function for logistic regression
+- ### gradient descent for logistic regression
+	- #### gradient descent implementation
+- ### the problem of overfitting
+	- #### the problem of overfitting

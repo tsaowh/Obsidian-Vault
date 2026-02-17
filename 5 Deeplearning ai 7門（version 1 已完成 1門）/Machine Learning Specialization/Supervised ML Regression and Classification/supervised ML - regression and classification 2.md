@@ -1,0 +1,239 @@
+- ### regression model
+	- #### linear regression model part1
+	- ![[Pasted image 20260203082515.png]]
+		- 監督式學習 (supervised learning) 最常見兩大類就是回歸 (regression model) vs 分類 (classification model)
+			- 回歸
+				- 輸出是連續值
+			- 分類
+				- 輸出是離散值
+		- 線性回歸模型 (linear regression)
+			- 還有其他模型也能解回歸問題
+			- 模型要靠資料學習 (supervised learning)
+				- 資料集 是 美國波特蘭（Portland）的房屋大小與房價
+			- 根據房子的大小來預測房價
+				- 輸入是面積，輸出是價格
+	- ![[Pasted image 20260203082700.png]]
+		- inputs = size
+		- outputs = price
+		- 水平軸和垂直軸 對應到 大小和價格
+			- 把「圖」和「表」連結起來：圖只是表格兩欄的視覺化
+	- ![[Pasted image 20260203082740.png]]
+		- training set＝拿來學的資料
+		- 監督式學習： **先訓練（learn）→再推論（predict）**
+			- x
+				- 輸入變數（input variable）
+				- 輸入特徵（input feature）
+				- 特徵（feature）
+			- y
+				- 輸出變數（output variable）
+				- 目標變數（target variable）
+			- m
+				- 訓練樣本的總數
+				- 很多公式（成本函數、平均誤差）都會用到 m
+			- i
+				- 把「索引」和「表格列」關聯在一起
+				- 第 i 筆樣本就是第 i 列，用上標 (i) 來標記第幾筆資料
+			- 如何訓練
+				- cost function
+				- 梯度下降
+	- #### linear regression model part2
+	- ![[Pasted image 20260203084157.png]]
+		- 監督式學習 流程與架構
+			- 資料（training set）
+			- 學習演算法（learning algorithm）
+			- 產生出來的模型（model）
+				- 函數（function）
+				- 模型的用途
+					- **預測新的 x**（不是用訓練資料本身） 對應的 y
+					- x → f(x) → ŷ
+					- ŷ 是對真實 y 的預測
+				- 其中一簡單模型，線性回歸模型
+					- ŷ = wx + b（斜率與截距）
+					- w、b 是模型參數（parameters）
+					- 目前為 「單變量線性回歸」（univariate linear regression）
+						- 單變量（單一特徵）
+							- 僅 size
+						- 接下來會從「單一特徵（single feature）」擴展到「多特徵（multiple features）」
+	- #### cost function
+	- ![[Pasted image 20260203084328.png]]
+		- 線性回歸模型 (linear regression model)
+			- $$f_{w,b}(x) = wx + b$$
+			- **訓練資料**：很多筆 (x,y)
+			- **features（特徵）**：size in feet²（房屋面積）→ x
+			- **targets（目標）**：price $1000’s（房價，單位千元）→ y
+			- w, b 是 parameters / coefficients / weights
+			- **訓練目的**：調 w,b 讓直線更貼近資料點（後面用 cost function 衡量）
+	- ![[Pasted image 20260203084349.png]]
+		- y-intercept（y 軸截距）
+	- ![[Pasted image 20260203084751.png]]
+		- 紅色叉叉是訓練資料點 $(x^{(i)}, y^{(i)})$
+		- 藍線是模型 $f_{w,b}$
+		- 綠點表示某個 x 對應的模型預測 $\hat{y}^{(i)}$
+		- $\hat{y}^{(i)} = f_{w,b}(x^{(i)}) = wx^{(i)} + b$
+		- 平方誤差 cost function
+			- $$J(w,b) = 1/(2m) * \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$$
+			- m = training 樣本數
+			- error = $(\hat{y}^{(i)} - y^{(i)})$
+			- 訓練目標 $$\min_{w,b} J(w,b)$$
+			- 為什麼要平方
+				- 避免正負誤差互相抵消
+				- 大誤差會被更嚴重懲罰（更合理）
+				- 數學上好優化（可微分、凸函數）
+			- 為什麼是1/2m
+				- 為什麼要除以 m
+					- 變成平均誤差，資料量不同也能比較
+				- 為什麼還要多一個 1/2
+					- 讓微分時的係數 2 抵消，公式更簡潔
+	- #### cost function intuition (直覺)
+	- 用一個超簡化的線性模型 $f_w(x) = wx$，來觀察不同的 $w$ 會造成多大的預測誤差代價 (cost function $J(w)$)，從而可以將誤差代價畫成 $w$ 的函數。
+		- 目標
+			- 找讓 $J(w)$ 最小的那個 $w$
+	- ![[Pasted image 20260204183500.png]]
+		- 左邊：標準線性回歸模型
+			- 兩個參數，曲面（$J(w, b)$ , $w$ , $b$）
+		- 右邊：簡化模型（重點！）
+			- 一個參數，曲線（$J(w)$ , $w$）
+	- ![[Pasted image 20260204183550.png]]
+	- ![[Pasted image 20260204184410.png]]
+	- ![[Pasted image 20260204184433.png]]
+	- ![[Pasted image 20260204184452.png]]
+		- recall 為什麼一定要平方誤差？
+			- 正負誤差都變正
+			- 大誤差懲罰更重
+			- 對 $w$ 來說，$J(w)$ 會變成一個 **凸函數（convex function）**
+				- convex function 只有 一個最低點（global minimum）
+				- 如果 cost function 是 convex，gradient descent 一定會走到 global minimum
+		- Convex / Concave / Saddle Point
+			- **凸函數 (Convex, U型)**：函數圖形上任意兩點的弦（直線段）都在函數圖形==上==方
+			- **凹函數 (Concave, 倒 U 型)**：函數圖形上任意兩點的弦都在函數圖形==下==方
+			- 鞍點（Saddle point）：多變數函數或矩陣中的一個特殊臨界點，其在某一方向上是極大值，在另一方向上則是極小值，形狀如同馬鞍
+				- ![[Pasted image 20260209113010.png]]
+				- 直觀例子（最經典）
+					- $f(x,y) = x^2 - y^2$
+						- 在 $(0,0)$：$\nabla f = (0,0)$
+						- 沿 $x$ 軸：$f = x^2$（最小值）
+						- 沿 $y$ 軸：$f = -y^2$（最大值）
+						- 同一個點，同時是最大值、最小值 = 鞍點
+				- 用 Hessian matrix 判斷
+					- Hessian matrix
+						- 由「二階偏導數」組成的矩陣
+						- 多變數函數在某一點附近的**曲率（彎曲方式）**
+							- 一階導數看「斜不斜」
+							- 二階導數看「彎不彎、往哪彎」
+						- 數學定義
+							- 對一個二變數函數 $f(x,y)$：
+							- $$H(f)=\begin{bmatrix}\frac{\partial^2 f}{\partial x^2} &\frac{\partial^2 f}{\partial x \partial y} \\\frac{\partial^2 f}{\partial y \partial x} &\frac{\partial^2 f}{\partial y^2}\end{bmatrix}$$
+							- 若 $f$ 的二階偏導連續，則：$$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
+								- 即 Hessian 是對稱矩陣
+						- 幾何意義
+							- 對角線：沿各變數方向的「彎曲程度」
+							- 非對角線：變數之間的「交互影響」
+						- Hessian 怎麼判斷極值？
+							- 判別式
+								- $$H =\begin{bmatrix}a & b \\b & c\end{bmatrix}$$
+								- 計算判別式：
+									- $D = ac - b^2$
+									- D>0，且 a>0
+										- 局部極小值
+									- D>0，且 a<0
+										- 局部極大值
+									- D<0
+										- 鞍點
+									- D = 0
+										- 無法判定
+								- why
+									- hint
+									- 泰勒展開 $$f(x_0 + h, y_0 + k)\approx f(x_0, y_0)+\frac{1}{2}\begin{bmatrix}h & k\end{bmatrix}\begin{bmatrix}a & b \\b & c\end{bmatrix}\begin{bmatrix}h \\k\end{bmatrix}$$
+									- 對 下列 配方 $$Q(h, k) = ah^2 + 2bhk + ck^2$$
+							- 特徵值(一般性，2個變數以上亦可適用)
+								- 對任意維度：
+									- **所有特徵值 > 0** → 極小值（正定）
+									- **所有特徵值 < 0** → 極大值（負定）
+									- **特徵值 有正有負** → **鞍點**
+									- **特徵值 有0** → **不確定**
+								- why
+									- 對稱矩陣（eg Hessian）有一個**超強性質**
+										- 可以找到一組互相垂直的方向（特徵向量），讓二次型變成「完全分開的平方項」。
+										- 即 存在正交矩陣 $Q$，使得 $H = Q \Lambda Q^{\top}$
+											- 正交矩陣 $Q$ 
+												- 它的每一個 column，就是一個單位長度、彼此垂直的向量
+												- 幾何意義
+													- 旋轉、鏡射
+													- 不拉伸、不扭曲、不改距離
+										- 其中 $\Lambda = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)$
+										- 這些 $\lambda_i$ 就是特徵值。
+									- 代回泰勒展開（關鍵一步）
+										- 在臨界點附近：$f(x_0 + h) \approx f(x_0) + \frac{1}{2} h^{\top} H h$
+										- 換座標 $z = Q^{\top} h$：
+											- $h^{\top} H h = z^{\top} \Lambda z = \sum_{i=1}^{n} \lambda_i z_i^2$
+												- $H = Q \Lambda Q^{\top}$ , $Q^{\top} Q = I$
+												- $h^{\top} H h = h^{\top} (Q \Lambda Q^{\top}) h$
+												- $h^{\top} (Q \Lambda Q^{\top}) h = (h^{\top} Q)\, \Lambda \, (Q^{\top} h)$
+												- $z = Q^{\top} h$
+												- $h^{\top} Q = (Q^{\top} h)^{\top} = z^{\top}$
+											- 這行是整個上述分類的核心
+									- 特徵值 如何計算
+										- $\det(H - \lambda I) = 0$
+										- 解出來的 λ 就是特徵值。
+						- 經典例子（回到鞍點）
+							- $f(x,y) = x^2 - y^2$
+							- $$H =\begin{bmatrix}2 & 0 \\0 & -2\end{bmatrix}$$
+							- 特徵值：2,−2
+								- 一正一負 → **鞍點**
+				- 不是最優解，但會讓梯度法「卡住」
+	- #### visualizing the cost function
+	- ![[Pasted image 20260210114149.png]]
+		- Model
+			- $x$：輸入（房屋大小）
+			- $f(x)$：模型預測的房價
+			- $w$：斜率（每增加 1 單位面積，價格平均增加多少）
+			- $b$：截距（面積趨近 0 時的基準價格）
+		- Parameters：$w, b$
+			- 之前為了畫圖簡化，暫時把 $b = 0$
+			- but 現在回到真實狀況：**兩個參數一起考慮**
+		- Objective
+			- 在所有 $w,b$ 的組合中，找出讓 $J$ 最小的那一組
+	- ![[Pasted image 20260210114204.png]]
+		- 左圖
+			- **系統性低估**（underestimate），所以誤差大。
+		- 右圖
+			- 當只有一個參數時（為了簡化暫時令 $b = 0$），cost function 可以寫成 $J(w)$，其形狀會為 U 型曲線
+			- 實際線性回歸中，cost function 應為 $J(w,b)$，其形狀會為 U 型曲面
+	- ![[Pasted image 20260210114229.png]]
+		- 這張圖直接把成本函數畫成 3D 曲面
+			- 平面座標軸：$w$ 與 $b$（參數）
+			- 垂直高度：$J(w,b)$（成本）
+		- $J(w,b)$ 是參數 $(w,b)$ 的 **二次函數（quadratic function）**
+			- 因 可二階微分
+			- 故 存在 Hessian matrix
+				- 若 對所有 $z$，   $z^T H z \ge 0$
+					- 則 半正定（Positive Semidefinite）
+				- 若 對所有 $z \neq 0$，   $z^T H z > 0$
+					- 則 正定（Positive Definite）
+				- 若 
+					- 存在向量 $z_1$ 使得 $z_1^T H z_1 > 0$
+					- 且存在向量 $z_2$ 使得 $z_2^T H z_2 < 0$
+					- 則 不定（Indefinite）
+						- 表示某些方向向上彎，某些方向向下彎
+						- 鞍點
+				- ![[Pasted image 20260212173627.png]]
+				- $z^T H z$ 直觀幾何解釋
+					- 給一個方向 $z$
+					- Hessian 表「每個座標間怎麼互相影響」
+					- $Hz$ 表「斜率對方向 z 的回應」
+						- 方向 z → 丟進 Hessian → 得到梯度的變化方向
+						- 變化向量
+					- 再用 $z^T$ 投影回原方向
+						- 沿著 z 這條線，實際彎曲多少？
+						- 得到純量
+	- ![[Pasted image 20260210114253.png]]
+	- ![[Pasted image 20260210114319.png]]
+		- 3D 曲面在不同高度用水平面切一刀，留下交線；這些交線投影到 w-b 平面上，就變成一圈圈的等高線 ($J(w,b)$（成本）相同)。
+		- 等高線是“成本相同”的集合，不是“線相同”
+		- 成本相同 僅代表 該模型好壞程度相同
+	- #### visualization examples
+	- ![[Pasted image 20260210114614.png]]
+	- ![[Pasted image 20260210114628.png]]
+	- ![[Pasted image 20260210114857.png]]
+	- ![[Pasted image 20260210114916.png]]
+

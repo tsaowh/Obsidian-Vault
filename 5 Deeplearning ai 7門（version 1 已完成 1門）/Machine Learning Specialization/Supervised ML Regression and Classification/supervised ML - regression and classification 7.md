@@ -1,0 +1,45 @@
+- ### classification with logistic regression
+	- #### motivations
+	- ![[截圖 2026-02-17 晚上11.03.11.png]]
+		- 什麼是 Classification
+			- 輸出只有「有限個類別」
+			- eg
+				- 這封 email 是 spam 嗎？
+				- 這筆交易是詐騙嗎？
+				- 這個腫瘤是惡性嗎？
+		- 回歸（regression）
+			- 預測 連續數值
+		- 分類（classification）
+			- 預測 類別
+			- 當只有兩個類別時，稱為：Binary Classification（二元分類）
+				- negative ≠ 壞、positive ≠ 好
+				- 只是表示「某種特性的 absence 或 presence」
+				- 為什麼用 0 和 1？
+					- 與後續 logistic regression 數學模型 形式一致
+	- ![[截圖 2026-02-17 晚上11.03.22.png]]
+		- x 軸：腫瘤大小（cm）
+		- y 軸：是否惡性（0 或 1）
+		- 藍色圓圈 → benign（良性）→ y = 0
+		- 紅色叉叉 → malignant（惡性）→ y = 1
+		- 分類問題的核心：
+			- 找到一條 decision boundary（決策邊界）
+				- 某個腫瘤大小以上 → 判定為惡性
+				- 某個腫瘤大小以下 → 判定為良性
+	- ![[截圖 2026-02-17 晚上11.03.41.png]]
+		- 假設硬用 Linear Regression 畫一條線，然後設一個閾值（threshold）：
+			- 若 f(x) < 0.5 → 預測 0
+			- 若 f(x) ≥ 0.5 → 預測 1
+			- 看起來好像可以分類，but 加入一個「非常大的腫瘤樣本」在最右邊時：
+				- linear regression 會試圖最小化平方誤差
+				- 直線會被那個極端點拉動
+				- 決策邊界（y = 0.5 交點）會改變，原本合理的分類變得錯誤
+		- 回歸（regression）vs 分類（classification）目標不同
+			- 回歸
+				- $\min \sum_{i=1}^{m} (y^{(i)} - \hat{y}^{(i)})^2$
+			- 分類
+				- 分對或分錯（0 或 1）
+					- 需要一個模型，輸出永遠在 0 和 1 之間
+						- logistic regression
+	- #### logistic regression
+	- #### decision boundary
+

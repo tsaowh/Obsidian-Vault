@@ -1,0 +1,116 @@
+- ### gradient descent in practice
+	- #### feature scaling part1
+	- ![[截圖 2026-02-17 下午3.54.09.png]]
+		- 特徵大小（Features）
+			- x1​：房屋面積（300 – 2000 平方英尺）
+				- 數值「很大」
+			- x2​：臥室數量（0 – 5）
+				- 數值「很小」
+			- 兩個特徵的數值尺度（scale）差很多
+			- scatter plot 上：
+				- 水平方向很長
+				- 垂直方向很短
+		- 參數空間（Parameters）
+			- 自然的補償現象（與 特徵大小 相反）
+				- 因 x1 敏感 
+					- 故 ​w1​ 必須「比較小」
+				- 因 x2 不敏感 
+					- 故 w2​ 反而可以「比較大」
+	- ![[截圖 2026-02-17 下午3.54.44.png]]
+		- 特徵的數值範圍，會影響對應參數的合理大小
+			- 特徵大小 scale 不同 → 參數大小不同 → cost 曲面形狀不同
+	- ![[截圖 2026-02-17 下午3.55.47.png]]
+		- 對 Gradient Descent 的影響
+			- 每次更新都使用 **全部訓練資料** 計算梯度
+				- $w := w - \alpha \frac{1}{m} \sum_{i=1}^{m} \nabla J_i(w)$
+			- 當等高線是細長橢圓時：
+				- cost function 水平方向很陡（曲率大）
+				- cost function 垂直方向很平（曲率小）
+				- 因為陡峭方向的梯度很大，更新量會主要朝那個方向移動
+				- 結果一步就「跨過」谷底
+				- 左右振盪
+					- 學習率 α 是固定的，但兩個方向的曲率差很多
+					- 在陡方向用小步伐
+					- 在平方向用大步伐
+					- but 它卻沒辦法自動分開處理
+		- Feature Scaling
+			- 兩個特徵都壓到類似的範圍，eg 0 到 1 之間
+				- $x_1' = \frac{x_1}{2000}$
+				- $x_2' = \frac{x_2}{5}$
+				- 兩個特徵範圍接近
+				- 對應參數大小也接近
+				- cost 等高線變成比較圓
+				- Gradient Descent 不會左右振盪 收斂較快
+	- #### feature scaling part2
+	- ![[截圖 2026-02-17 下午5.13.47.png]]
+	- ![[截圖 2026-02-17 下午5.14.00.png]]
+	- ![[截圖 2026-02-17 下午5.14.23.png]]
+	- ![[截圖 2026-02-17 下午5.14.34.png]]
+		- Feature scaling 的目的，是讓不同特徵「落在相近的數值範圍」，以加速梯度下降
+			- 方法一：除以最大值（Simple Rescaling）
+				- $x_{1,\text{scaled}} = \frac{x_1}{2000}$
+				- $x_{2,\text{scaled}} = \frac{x_2}{5}$
+					- 數值縮放到 0 ~ 1 之間
+					- **沒有做 中心化**（center around 0）
+						- 某些模型（例如線性模型）中，資料若圍繞 0，通常會讓優化更穩定
+			- 方法二：Mean Normalization（平均值正規化）
+				- $$x_1 = \frac{x_1 - \mu_1}{\max - \min}$$
+					- 數值縮放到 -1 ~ 1 之間
+						- 資料「平移」到平均值為 0（中心化）
+						- 同時做縮放
+					- 對梯度下降更友善
+					- 缺
+						- 若 有極端值（outliers）則 可能會影響縮放效果
+			- 方法三：Z-score Normalization（標準化）
+				- $$x = \frac{x - \mu}{\sigma}$$
+					- μ 是平均
+					- σ 是標準差
+					- 最通用且理論基礎較完整的 scaling 方法
+						- 平均值變為 0
+						- 標準差變為 1
+						- 不依賴 max/min
+							- 對 outlier 相對穩定
+			- 需要 scaling
+				- 距離型模型 與 梯度型模型 對尺度敏感
+				- KNN、線性模型、SVM、Neural Networks
+			- 不需要 scaling
+				- 樹模型只看分裂點，對尺度不敏感
+				- Tree-based model（如 Random Forest, XGBoost）
+	- #### checking gradient descent for convergence
+	- ![[截圖 2026-02-17 下午6.12.33.png]]
+		- 這兩個式子呈現的是「梯度下降法」的基本精神：
+			- 每一次 iteration（迭代）
+			- 同時更新所有參數 $w_j$ 與 $b$
+			- 朝「讓成本函數 $J(\vec{w}, b)$ 下降的方向」前進
+		- 其中：
+			- $\dfrac{\partial J}{\partial w_j}$、$\dfrac{\partial J}{\partial b}$：代表在目前參數位置的斜率（梯度）
+			- $\alpha$：學習率（learning rate），決定每次前進的步伐大小
+				- $\alpha$ 太大 $\rightarrow$ 可能 overshoot，導致 $J$ 上升甚至震盪
+				- $\alpha$ 太小 $\rightarrow$ 收斂很慢，需要很多 iteration
+				- 學會看 learning curve，後面就能更好地選 learning rate
+	- ![[截圖 2026-02-17 下午6.14.59.png]]
+		- 如何判斷 Gradient Descent 是否收斂？
+			- 用 Learning Curve 觀察 J 是否持續下降
+				- 橫軸
+					- iteration 次數（不是 w 或 b）
+				- 縱軸
+					- cost function $J(\vec{w}, b)$
+				- 正常情況應該是：
+					- J 每次 iteration 都下降
+					- 曲線逐漸趨平
+					- 最後接近一個穩定值
+				- 若 J 在某次 iteration 之後上升，則可能
+					- Learning rate 太大
+					- 參數更新時沒有「同時更新」
+					- gradient、cost function 計算錯誤
+		- 自動收斂測試（Automatic Convergence Test）
+			- 若 $J^{(t)} - J^{(t+1)} \le \varepsilon$，則 視為 收斂
+				- 選 ε 其實很困難
+				- ε 太大 → 還沒真正收斂就停止
+				- ε 太小 → 訓練太久
+			- 故 傾向看 Learning Curve 而非 完全依賴自動門檻
+		- 收斂 ≠ 全域最小值（global minimum）
+			- convex 問題（如 線性迴歸）中：
+				- 收斂 → 等於 global minimum
+			- 非 convex 問題（如 深度學習）中：
+				- 收斂 → 可能只是 local minimum 或 saddle point

@@ -1,0 +1,279 @@
+- ### train the model with gradient descent
+	- #### gradient descent
+	- ![[Pasted image 20260213093141.png]]
+		- $$\min_{w_1, \ldots, w_n, b} J(w_1, w_2, \ldots, w_n, b)$$
+			- 可能有很多參數（例如神經網路）
+			- Gradient Descent 適用於「任何可微函數」
+				- Gradient Descent 是通用的最小化方法，不只用於線性回歸。
+			- 簡化情形
+				- 線性回歸的平方誤差 → 凸函數 (convex) → 只有一個 global minimum
+			- 實際情形
+				- 神經網路 → 非凸函數 (non-convex) → 可能有多個 local minima
+					- **minimum** = 單數（最小值）
+					- **minima** = 複數（多個最小值）
+					- maximum → maxima
+					- minimum → minima
+					- criterion → criteria
+	- ![[Pasted image 20260213093202.png]]
+		- x 軸：w
+		- y 軸：b
+		- z 軸：J(w,b)
+		- Gradient Descent 的流程
+			- 原地轉一圈（看 360 度）
+			- 找最陡的下坡方向
+			- 跨一小步
+			- 重複
+		- non-convex 函數（即 神經網路 常見情況）的重要特性
+			- 起始方向不同 → 會掉入不同 local minimum
+				- 黑色路徑 → 走到左邊 valley
+				- 藍色路徑 → 走到右邊 valley
+		- but 深度學習中，很多 local minima 表現其實都差不多好
+			- why
+				- 高維空間的特性
+					- 大多數 valley 都是「差不多深」
+					- 即「壞的」local minima 其實很少
+					- 很多 minima 其實等價
+						- eg
+							- 神經網路中 兩個 hidden units 對調
+							- 神經網路中 參數重排列
+							- 皆得到 相同的loss
+					- 維度越高，saddle point 越多
+						- 臨界點定義
+							- $\nabla f(x) = 0$
+							- 三種可能
+								- Local minimum（全部方向都往上）
+								- Local maximum（全部方向都往下）
+								- Saddle point（有些方向往上、有些方向往下）
+								- 取決於
+									- 看每個方向的曲率（Hessian 的特徵值）
+									- 因 假設每個方向的曲率
+										- 有 50% 機率正
+										- 有 50% 機率負
+										- 所有方向都正的機率趨近 0
+									- 故 高維中，幾乎所有臨界點都是 saddle
+			- 真正比較常見的問題
+				- Saddle points（鞍點）
+				- Plateaus（平坦區）
+				- sol 
+					- Stochastic Gradient Descent（SGD）
+						- 純 GD（batch GD）vs Stochastic Gradient Descent（SGD）
+							- 純 GD（batch GD）
+								- 每次更新都使用 **全部訓練資料** 計算梯度
+									- $w := w - \alpha \frac{1}{m} \sum_{i=1}^{m} \nabla J_i(w)$
+									- $m =$ 全部資料筆數
+									- 每次都要跑完整個 dataset
+								- 特性
+									- 梯度方向「非常準確」
+										- 每一步都朝真正下降方向
+									- 計算慢
+										- 不可處理大數據
+									- 容易卡在 saddle / plateau
+							- Stochastic Gradient Descent（SGD）
+								- 每次只用 **一筆資料**（或小批次 mini-batch）
+									- $w := w - \alpha \nabla J_i(w)$
+									- 梯度變成隨機變數
+								- 特性
+									- 計算快
+										- 可處理大數據
+									- 容易跳出 saddle / plateau
+										- 有隨機噪音（noise）
+											- 即 跟 平均梯度（$\frac{1}{m} \sum_{i=1}^{m} \nabla J_i(w)$） 的差距
+											- 即使 平均梯度是 0，每個 mini-batch 算出來的梯度都不會剛好 0
+											- 路徑會抖動
+											- 不會完全收斂到一個精確點
+								- 因 SGD 還是不一定 跳得出 saddle / plateau
+								- 故
+									- learning rate 不能太小
+									- mini-batch size 不能太大
+										- 導致 noise 太小
+	- #### implementing gradient descent
+	- ![[Pasted image 20260213093231.png]]
+		- $$w := w - \alpha \frac{\partial}{\partial w} J(w,b)$$
+		- $$b := b - \alpha \frac{\partial}{\partial b} J(w,b)$$
+			- 每一步都：新參數 = 舊參數 − 學習率 × 梯度
+				- 負號代表往「下降方向」走
+			- Learning rate（α）
+				- α 控制步伐大小
+					- 每一步走多遠
+				- α 太大 → 震盪、發散
+				- α 太小 → 收斂很慢
+				- α 必須是正數
+			- Derivative（偏導數）
+				- $\frac{\partial}{\partial w} J(w,b)、\frac{\partial}{\partial b} J(w,b)$
+				- 下降斜率
+			- Simultaneous Update
+				- 正確寫法
+					- $tmp_w = w - α * dJ/dw$
+					- $tmp_b = b - α * dJ/db$
+					- $w = tmp_w$
+					- $b = tmp_b$
+					- 兩個更新都用「舊的 w, b」
+					- 同時決定 w 方向和 b 方向的移動量
+				- 錯誤寫法
+					- $tmp_w = w - α * dJ/dw$
+					- $w = tmp_w$
+					- $tmp_b = b - α * dJ/db$
+						- 這裡用的是新的 w
+					- $b = tmp_b$
+					- 第二步用到的是「更新後的 w」
+					- 不是同一個時間點的參數
+					- 先往 w 方向移動，再用新位置決定 b
+	- #### gradient descent intuition
+	- ![[Pasted image 20260213093339.png]]
+	- ![[Pasted image 20260213093515.png]]
+		- 為了建立直覺，先把問題簡化 $J(w)$
+		- 右邊起始點（斜率為正）
+			- $\frac{d}{dw} J(w) > 0$
+			- $w = w - \alpha (\text{positive number})$
+			- 因
+				- α 是正數
+				- 導數是正數
+			- 故 
+				- w 會變小
+				- 向左移動
+				- cost 變小
+				- 更接近 minimum
+		- 左邊起始點（斜率為負）
+			- $\frac{d}{dw} J(w) < 0$
+			- $w = w - \alpha (\text{negative number})$
+			- 因
+				- α 是正數
+				- 減負數 = 加正數
+			- 故
+				- w 變大
+				- 向右移動
+				- cost 變小
+				- 更接近 minimum
+		- 證明 gradient descent 方向永遠正確
+	- #### learning rate
+	- ![[Pasted image 20260213093539.png]]
+		- α 太小（Too Small）
+			- 小 α → 保證收斂
+				- cost 下降
+			- 收斂速率慢
+			- 需要大量 iteration
+		- α 太大（Too Large）
+			- 大 α → 不保證收斂
+				- cost 反而上升
+				- 可能 overshoot、diverge
+			- 收斂速率快
+			- 不需要大量 iteration
+		- gradient descent 收斂條件
+			- 對於二次函數：$J(w) = \frac{1}{2} k w^2$
+			- 收斂條件
+				- $0 < \alpha < \frac{2}{k}$
+			- 震盪甚至發散
+				- $\alpha > \frac{2}{k}$
+			- why
+				- 函數開始
+					- 給定二次函數：$J(w) = \frac{1}{2}kw^2$
+						- k > 0
+						- minimum 在  w = 0
+				- 先算梯度
+					- $\frac{d}{dw}J(w) = kw$
+				- 代入 Gradient Descent 更新式
+					- $w_{t+1} = w_t - \alpha k w_t$
+					- $w_{t+1} = (1-\alpha k)w_t$
+				- 遞迴關係
+					- $w_{t+1} = r w_t$
+					- $r = 1 - \alpha k$
+				- 展開遞迴
+					- $w_t = (1-\alpha k)^t w_0$
+				- 收斂時機
+					- $w_t \to 0$
+					- 即 $(1-\alpha k)^t \to 0$
+					- 這會發生在：$|1-\alpha k| < 1$
+				- 解不等式
+					- $-1 < 1 - \alpha k < 1$
+					- 分成兩邊解：
+						- 左邊
+							- $-1 < 1 - \alpha k$
+							- $-2 < -\alpha k$
+							- $2 > \alpha k$
+							- $\alpha < \frac{2}{k}$
+						- 右邊
+							- $1 - \alpha k < 1$
+							- $-\alpha k < 0$
+							- $\alpha > 0$
+				- 合併結果
+					- $0 < \alpha < \frac{2}{k}$
+				- α > 2/k
+					- $|1-\alpha k| > 1$
+					- $(1-\alpha k)^t$
+						- 震盪（因為可能是負數）
+						- 絕對值越來越大
+						- 最終發散
+				- 直觀理解
+					- $w_{t+1} = r w_t$
+					- $r = 1 - \alpha k$
+					- $w_t = (1-\alpha k)^t w_0$
+					- 震盪 $r < 0$
+					- 收斂 $|r| < 1$
+						- 不震盪收斂：
+							- $0 < r < 1 \;\Rightarrow\; 0 < \alpha < \frac{1}{k}$ 
+						- 震盪但收斂：
+							- $-1 < r < 0  \;\Rightarrow\; \frac{1}{k} < \alpha < \frac{2}{k}$
+					- 發散 $|r| > 1$
+						- 不震盪發散：
+							- $1 < r \;\Rightarrow\; \alpha k < 0$ 
+						- 震盪且發散：
+							- $r < -1  \;\Rightarrow\; \frac{2}{k} < \alpha$
+				- 優化理論
+					- 多維情況：
+						- $J(w) = \frac{1}{2} w^T H w$
+					- 收斂條件變成：
+						- $0 < \alpha < \frac{2}{\lambda_{\max}}$
+						- $\lambda_{\max}$ 是 Hessian 最大 eigenvalue
+						- 故 曲率越大 → 允許的 learning rate 越小
+	- ![[Pasted image 20260213093600.png]]
+	- ![[Pasted image 20260213101052.png]]
+		- 即使 learning rate 是固定值
+			- 只要梯度趨近 0
+			- 更新量自然變小
+			- 仍可以收斂
+	- #### gradient descent for linear regression
+	- ![[Pasted image 20260213101123.png]]
+	- ![[Pasted image 20260213101224.png]]
+		- 關鍵步驟：
+			- 微分平方 → 產生 2
+			- 與前面的 1/2 抵銷
+			- 因 連鎖律（chain rule）
+				- 若 y = f(u) 且 u = g(x)，則 y = f(g(x))
+					- $\frac{dy}{dx} = f'(g(x)) \cdot g'(x)$
+			- 故
+				- 對 w 微分
+					- 因 $\frac{d}{dw}(wx) = x$
+					- 故 微分後有 $x^{(i)}$
+						- $$\frac{\partial}{\partial w}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)})-y^{(i)}\right)x^{(i)}$$
+				- 對 b 微分
+					- 因 $\frac{d}{db}(b) = 1$
+					- 故 微分後無 $x^{(i)}$
+						- $$\frac{\partial}{\partial b}J(w,b) = \frac{1}{m}\sum_{i=1}^{m}\left(f_{w,b}(x^{(i)})-y^{(i)}\right)$$
+	- ![[Pasted image 20260213101252.png]]
+	- ![[Pasted image 20260213101311.png]]
+		- 一般函數（神經網路）可能
+			- 有多個 local minimum
+			- 到哪個 local minimum，取決於初始向量
+	- ![[Pasted image 20260213101328.png]]
+		- 平方誤差 + 線性模型 → convex function
+			- 為什麼是 convex？
+				- $$J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left(wx^{(i)}+b-y^{(i)}\right)^2$$
+				- 對 w,b 而言 皆為 二次函數圖形（碗狀）
+			- 只有一個 global minimum
+	- #### running gradient descent
+	- ![[Pasted image 20260213101452.png]]
+		- 模型一開始被設定為 很差的初始模型
+			- 斜率是負的（房子越大價格越低，明顯錯）
+			- 截距很高
+		- 橢圓形代表：
+			- 中心 → cost 全域最小值（最佳解）
+			- 越外圈 → cost 越高
+		- 因 平方誤差 cost，對線性回歸來說是**convex function**
+		- 故 只有一個 global minimum
+	- ![[Pasted image 20260213101521.png]]
+		- 每一條線代表：
+			- 每一次 gradient descent 更新後的模型
+		- 原本斜率是負，逐漸變成正
+		- 線越來越貼近資料分布
+			- w,b 往最佳解（橢圓形中心）移動
+	- ![[Pasted image 20260213101547.png]]

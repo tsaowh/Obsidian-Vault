@@ -1,0 +1,5 @@
+- ### the problem of overfitting
+	- #### addressing overfitting
+	- #### cost function with regularization
+	- #### regularized linear regression
+	- #### regularized logistic regression

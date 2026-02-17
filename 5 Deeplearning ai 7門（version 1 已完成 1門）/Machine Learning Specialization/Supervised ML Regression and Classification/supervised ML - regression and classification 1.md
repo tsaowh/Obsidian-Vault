@@ -1,0 +1,121 @@
+- ### supervised vs unsupervised ML
+	- #### supervised ML 
+	- ![[Pasted image 20260126160426.png]]
+		- 目前機器學習所創造的經濟價值中，有 99% 來自「監督式學習」
+		- 監督式學習
+			- 學習「X 到 Y」也就是「輸入到輸出」映射關係的演算法
+				- X = 輸入（input）
+				- Y = 輸出（output）
+				- 學的是一個「對應關係（mapping）」
+			- 關鍵特徵
+				- 會給演算法一些學習用的範例，而這些範例包含正確答案
+					- 正確答案
+						- 對於某個輸入 X ，所對應的正確標籤 Y
+				- X + 正確的 label（標籤）Y = 訓練資料
+				- 透過這些正確的輸入 X  與 期望輸出 Y 的配對，演算法 最終學會 只看輸入本身，即使沒有輸出標籤，也能對輸出（做出）相當準確的預測
+	- ![[Pasted image 20260126161007.png]]
+		- 垃圾郵件過濾器
+			- 輸入 X 是一封電子郵件，而輸出 Y 是這封信是不是垃圾郵件
+		- 語音辨識
+			- 輸入是一段音訊，而演算法的任務是輸出文字逐字稿
+		- 機器翻譯
+			- 輸入英文，讓它輸出對應的西班牙文、阿拉伯文、印度文、中文、日文等翻譯
+		- 線上廣告
+			- 輸入一些關於廣告的資訊，以及一些關於user資訊，判斷user會不會點擊那個廣告
+		- 自駕車
+			- 輸入 X 是一影像 + 感測器，而輸出 Y 是其他車輛的位置
+		- 製造業視覺檢測
+			- 輸入 X 是一產品照片，而輸出 Y 是有沒有刮痕／瑕疵
+	- ![[Pasted image 20260126161040.png]]
+		- 監督式學習
+			- 回歸演算法（regression）
+				- 輸出是 **連續值**
+			- 分類演算法（classification）
+				- 輸出是 **離散值**
+		- 回歸演算法（regression）
+			- 根據房屋大小來預測房價
+			- model complexity（模型複雜度）
+				- 線性模型
+					- 線性回歸（linear regression）
+					- 可能產生 欠擬合（underfitting）
+				- 非線性模型
+					- 可能產生 過擬合（overfitting）
+			- 模型選擇（model selection）
+				- **數學與評估方法**，不是憑感覺
+				- 泛化能力（generalization）
+	- ![[Pasted image 20260126161150.png]]
+		- 分類演算法（classification）
+			- 乳癌偵測
+				- 兩個類別（classes）
+					- benign（良性）
+					- malignant（惡性）
+	- ![[Pasted image 20260126162025.png]]
+		- multi-class classification（超過兩種可能的輸出類別）
+	- ![[Pasted image 20260126162046.png]]
+		- multiple features（多特徵）
+			- X₁：腫瘤大小
+			- X₂：年齡
+		- decision boundary（決策邊界）
+			- 把惡性腫瘤和良性腫瘤區分開
+		- training 流程
+			- 原始資料 
+			- Feature Engineering（創造好用的 X） > Feature Selection（刪掉多餘的 X）
+				- 決定 X 長什麼樣
+				- Feature Engineering
+					- 創造、轉換、組合特徵
+				- Feature Selection
+					- 從現有特徵中挑要用的
+				- 多特徵 → 多維空間 → 決策邊界
+			- Model training 
+				- 學 X → Y
+			- Hyperparameter tuning
+				- 調模型怎麼學
+		![[Pasted image 20260126162103.png]]
+	- #### unsupervised ML
+	- ![[Pasted image 20260126162222.png]]
+	- ![[Pasted image 20260126162238.png]]
+		- 非監督式學習
+			- 探索型學習
+			- 沒有任何輸出標籤 Y
+			- 沒有標準答案
+			- 監督式學習演算法 是去找資料中的結構、模式
+				- 可發現「人類自己都不知道的關聯」
+				- 非常適合用在生物、醫療、探索型研究
+			- eg 分群（Clustering）
+	- ![[Pasted image 20260126162331.png]]
+		- 
+	- ![[Pasted image 20260126162354.png]]
+		- 每一欄代表一個人的整體基因活動
+		- 每一列代表一個特定的基因呈現出來的表徵
+			- 基因影響行為
+		- 顏色（紅色、綠色、灰色等等）代表不同個體中，某個特定基因活躍的程度
+		- 用分群找「人類類型」type 1~type 3
+			- 事先並沒有告訴演算法，什麼是type 1的人、什麼是type 2的人、什麼是type 3的人
+	- ![[Pasted image 20260126162411.png]]
+		- Market Segmentation（市場分群）
+		- 這些分類不是事先定義
+		- 是演算法從行為／資料中  找出來
+		- 幫助團隊更好的服務社群
+	- ![[Pasted image 20260126162442.png]]
+		- 非監督式學習
+			- 分群（clustering）
+			- 異常偵測（anomaly detection）
+				- 金融系統中的詐欺偵測
+				- 信用卡盜刷
+				- 網路入侵
+				- 工業設備故障
+			- 降維（Dimensionality Reduction）
+				- 壓縮＋保留重點
+					- 視覺化
+					- 降噪
+					- 加速訓練
+	- #### python and jupyter notebooks
+		- Markdown Cell 是拿來寫說明文字的
+		- Code Cell 是拿來寫 Python 程式的
+		- 執行方式
+			- Shift + Enter
+				- 執行目前 cell
+				- 移到下一格
+			- Alt + Enter
+				- 執行目前 cell
+				- 並且**在下面新增一格新的 cell**

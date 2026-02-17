@@ -1,0 +1,227 @@
+- ### multiple linear regression
+	- #### multiple features
+	- ![[截圖 2026-02-15 下午5.45.07.png]]
+		- 引入多特徵概念
+			- 單一數值 x 改成向量 x
+		- 建立 index notation
+	- ![[截圖 2026-02-15 下午5.45.36.png]]
+		- 將原本：
+			- $f_{w,b}(x) = w x + b$
+		- 擴展為：
+			- $f_{w,b}(x) = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b$
+		- 給定模型：
+			- $f_{w,b}(x) = 0.1x_1 + 4x_2 + 10x_3 - 2x_4 + 80$
+			- 參數意義解釋
+				- 價格單位是 $1000
+				- b = 80
+					- 基礎房價 $80,000
+				- 0.1
+					- 每增加1平方英尺 → 增加 $100
+				- 4
+					- 每增加1間臥室 → 增加 $4,000
+				- 10
+					- 每增加1層樓 → 增加 $10,000
+				- -2
+					- 每增加1年屋齡 → 減少 $2,000
+			- 概念
+				- 每個特徵有自己的權重 wj
+				- 權重代表「影響程度」
+				- 正值 → 正相關，負值 → 負相關
+		- 多特徵線性回歸一般寫成：
+			- $y = \sum_{j=1}^{n} w_j x_j + b$
+			- 即 multiple linear regression（非 multivariate regression）
+				- multiple linear regression vs multivariate regression
+					- multiple linear regression（多元線性迴歸）
+						- 多個自變數（X）一個因變數（Y）
+						- 數學形式：
+							- $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p + \varepsilon$
+							- 假設關係為線性
+							- **X₁, X₂, …, Xₚ**：多個 自變數（解釋變數）
+							- **Y**：只有一個 因變數（結果變數）
+						- eg
+							- 用以下 自變數 X 預測 因變數 Y「房價」：
+								- 坪數
+								- 房齡
+								- 臥室數量
+					- multivariate regression（多變量迴歸）
+						- 多個因變數（Y）
+						- 數學形式：
+							- $Y_1 = \beta_{10} + \beta_{11}X_1 + \dots + \varepsilon_1$
+							- $Y_2 = \beta_{20} + \beta_{21}X_1 + \dots + \varepsilon_2$
+							- 假設關係為線性
+							- X 可以是一個或多個
+							- 多個 Y（Y₁, Y₂, …）
+						- eg
+							- 用：
+								- 讀書時間
+								- 出席率
+							- 同時預測：
+								- 數學成績
+								- 英文成績
+								- 物理成績
+	- ![[截圖 2026-02-15 下午5.45.51.png]]
+		- 定義向量
+			- 權重向量
+				- $\vec{w} = [w_1, w_2, \ldots, w_n]$
+			- 特徵向量
+				- $\vec{x} = [x_1, x_2, \ldots, x_n]$
+		- Dot Product（內積）
+			- $\vec{w} \cdot \vec{x} = w_1x_1 + w_2x_2 + \ldots + w_nx_n$
+			- $f_{w,b}(\vec{x}) = \vec{w} \cdot \vec{x} + b$
+				- 即 $y = w^T x + b$
+		- why 向量化表示（Vectorization）
+			- 更簡潔
+			- 可向量化運算（NumPy / TensorFlow / PyTorch）
+			- 導向矩陣形式（批量資料）
+				- m 筆資料，每筆資料 n 維：
+					- $X \in \mathbb{R}^{m \times n}$
+				- $\hat{y} = Xw + b$
+	- #### vectorization part1
+	- ![[截圖 2026-02-16 上午11.23.27.png]]
+		- 用「向量運算」取代「for 迴圈」，讓程式：
+			- 更短
+			- 更快
+				- 可利用 CPU / GPU 平行運算
+		- 數學與程式 indexing 差異
+			- 線性代數
+				- index 從 1 開始
+			- Python / NumPy
+				- index 從 0 開始
+		- 若 不使用向量化
+			- Python for loop 是 序列式（sequential）運算
+			- 每次 iteration 都要：
+				- 讀記憶體
+				- 執行乘法
+				- 執行加法
+				- 更新變數
+		- 若 使用向量化
+			- 為什麼這會快很多？（根據 NumPy 官方說明與實作原理，逐步向底層解釋）
+				- np.dot 是 C 語言實作
+				- 使用 BLAS / MKL 函式庫
+					- NumPy 內部會呼叫 高度優化的數值運算函式庫：
+						- BLAS（Basic Linear Algebra Subprograms）
+							- OpenBLAS
+						- Intel MKL = Intel Math Kernel Library
+							- 超級強化版 BLAS
+				- 使用 SIMD（Single Instruction Multiple Data） 指令
+					- 一個 clock cycle 同時計算多個乘法
+				- 使用 連續記憶體 (contiguous memory)
+					- 適合 cache
+				- 自動使用CPU多核心
+					- np.dot 會：
+						- 使用多執行緒
+						- 同時在多核心上運算
+				- 可以用 GPU
+					- GPU 擅長 大量重複的矩陣乘法
+					- 向量運算可平行數千個 core
+			- 機器學習其實是大量線性代數運算，天生適合：
+				- 向量化
+				- 平行處理
+				- GPU
+	- #### vectorization part2
+	- ![[截圖 2026-02-16 上午11.23.47 1.png]]
+		- 時間複雜度沒有變
+			- 注意 兩種方法時間複雜度都是：$O(n)$
+		- 差別在：
+			- 常數因子大幅下降
+			- eg
+				- for-loop 可能 100ms
+				- np.dot 可能 5ms
+		- 即 vectorization = 把「逐一運算」變成「批次平行運算」
+			- 不是演算法變快
+			- 而是硬體利用率變高
+		- 向量化 是把 迴圈 搬到底層（C/BLAS + SIMD + 多核心）去做，減少 Python （直譯 +  單步執行）的cost 並 提高硬體利用率；它通常不改變 Big-O，但會大幅降低常數因子。
+			- why
+				- 因 現實世界的限制
+					- 記憶體頻寬（Memory bandwidth）
+					- 快取階層（cache hierarchy）
+						- RAM → L3 → L2 → L1 → register
+						- 不能「n 個元素同時進 CPU」
+					- SIMD 寬度是固定的
+				- 故 真正 dot product 的時間模型
+					- $T(n) \approx \frac{n}{w} + \log n$
+						- w = SIMD 寬度（常數）
+						- log n = 加法的 reduction tree
+						- 因 n/w 佔主導，故 仍為 $O(n)$
+	- ![[截圖 2026-02-16 上午11.34.56 1.png]]
+	- #### gradient descent for multiple linear regression
+	- ![[截圖 2026-02-16 上午11.35.38 1.png]]
+		- Cost function 的表示轉換
+			- $J(w_1, \ldots, w_n, b)$ 改為 $J(\vec{w}, b)$
+			- 即 把 n 個權重視為一個向量變數
+			- 矩陣形式的標準寫法
+				- $J(\vec{w}) = \frac{1}{2m} \| X\vec{w} + b - y \|^2$
+				- 更嚴謹的矩陣寫法
+					- $J(\mathbf{w}) = \frac{1}{2m} \| X\mathbf{w} + b\mathbf{1} - \mathbf{y} \|^2$
+	- ![[截圖 2026-02-16 上午11.35.56.png]]
+		- 一個 feature
+			- $w := w - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f(x^{(i)}) - y^{(i)} \right) x^{(i)}$
+			- $b := b - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f(x^{(i)}) - y^{(i)} \right)$
+		- 多個 feature
+			- $w_j := w_j - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( f(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$
+				- $\ j = 1, \ldots, n$
+				- 因 $$\frac{\partial}{\partial w_j} \left( w_1 x_1 + \ldots + w_n x_n \right) = x_j$$
+				- 故 $$\frac{\partial J}{\partial w_j} = \frac{1}{m}\sum_{i=1}^{m}\left( f(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$$
+			- b 更新規則同 一個 feature
+		- 向量化形式
+			- $$\vec{w} := \vec{w} - \alpha \frac{1}{m} X^T \left( X\vec{w} + b - y \right)$$
+			- $$b := b - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( (X\vec{w})_i + b - y^{(i)} \right)$$
+	- ![[截圖 2026-02-16 上午11.36.13.png]]
+		- Normal Equation（正規方程）
+			- 線性回歸可以直接求閉式解（closed-form solution）：
+				- $\vec{w} = (X^T X)^{-1} X^T y$
+				- 若包含 b，通常把 1 加入 X 第一行
+					- $X = \begin{bmatrix}1 & x_1^{(1)} & \cdots \\1 & x_1^{(2)} & \cdots \\\vdots & \vdots & \ddots\end{bmatrix}$
+					- 這樣 $b$ 會成為 $w_0$，公式仍然成立
+			- 優點
+				- 不需要迭代、learning rate
+				- 一步求出解
+			- 缺點
+				- 不泛化
+					- 只能用於：線性回歸（平方誤差）
+					- 不能用於：
+						- logistic regression
+						- neural network
+						- 其他非線性模型
+						- 因 上述 cost function 沒有 closed-form solution
+				- 當 n 很大時很慢
+					- 因 要計算：$(X^T X)^{-1}$
+					- 故 時間複雜度：$O(n^3)$
+						- 計算 反矩陣
+							- 用「消元」把矩陣變成單位矩陣
+								- 對一個 nxn 矩陣
+									- 需要大約 n 次主消去步驟
+									- 每一步都要對大約 n 行做運算
+									- 每行又有 n 個元素
+								- eg Gaussian elimination（高斯消去法）
+			- 實務上幾乎不會有人 真的算 inverse 
+				- 直接算 inverse 又慢、又誤差大、又沒必要
+					- 慢
+						- 如上述
+						- 實務上會改用：
+							- Gradient Descent
+								- SGD 或 mini-batch
+					- 誤差大
+						- 當特徵之間高度相關（multicollinearity）時，XTX 會變得 **接近奇異矩陣（ill-conditioned）**
+							- 逆矩陣中的數值非常大
+							- 浮點誤差被放大
+							- 結果嚴重不準
+						- QR decomposition / SVD 不會有這個問題
+					- 沒必要
+						- 現代 library 已經做好了
+							- NumPy / PyTorch / TensorFlow 內部會自動選擇：
+								- QR decomposition
+								- SVD
+							- 而非算 inverse
+		- Gradient Descent vs Normal Equation（正規方程）
+			- Gradient Descent
+				- 優
+					- 可擴展到所有模型（含線性模型）
+				- 缺
+					- 需調 $(\vec{w}, b)$、learning rate（須慢慢調整）
+			- Normal Equation
+				- 優
+					- 無需迭代（無須慢慢調整）
+				- 缺
+					- 只能線性回歸模型（不含線性模型）
+					- 當 n 很大時很慢、誤差大
