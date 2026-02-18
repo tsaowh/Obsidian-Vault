@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
+                "file": "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）"
+              "title": "supervised ML - regression and classification 4"
             }
           }
         ],
@@ -211,11 +211,27 @@
   },
   "active": "adee9f1ee8c5aebb",
   "lastOpenFiles": [
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/7-1.md",
-    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 5.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 6.md",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 7.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 8.md",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 9.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218182801.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218182710.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218182629.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218182555.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218182418.png",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 1.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 2.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 3.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 4.md",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218173330.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-18 下午3.27.39 1.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218172506.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218172242.png",
+    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/Pasted image 20260218172217.png",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-1 litigant 5（當事人 5）.md",
+    "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/7-1.md",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Deep Learning Specialization/Sequence Models",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Deep Learning Specialization/CNN",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Deep Learning Specialization/Improving DNN Hyperparameter Tuning, Regularization and Optimization",
@@ -225,22 +241,6 @@
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Deep Learning Specialization",
     "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上11.03.41.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 8.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 6.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 5.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上11.03.22.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上11.03.11.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 4.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 3.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/supervised ML - regression and classification 2.md",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上9.24.32.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上9.24.19.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上8.45.59.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上8.06.36.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 晚上8.06.17.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 下午6.14.59.png",
-    "5 Deeplearning ai 7門（version 1 已完成 1門）/Machine Learning Specialization/Supervised ML Regression and Classification/attachement/截圖 2026-02-17 下午6.12.33.png",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）7-2 litigant 6（當事人 6）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）8-1 litigant 7（當事人 7）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）6-1 litigant 3（當事人 3）.md",
@@ -255,7 +255,6 @@
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）2-1 principle of party presentation（辯論主義）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）1-1 principle of litigation（訴訟法理）.md",
     "1 Jurisprudence 263堂（version 1 已完成 35堂）/2 Code of Civil Procedure (民訴) 35堂（version 1 已完成 5堂）completion rate 15%/Code of Civil Procedure（民訴）md檔/Code of Civil Procedure（民訴）3-2 parties to the litigation（訴訟主體）.md",
-    "2 Tech law materials/1150112 collocations.md",
-    "5 Deeplearning ai/course 1.md"
+    "2 Tech law materials/1150112 collocations.md"
   ]
 }

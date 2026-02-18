@@ -41,5 +41,110 @@
 					- 需要一個模型，輸出永遠在 0 和 1 之間
 						- logistic regression
 	- #### logistic regression
+	- ![[截圖 2026-02-18 下午1.53.50.png]]
+		- **Sigmoid（Logistic）函數**：
+			- $$g(z) = \frac{1}{1 + e^{-z}}$$
+				- 當 $z \to +\infty$，$g(z) \to 1$
+				- 當 $z \to -\infty$，$g(z) \to 0$
+				- 當 $z = 0$，$g(z) = 0.5$
+				- 這三個特性使它非常適合做二元分類，亦即：
+					- 輸出永遠在 (0,1)
+					- 有明確的中間點（0.5）
+					- 形狀是平滑的 S 曲線
+				- 不是直接預測 0 或 1，而是預測「介於 0 到 1 之間的傾向程度」
+	- ![[截圖 2026-02-18 下午1.54.09.png]]
+		- 從線性模型到 Logistic Regression
+			- **Logistic regression = 線性模型 + Sigmoid**
+				- 線性模型
+					- $z = \mathbf{w} \cdot \mathbf{x} + b$
+				- 套入 Sigmoid
+					- $$f_{w,b}(x) = g(z) = \frac{1}{1 + e^{-(\mathbf{w}\cdot\mathbf{x}+b)}}$$
+					- 關鍵轉換：
+						- 原本線性模型輸出範圍是 $(-\infty, +\infty)$
+						- 經過 sigmoid 後變成 (0,1)
+				- 這樣的設計非常巧妙：
+					- 保留線性模型的可解釋性
+						- 因 需要一個 可以隨輸入特徵改變、可學習、可調整 決策邊界 位置與方向 的模型
+					- 再加上一個非線性轉換，讓輸出符合機率的形式
+				- 為什麼仍叫 Regression？
+					- 學習時仍然是在「擬合一個函數」
+					- 輸出是一個連續值（機率）
+					- 最後再用閾值（例如 0.5）轉成分類結果
+	- ![[截圖 2026-02-18 下午1.54.21.png]]
+		- Logistic regression 的輸出是條件機率
+			- $f_{w,b}(x) = P(y = 1 \mid x; w,b)$
+				- 在給定輸入 x，以及模型參數 w,b 的情況下
+				- y = 1 的機率是多少？
+			- 因 $P(y=0) + P(y=1) = 1$
+				- 模型輸出 0.7，不代表 y = 0.7
+				- 而是代表「y=1 的機率為 0.7」
+			- 故 若 $f(x) = 0.7$，則 表示
+				- 有 70% 機率是 class 1（惡性）
+				- 有 30% 機率是 class 0（良性）
 	- #### decision boundary
+	- ![[截圖 2026-02-18 下午3.27.18.png]]
+		- Logistic Regression 的輸出與分類規則
+			- ① 先計算線性組合
+				- $z = \mathbf{w} \cdot \mathbf{x} + b$
+				- 對輸入特徵做加權
+				- 再加上一個偏差項 b
+			- ② 套用 Sigmoid function
+				- $$g(z) = \frac{1}{1 + e^{-z}}$$
+				- 因 sigmoid function 會把任意實數 z 壓縮到 0 到 1 之間
+					- decision boundary 為
+						- z = 0
+						- f(x) = 0.5
+				- 故 $f_{w,b}(x) = g(z)$，可解釋為
+					- $P(y = 1 \mid x; w, b)$
+					- 即 在給定輸入 x，以及模型參數 w,b 的情況下，預測為 1 的機率
+			- ③ 分類的關鍵：0.5 threshold
+				- 模型最後怎麼做 0 或 1 的決策？
+					- $\text{若 } f(x) \ge 0.5，\text{預測 } \hat{y} = 1$
+					- $\text{若 } f(x) < 0.5，\text{預測 } \hat{y} = 0$
+				- 重要觀察：
+					- 因 sigmoid function z = 0 時 剛好 f(x) = 0.5
+					- 故 $z \ge 0$
+						- 即 $\mathbf{w} \cdot \mathbf{x} + b \ge 0$
+						- 即 $f(x) \ge 0.5$
+					- logistic regression 分類的 decision boundary 其實是由 z = 0 決定的
+	- ![[截圖 2026-02-18 下午3.27.29.png]]
+		- 線性 Decision Boundary
+			- 若 模型為：$z = w_1 x_1 + w_2 x_2 + b$
+				- $w_1 = 1，w_2 = 1，b = -3$
+			- 則 $z = x_1 + x_2 - 3$
+			- 決策邊界怎麼找？
+				- 因 決策邊界定義為：z = 0
+				- 故 decision boundary 為 $x_1 + x_2 - 3 = 0$
+					- $\text{decision boundary 的一邊} \rightarrow z \ge 0 \rightarrow \text{預測 } 1$
+					- $\text{decision boundary 的另一邊} \rightarrow z < 0 \rightarrow \text{預測 } 0$
+	- ![[截圖 2026-02-18 下午3.27.39 1.png]]
+		- 非線性 Decision Boundary（圓形）
+			- 改用多項式特徵
+			- 若 模型為：$z = w_1 x_1^2 + w_2 x_2^2 + b$
+				- $w_1 = 1，w_2 = 1，b = -1$
+			- 則 $z = x_1^2 + x_2^2 - 1$
+			- 決策邊界怎麼找？
+				- 因 決策邊界定義為：z = 0
+				- 故 decision boundary 為 $x_1^2 + x_2^2 - 1 = 0$
+					- $\text{若 } x_1^2 + x_2^2 \ge 1 \rightarrow \text{預測 } 1$
+					- $\text{若 } x_1^2 + x_2^2 < 1 \rightarrow \text{預測 } 0$
+		- 重要觀念
+			- logistic regression 並沒有變複雜
+			- 它仍然只是：$z = w^T x + b$
+			- 只是現在的 x 已經不是原本的 $(x_1, x_2)$，而是：$(x_1^2, x_2^2)$
+	- ![[截圖 2026-02-18 下午3.27.50.png]]
+		- 更高階多項式 → 更複雜decision boundary
+			- $$z = w_1 x_1 + w_2 x_2 + w_3 x_1^2 + w_4 x_1 x_2 + w_5 x_2^2 + \cdots + b$$
+				- 加入：
+					- 交互項 $x_1 x_2$
+					- 二次項
+					- 三次項
+					- 更高次多項式
+			- 決策邊界怎麼找？
+				- 因 決策邊界定義為：z = 0
+				- 故 decision boundary 為 
+					- 橢圓
+					- 不規則封閉曲線
+					- ...
+				- logistic regression $f_{w,b}(x)$ 會用 sigmoid function $g(z)$ 把任意實數 z 壓縮到 0 到 1 之間
 

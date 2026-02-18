@@ -1,5 +1,74 @@
 - ### cost function for logistic regression
 	- #### cost function for logistic regression
+	- ![[Pasted image 20260218182418.png]]
+		- 二元分類問題（binary classification）
+			- 每一列是一筆訓練資料（例如一位病患）
+			- 每筆資料包含：
+				- 多個特徵 $x_1, x_2, ..., x_n$
+					- 例如：腫瘤大小、年齡等
+				- 一個標籤 $y$
+					- $y∈{0,1}$
+		- Logistic regression 模型
+			- $$f_{w,b}(x) = g(z) = \frac{1}{1 + e^{-(\mathbf{w}\cdot\mathbf{x}+b)}}$$
+				- sigmoid 函數
+					- 輸出值介於 0 到 1
+					- 可被解釋為「屬於類別 1 的機率」
+		- 如何選擇 $w$ 與 $b$？
+			- 引出「成本函數（cost function）」的設計問題
+	- ![[Pasted image 20260218182555.png]]
+		- 以 mean squared error（MSE） 為 成本函數（cost function）的問題
+			- 若為 linear regression  $$f_{w,b}(x) = w \cdot x + b$$
+				- cost function 若為 MSE 
+					- $$J(w, b) = \frac{1}{m} \sum_{i=1}^{m} \frac{1}{2} \left( f\left(x^{(i)}\right) - y^{(i)} \right)^2$$
+					- convex（凸函數）
+					- gradient descent 一定收斂到 global minimum
+			- 若為 logistic regression $$f_{w,b}(x) = g(z) = \frac{1}{1 + e^{-(\mathbf{w}\cdot\mathbf{x}+b)}}$$
+				- cost function 若仍為 MSE
+					- 因 sigmoid 本身 **非 凸函數**
+					- 故 其 $J(w, b)$
+						- non-convex（非 凸函數）
+						- 會出現 local minima
+						- gradient descent 可能卡住
+	- ![[Pasted image 20260218182629.png]]
+		- Logistic loss（當 y=1）
+			- 新 cost function（Logistic loss）
+				- $$L(f(x), y) = \begin{cases} - \log(f(x)) & \text{if } y = 1 \\ - \log(1 - f(x)) & \text{if } y = 0 \end{cases}$$
+			- 當 y=1， Logistic loss 為 $- \log(f(x))$
+				- 當 $f(x) \to 1$
+					- loss $\to 0$
+					- 表示預測很好
+				- 當 $f(x) \to 0$
+					- loss $\to \infty$
+					- 嚴重懲罰
+			- eg
+				- 若真實是惡性腫瘤（y=1）：
+					- 預測 0.9 → loss 很小
+					- 預測 0.5 → loss 中等
+					- 預測 0.01 → loss 非常大
+	- ![[Pasted image 20260218182710.png]]
+		- Logistic loss（當 y=0）
+			- 當 y=0， Logistic loss 為 $- \log(1 - f(x))$
+				- 當 $f(x) \to 0$
+					- loss $\to 0$
+					- 表示預測很好
+				- 當 $f(x) \to 1$
+					- loss $\to \infty$
+					- 嚴重懲罰
+			- eg
+				- 若真實是良性腫瘤（y=0）：
+					- 預測 0.01 → loss 很小
+					- 預測 0.5 → loss 中等
+					- 預測 0.9 → loss 非常大
+	- ![[Pasted image 20260218182801.png]]
+		- 新 cost function（Logistic loss）
+			- $$J(w, b) = \frac{1}{m} \sum_{i=1}^{m} L\left(f\left(x^{(i)}\right), y^{(i)}\right)$$
+			- convex
+				- 因
+					- 分段不是因為 $w, b$ 改變而跳來跳去
+					- 而是因為資料標籤不同，選到不同的那條公式
+				- 故 
+					- 對於某一筆樣本 $i$ 而言，loss 其實是**一個固定的函數**（不是訓練過程中會切來切去）
+			- gradient descent 可以找到 global minimum
 	- #### simplified cost function for logistic regression
 - ### gradient descent for logistic regression
 	- #### gradient descent implementation
