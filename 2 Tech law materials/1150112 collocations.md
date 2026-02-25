@@ -18,52 +18,54 @@
 
 企業策略與競爭判斷
 
-| English                               | 中文對照               |
-| ------------------------------------- | ------------------ |
-| bet its AI future on a partnership    | 將其 AI 未來押注於一項合作    |
-| be agreed to have Gemini power Siri   | 同意由 Gemini 驅動 Siri |
-| chose to license from the incumbent   | 選擇向既有業者授權          |
-| cannot mount an independent AI effort | 無法發起獨立的 AI 競爭      |
+| English                               | 中文對照                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| bet its AI future on a partnership    | 將其 AI 發展前途押在與某一合作夥伴的                                                                                                                                                                                                                                                                                                                                     |
+| agree to have Gemini power Siri       | 同意由 Gemini 驅                                                                                                                                                                                                                                                                                                                                             |
+| chose to license from the incumbent   | 面對 AI 模型層競爭，Apple 並未自建挑戰者，而是選擇向既有市場主導者取得授權。<br><br>incumbent 目前佔據權力位置、並從該位置獲益的既有主導者(cumbere / cubare : 躺、靠、壓)<br><br>license 在此為動詞，意指在不取得所有權的前提下，向該主導者                                                                                                                                                                                                   |
+| cannot mount an independent AI effort | 無法建立一套獨立的 AI 發展體系<br><br>mount 把資源、力量、壓力『架上去』，形成一個能持續推進的行動<br>mount an effort 建立並推動一套行動<br><br>mount a challenge 發起具規模的挑戰<br>No startup has been able to mount a credible challenge to the incumbents. <br>尚無新創能對既有主導者構成實質挑戰。<br><br>mount a campaign 發起有組織的行動／運動<br>Regulators mounted a campaign against monopolistic practices.<br>監管機構發起了一場針對壟斷行為的行動 |
+
 
 市場結構與商品化判斷
 
-| English                          | 中文對照         |
-| -------------------------------- | ------------ |
-| models compete primarily on cost | 模型主要以成本競爭    |
-| model layer is commoditizing     | 模型層正在商品化     |
-| won the contract partly on price | 部分因價格優勢而贏得合約 |
-| converge in capability           | 在能力上趨於收斂     |
-| switch providers based on price  | 依價格更換供應商     |
-| narrows the field                | 縮小競爭場域       |
-| consolidating as predicted       | 如預期般持續集中     |
+| English                          | 中文對照                 |
+| -------------------------------- | -------------------- |
+| models compete primarily on cost | 模型競爭的核心已從能力轉為成本      |
+| model layer is commoditizing     | 模型層正走向商品化            |
+| won the contract partly on price | 合約得標在一定程度上取決於價格      |
+| converge in capability           | 在能力上趨於收斂             |
+| switch providers based on price  | 依價格因素在不同供應商之間轉換      |
+| Apple’s exit narrows the field   | Apple 的退出降低了潛在競爭的可能性 |
+| consolidating as predicted       | 市場正在如預期般收斂至少數主導者     |
 
 資本與基礎設施論證
 
-| English                                    | 中文對照             |
-| ------------------------------------------ | ---------------- |
-| billions are flowing into improving models | 數千億資金正流入模型改進     |
-| run the Gemini model on its own servers    | 在自有伺服器上運行 Gemini |
-| justify the capital expenditure            | 合理化資本支出          |
-| looks increasingly precarious              | 顯得愈發不穩定          |
+| English                                    | 中文對照                                                  |
+| ------------------------------------------ | ----------------------------------------------------- |
+| billions are flowing into improving models | 儘管模型層可能正走向商品化，數十億計的資金仍持續湧入模型改進                        |
+| run the Gemini model on its own servers    | Apple 於自家基礎設施上運行 Gemini 模型                            |
+| justify the capital expenditure            | 為資本支出提供正當性                                            |
+| looks increasingly precarious              | 從目前的投資規模、回報結構與市場走向來看，這套基礎設施投資的合理性正變得越來越站不住腳 (顯得愈發不穩定) |
 
 價值分配與層級轉移
 
-| English                          | 中文對照      |
-| -------------------------------- | --------- |
-| value accrues elsewhere          | 價值轉移至其他層面 |
-| capture value elsewhere          | 在他處攫取價值   |
-| extract rents from developers    | 向開發者攫取租值  |
-| move up the stack                | 向技術堆疊上層移動 |
-| cover the investment             | 覆蓋投資成本    |
+| English                       | 中文對照                                                                                                                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| value accrues elsewhere       | 即使大家把注意力都放在模型或算力上，真正能持續產生利潤與權力的地方，其實在別的層級。<br><br>benefits accrue to 利益最終、持續地累積到...身上<br>interest accrues over time 利息會隨時間逐步累積                                                  |
+| capture value elsewhere       | 當模型層利潤被壓縮，平台勢必轉向其他環節攫取價值                                                                                                                                                        |
+| extract rents from developers | 平台利用結構性支配地位，向無法脫離其生態系的開發者收取租金性收益                                                                                                                                                |
+| move up the stack             | 當底層變成低毛利商品時，企業為了掌握利潤與權力，主動轉向更靠近使用者的上層位置。(從低毛利、易商品化的層級，移向高毛利、可控制的層級。)<br><br>Chipmakers are moving up the stack by offering integrated software platforms.<br>原本做硬體的公司，往上做到軟體與平台 |
+| cover the investment          | 回收投資成本 (若價格持續下探，這些收入恐怕不足以回收投資成本)                                                                                                                                                |
 
 分析與論證操作
 
-| English                             | 中文對照    |
-| ----------------------------------- | ------- |
-| compare that to                     | 將其與……對比 |
-| raises a question                   | 提出一個問題  |
-| argued elsewhere                    | 曾於他處主張  |
-| worth pausing on                    | 值得停下來檢視 |
-| watch whether                       | 觀察是否    |
-| reveals where differentiation lives | 揭示差異化所在 |
-| sharpens the question               | 使問題更加尖銳 |
+| English                                                   | 中文對照                                                                                                                                                                         |
+| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| compare that to                                           | 將此與……對照來看，其不對稱性尤為明顯                                                                                                                                                          |
+| The deal raises a question regulators will need to answer | 這項交易引發了一個監管者無法迴避的問題                                                                                                                                                          |
+| As I argued elsewhere, ...                                | 正如我先前在其他文章中所論證                                                                                                                                                               |
+| worth pausing on                                          | 值得停下來仔細檢視                                                                                                                                                                    |
+| reveals where differentiation lives                       | 揭示差異化真正所在<br><br>where Apple invests instead—on-device processing, privacy infrastructure, interface innovation—reveals where differentiation lives<br>企業的投資去向，往往最能揭示差異化真正所在 |
+| sharpens the question                                     | 讓問題變得更具體<br><br>Apple’s choice doesn’t yet answer which world we’re in, but it sharpens the question considerably.<br>這項決策尚未給出答案，卻使問題變得更加具體、尖銳                               |
+
+
