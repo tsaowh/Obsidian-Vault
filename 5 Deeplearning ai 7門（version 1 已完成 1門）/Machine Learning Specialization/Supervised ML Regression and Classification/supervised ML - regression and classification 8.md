@@ -31,8 +31,9 @@
 						- gradient descent 可能卡住
 	- ![[Pasted image 20260218182629.png]]
 		- Logistic loss（當 y=1）
-			- 新 cost function（Logistic loss）
+			- 新 cost function（Logistic loss / cross entropy loss）
 				- $$L(f(x), y) = \begin{cases} - \log(f(x)) & \text{if } y = 1 \\ - \log(1 - f(x)) & \text{if } y = 0 \end{cases}$$
+				- 模型對正確類別的機率取 log，再取負號
 			- 當 y=1， Logistic loss 為 $- \log(f(x))$
 				- 當 $f(x) \to 1$
 					- loss $\to 0$
@@ -70,7 +71,55 @@
 					- 對於某一筆樣本 $i$ 而言，loss 其實是**一個固定的函數**（不是訓練過程中會切來切去）
 			- gradient descent 可以找到 global minimum
 	- #### simplified cost function for logistic regression
+	- ![[Pasted image 20260226232245.png]]
+		- $$L\left(f_{\vec{w},b}(x^{(i)}), y^{(i)}\right) = \begin{cases} -\log\left(f_{\vec{w},b}(x^{(i)})\right) & \text{if } y^{(i)} = 1 \\ -\log\left(1 - f_{\vec{w},b}(x^{(i)})\right) & \text{if } y^{(i)} = 0 \end{cases}$$
+		- logistic loss 簡化成單一公式 如下
+		- $$L = -y^{(i)} \log\left(f(x^{(i)})\right)- \left(1 - y^{(i)}\right)\log\left(1 - f(x^{(i)})\right)$$
+		- 若 y = 1，則
+		- $$L = -1 \log(f) - 0 = -\log(f)$$
+		- 若 y = 0，則
+		- $$L = 0 - 1 \log(1 - f) = -\log(1 - f)$$
+		- 讓 logistic loss 不用再分兩個 case
+		- 實作 gradient descent 會更方便
+	- ![[Pasted image 20260226232311.png]]
+		- 因 y∈{0,1}
+		- 故 
+			- y 是一個「開關」
+			- (1 − y) 是另一個「互補開關」
+		- 這是 machine learning 裡非常典型的 分類 技巧
+	- ![[Pasted image 20260226232358.png]]
+		- Simplified Cost Function（整體資料的 Cost）
+			- 從單筆 logistic loss 推到整體 Cost
+			- Step 1：定義 Cost
+				- Cost = 所有資料 Loss 的平均
+				- $$J(w,b) = \frac{1}{m} \sum_{i=1}^{m} L\left(f(x^{(i)}), y^{(i)}\right)$$
+			- Step 2：代入簡化後的 logistic loss
+				- 即 logistic regression 標準公式
+				- $$J(w,b) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} \log\left(f(x^{(i)})\right) + \left(1 - y^{(i)}\right) \log\left(1 - f(x^{(i)})\right) \right]$$
+		- 為什麼選這個 Cost？
+			- 來自 Maximum Likelihood Estimation（MLE）
+				- logistic loss（cost function）形成之邏輯順序
+					- 我們假設資料服從 Bernoulli 分布
+						- 成功機率為 p
+						- 失敗機率為 1 - p
+						- 常用於建模只有兩種結果的事件，如拋硬幣、產品合格與否
+					- 用 Maximum Likelihood 找最好的參數
+						- 整體 likelihood：$$\prod_{i=1}^{m} p^{y^{(i)}} (1 - p)^{1 - y^{(i)}}$$
+						- 取 log（即  log likelihood）：$$\sum \left[ y \log p + (1 - y)\log(1 - p) \right]$$
+						- 最小化 negative log likelihood：$$-\sum \left[ y \log p + (1 - y)\log(1 - p) \right]$$
+							- 等價於 最大化 likelihood
+							- 即 logistic loss（cost function）
+			- 它是 Convex 的
+				- 只有一個 global minimum
+				- 不會卡在 local minimum
+				- Gradient descent 保證收斂
+		- 為什麼不用平方誤差？
+			- non-convex
+			- 產生局部極小值
 - ### gradient descent for logistic regression
 	- #### gradient descent implementation
+	- ![[Pasted image 20260227134640.png]]
+	- ![[Pasted image 20260227135035.png]]
+	- ![[Pasted image 20260227135126.png]]
 - ### the problem of overfitting
 	- #### the problem of overfitting
