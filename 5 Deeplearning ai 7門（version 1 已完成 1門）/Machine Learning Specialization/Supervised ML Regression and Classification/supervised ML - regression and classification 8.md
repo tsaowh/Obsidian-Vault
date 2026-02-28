@@ -119,7 +119,54 @@
 - ### gradient descent for logistic regression
 	- #### gradient descent implementation
 	- ![[Pasted image 20260227134640.png]]
+		- Logistic Regression 要學什麼？
+			- 透過訓練資料，找出最好的權重向量 $\mathbf{w}$ 與偏差 $b$。
+		- 給定新輸入 $\vec{x}$，模型輸出 sigmoid function（邏輯函數）的值（即 在參數為 $w, b$ 的情況下，給定 $x$ 時 $y=1$ 的機率）：$$f_{\vec{w},b}(\vec{x})=\frac{1}{1 + e^{-(\vec{w}\cdot \vec{x} + b)}}=P(y=1 \mid \vec{x}; \vec{w}, b)$$
+		- Linear Regression vs Logistic Regression
+			- Linear Regression
+				- 預測連續數值（無機率意義）
+				- $f(x) = w \cdot x + b$
+			- Logistic Regression
+				- 預測機率（有機率意義，即 機率分類模型（probabilistic classifier））
+				- $f(x) = \sigma(w \cdot x + b)=\frac{1}{1 + e^{-(\vec{w}\cdot \vec{x} + b)}}=P(y=1 \mid \vec{x}; \vec{w}, b)$
 	- ![[Pasted image 20260227135035.png]]
+		- 如何找出最好的權重向量 $\mathbf{w}$ 與偏差 $b$？
+			- Gradient Descent
+		- Cost Function
+			- Log Loss（Logistic Loss）
+				- 即 Negative Log Likelihood、Binary Cross Entropy
+				- $$J(\vec{w}, b)=-\frac{1}{m}\sum_{i=1}^{m}\left[y^{(i)} \log f_{\vec{w},b}\!\left(x^{(i)}\right)+\big(1 - y^{(i)}\big)\log\!\left(1 - f_{\vec{w},b}\!\left(x^{(i)}\right)\right)\right]$$
+		- 為什麼不用平方誤差？
+			- 若使用 MSE，cost function 會變成 **non-convex**
+			- Gradient descent 可能卡在 local minimum
+			- Cross entropy 保證 cost function 是 **convex** 使 logistic regression 能穩定收斂
+		- 該 Cost Function 之 梯度公式 
+			- $$\frac{\partial J}{\partial w_j}=\frac{1}{m}\sum_{i=1}^{m}\left( f\big(x^{(i)}\big) - y^{(i)} \right)x_j^{(i)}$$
+			- $$\frac{\partial J}{\partial b}=\frac{1}{m}\sum_{i=1}^{m}\left( f\big(x^{(i)}\big) - y^{(i)} \right)$$
+		- 雖然 cost function 不同（平方誤差 vs 交叉熵），logistic regression 梯度公式 居然和Linear Regression 梯度公式 一模一樣！
+			- logistic regression 梯度公式 和 Linear Regression 梯度公式 一樣 因素
+				- sigmoid 導數會和 log loss 導數結合簡化掉
+				- Step 1：定義模型
+					- $z = w \cdot x + b$
+					- $f(x) = \sigma(z) = \frac{1}{1 + e^{-z}}$
+				- Step 2：Cost Function
+					- $L = - \left[ y \log(f) + (1-y)\log(1-f) \right]$
+				- Step 3：求導（重點）
+					- 我們要求：$$\frac{\partial L}{\partial w_j}$$
+					- chain rule（鏈式法則）：$$\frac{\partial L}{\partial w_j}=\frac{\partial L}{\partial f}\cdot\frac{\partial f}{\partial z}\cdot\frac{\partial z}{\partial w_j}$$
+					- 計算 $\frac{\partial L}{\partial f}$
+						- $$\frac{\partial L}{\partial f}=-\left(\frac{y}{f}-\frac{1-y}{1-f}\right)$$
+					- 計算 $\frac{\partial f}{\partial z}$
+						- $$\frac{d}{dz}\sigma(z)=\sigma(z)\big(1-\sigma(z)\big)$$
+						- $$\frac{\partial f}{\partial z}=f(1-f)$$
+					- 計算 $\frac{\partial z}{\partial w_j}$
+						- $z = w \cdot x + b$
+						- $$\frac{\partial z}{\partial w_j}=x_j$$
+					- 故$$\frac{\partial L}{\partial w_j}=(f - y)\, x_j$$
+		- logistic regression 梯度公式 和 Linear Regression 梯度公式 一樣 but
+			- Linear regression 的 f = wx + b
+			- Logistic regression 的 f = sigmoid(wx + b)
+			- 差別藏在 f 裡面，不在梯度公式
 	- ![[Pasted image 20260227135126.png]]
 - ### the problem of overfitting
 	- #### the problem of overfitting
