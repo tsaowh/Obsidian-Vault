@@ -19,7 +19,7 @@ Meta 在 9 月 8 日推出個人 AI agent **Muse**。它不是單純聊天機器
 
 Meta 的基本假設其實非常重要：
 
-> **不要假設 Agent 不會被攻擊，而是假設它遲早會被攻擊，再限制攻擊成功後能造成的傷害。**
+> ==**不要假設 Agent 不會被攻擊，而是假設它遲早會被攻擊，再限制攻擊成功後能造成的傷害。**==
 
 Meta 明確承認 prompt injection 仍是未解問題，所以 Muse 的核心模型即使被騙，也不能直接取得所有權限。([Meta AI Research](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse "How We Built Safety Into Muse | Meta AI Research"))
 
@@ -65,6 +65,25 @@ Sentinel 可以檢查 hostname、IP、port、protocol、HTTP method、path，甚
 
 而不是「希望 AI 自己做對的事」。
 
+==note start==
+
+Muse 的安全核心不是要求 Agent 自己「不要犯錯」，而是用多層系統邊界限制它：先把 Agent 關在受限執行環境中，再讓它拿不到真正憑證，最後所有對外連線與敏感操作都必須經過獨立守門機制批准。換句話說，就是同時限制 **Agent 能碰什麼、能拿什麼、能送出去什麼**，讓單一防線失效時仍有其他層保護。
+
+- **Runtime isolation（執行環境隔離）**：把 Agent 放在 VM / container 中，限制 syscall、kernel capability 與 network access。
+- **Credential separation（憑證分離）**：真正的 OAuth token、API key 不交給 Agent。
+- **Surrogate token（替代憑證）**：Agent 持有的代理性 token，不等於真正帳號憑證。
+- **Just-in-time credential insertion（即時憑證注入）**：操作通過審核後，系統才在最後一刻加入真正憑證。
+- **Sentinel（獨立權限守門機制）**：負責批准或拒絕 network egress 與 connector action。
+- **Network egress（對外連線）**：系統向外部網站、API 或服務送出資料的行為。
+- **eBPF**：Linux 核心層的可程式化監控技術，可追蹤 process 與資料流。
+- **Tainted（已接觸敏感資料）**：某個 process 讀過敏感資料後被標記，後續對外傳輸會受到更嚴格限制。
+- **Least privilege（最小權限）**：只給完成任務所需的最低權限。
+- **Mandatory mediation（強制中介）**：敏感操作必須經過獨立控制層審查。
+- **Capability security（能力式安全）**：限制一個主體實際被允許執行哪些操作。
+- **Defense in depth（縱深防禦）**：用多層防線避免單點失效造成全面失守。
+
+==note end==
+
 ---
 
 ### 3. Human-in-the-loop 也出現一個很重要的變化
@@ -90,6 +109,23 @@ Permission 可以限制成 one-time、session-scoped、task-scoped、time-bounde
 這是我認為這篇裡面 **對 AI governance 最有研究價值的地方之一**：
 
 **consent 不只是文字，而可以被轉譯成 machine-enforceable authorization。** ([Meta AI Research](https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse "How We Built Safety Into Muse | Meta AI Research"))
+
+==note start==
+
+Muse 對 **Human-in-the-loop** 的改進，在於把「人的同意」從單純的 UI 確認，變成系統真正會強制執行的權限。使用者核准一次特定操作，例如「這次支付 50 美元」，並不等於永久授權；權限可以被限制在單次、單一 session、特定任務或特定時間範圍，也能綁定 connector、destination 與 use case。對 AI governance 而言，真正重要的是：**consent 不再只是文字表示，而是可以被轉譯成 machine-enforceable authorization，也就是可由系統強制落實的授權。**
+
+- **Human-in-the-loop**：人在 AI 執行關鍵操作前保留確認、批准或介入權。
+- **Strict capability**：嚴格能力授權；只給 AI 明確、有限、不可任意擴張的操作權限。
+- **One-time permission**：單次授權，只能使用一次。
+- **Session-scoped**：僅在目前這次工作階段內有效。
+- **Task-scoped**：僅限特定任務使用。
+- **Time-bounded**：授權只在限定時間內有效。
+- **Connector**：AI 用來連接外部服務或系統的介面。
+- **Destination**：操作的目標，例如特定網站、帳戶或 API。
+- **Use case**：授權被允許使用的特定用途。
+- **Machine-enforceable authorization（可由系統強制落實的授權）**：把使用者授權轉換成系統可直接檢查並強制遵守的權限限制，例如限定可操作的資源、行為、金額、對象、次數或時間；Agent 即使想超出範圍，也會被技術機制阻擋，而不是只靠模型自行遵守。
+
+==note end==
 
 ---
 
@@ -119,6 +155,12 @@ Agent hallucination：
 
 **LLM 不應被視為 trusted computing base。**
 
+==note start==
+
+**Agent 安全的核心，不是把模型訓練到「永遠不犯錯」，而是即使模型犯錯，也不能直接造成真實世界的高風險行動。** 因此真正重要的是把 LLM 當成**不可信元件**，由外部系統控制它「能做什麼、能碰哪些資源、在什麼條件下能做、權限多久有效、行為能否追蹤」。這正是傳統資訊安全的思路，也就是 **LLM 不應成為 trusted computing base（可信運算基礎）**。
+
+==note end==
+
 ---
 
 ### 5. 但發布後馬上發生了一件很有意思的事
@@ -138,6 +180,23 @@ The Batch 9 月 18 日出刊後，9 月 21 日資安研究者 Patrick Wardle 公
 而是整條：
 
 **user → client → agent → tools → credentials → network → third-party services**
+
+==note start==
+
+這起 Muse 漏洞的精髓是：**雲端 Agent 本身即使隔離得很好，整體 Agent 系統仍可能因 client 端或其他周邊元件出現漏洞而失守。** 這次問題出在 macOS client 的本機設定可被修改，使原本應送往合法服務的 transcription request 可能被重新導向，而不是攻破 Meta 的 Secure VM。它提醒我們：Agent security 的安全範圍不能只看 LLM 或 Agent VM，而必須看整個 **attack surface（攻擊面）**，包括 **user、client、agent runtime、tools/connectors、credentials、network 與 third-party services**。這些元件構成一條 **trust chain（信任鏈）**；其中任何一個具有關鍵權限的環節被破壞，都可能削弱其他安全措施。
+
+- **Local code execution（本機程式碼執行能力）**：攻擊者已能在受害者的電腦上執行程式；這次漏洞需要這項前提，因此不能理解成一般網路攻擊者可直接從遠端利用。
+- **Secure VM**：Meta 在雲端用來隔離 Agent 執行環境的受控虛擬機；這次漏洞並不是突破這一層。
+- **Agent sandbox**：限制 Agent 可存取的系統資源、權限與網路行為的隔離環境；Secure VM 可以是 sandbox 架構的一部分，而兩者並非完全同義。
+- **Connector**：讓 Agent 代表使用者存取外部服務的介面，例如 Email、雲端硬碟或其他 API。
+- **Credential（憑證）**：用來證明身分或取得服務權限的資訊，例如 OAuth token、API key；一旦遭竊取，攻擊者可能冒用使用者權限。
+- **Trust chain（信任鏈）**：整個 Agent 系統中一連串必須被信任的元件；安全性取決於的不只是模型，而是這些元件共同形成的整體。
+- **Attack surface（攻擊面）**：所有可能成為攻擊入口的元件與介面，包括 client、設定檔、browser、connector、credential、network、update mechanism 等。
+- **Update mechanism（更新機制）**：軟體取得、驗證與安裝更新的流程；若本身被攻破，也可能成為供應鏈式攻擊入口。
+
+最重要的觀念：Secure VM 安全 ≠ Agent 系統安全。Agent security 必須保護的是整個 attack surface 與 trust chain，而不是只把 LLM 關進 sandbox。
+
+==note end==
 
 ---
 
@@ -192,6 +251,13 @@ Agent 世界可能需要進一步問：
 
 我覺得這一條線非常適合 **AI and Law / CLSR**，因為它不是空泛談 AI ethics，而是有非常具體的 **technical architecture → legal duty** 對接。
 
+
+==note start==
+
+這段真正有研究價值的地方，是把法律上的「使用者有沒有同意」，進一步轉成「系統是否把使用者同意的範圍，落實為技術上可被強制遵守的權限邊界」。對高自主 Agent 而言，單純取得 **informed consent（知情同意）** 可能已不夠，還需要 **machine-enforceable consent（可由系統強制落實的同意）**：例如使用者同意 Agent 讀取 Gmail，不代表也同意它寄信、修改 forwarding rule，或存取所有信件。這會把 AI governance 從抽象的「有沒有告知、使用者有沒有按同意」，推進到更具體的 **technical architecture → legal duty（技術架構如何影響法律上的注意義務）**；同時，如果事故不是模型本身造成，而是 client、connector、credential、OS 或其他元件失效，就會進一步產生 **system-level AI liability（系統層級的 AI 責任分配）**問題。
+
+==note end==
+
 ---
 
 # 二、OpenAI × Navier–Stokes：真正的突破可能不是「AI 解出一道數學題」
@@ -219,6 +285,20 @@ Navier–Stokes 部分約產生：
 > **建立一個由數千個 AI researcher 組成的計算型研究組織。**
 
 不同 agent 嘗試不同 approach，彼此交換結果，再由 Codex consolidation，把有潛力的研究方向交叉傳遞（cross-pollination）。
+
+==note start==
+
+OpenAI 這次真正重要的，不只是「AI 解了一道很難的數學題」，而是展示了一種新的研究模式：**不是靠單一模型一次想出答案，而是讓數千個 Agent 同時探索不同方向、交換中間成果、淘汰失敗路線，再把有希望的思路整合起來。** 這更像一個由 AI 組成的「計算型研究組織」，最後再把人類可讀的證明轉成 Lean 形式化證明。核心突破因此不只是 model intelligence，而是 **massively parallel research + coordination + formal verification**。
+
+- **Multi-agent system（多代理系統）**：由多個 AI Agent 分工、互動與協作完成同一目標的系統。
+- **Concurrent agents（並行 Agent）**：大量 Agent 同時工作，而不是一個做完再換下一個。
+- **Cross-pollination（思路交叉傳遞）**：把某個 Agent 找到的有價值想法傳給其他 Agent，讓不同研究路線互相借用成果。
+- **Consolidation（成果整合）**：把大量 Agent 產生的零散結果整理、比較並合併成較完整的研究方向。
+- **Formalize（形式化）**：把一般數學證明轉換成可由電腦逐步驗證的嚴格形式。
+- **Lean**：形式化定理證明系統，用來檢查每一步推理是否符合邏輯規則。
+- **Formal verification（形式驗證）**：不是只相信模型「看起來推得對」，而是讓證明經過機器逐步驗證。
+
+==note end==
 
 ---
 
@@ -263,6 +343,23 @@ Navier–Stokes 部分約產生：
 讓大量 agent 各自探索不同研究路徑，再整合成果。
 
 Navier–Stokes 事件可能是第三種 scaling 非常極端的示範。
+
+
+==note start==
+
+這段的重點是：**AI 的進步不一定只靠把單一模型訓練得更聰明，也可以靠更好的「研究編排」來提升整體能力。** 也就是在模型訓練完成後，投入更多推論算力，讓 AI 同時嘗試很多研究方向，再讓多個 agent 分工、互相檢查、整合成果。過去 scaling 主要是「把模型本身做強」，現在則逐漸出現「把 AI 的研究流程做強」這條路；Navier–Stokes 事件若證據成立，可能就是這種 **agentic research scaling** 的重要示範。
+
+- **Orchestration**：安排多個 AI 要怎麼分工、合作、檢查彼此的結果，最後再整合答案。
+- **Base model IQ**：模型本身原有的理解、推理與解題能力。
+- **Massive inference compute**：回答同一個難題時投入非常大量的算力，讓 AI 可以多想、多試、多比較。
+- **Parallel search**：同時探索很多條不同的解題路徑，而不是只沿著一條路往下想。
+- **Agent coordination**：讓多個 agent 分工合作，例如有人提出假設、有人驗證、有人找反例。
+- **Training-time scaling**：在訓練階段增加資料、算力或模型規模，把模型本身訓練得更強。
+- **Test-time / inference-time scaling**：模型訓練完成後，在實際解題時花更多算力，讓它反覆思考或嘗試更多解法。
+- **Agentic research scaling**：增加 AI agent 的數量與研究分工，讓大量 agent 同時探索不同方向，再整合成研究成果。
+- **Scaling**：增加某種資源，例如算力、模型大小或 agent 數量，藉此提升 AI 的整體能力。
+
+==note end==
 
 ---
 
@@ -318,6 +415,13 @@ Lean 無法自己回答：
 
 因此 formal proof 與 peer review 是互補的，不是替代關係。
 
+
+==note start==
+
+這段的核心是：**Lean 可以幫你確認「證明的邏輯有沒有真的走通」，但不能替你確認「你證明的是不是對的問題、是不是重要的新發現」。** 它會把自然語言中容易被忽略的條件、隱藏假設與推導漏洞逼出來，因此非常適合檢查形式邏輯上的正確性；但它只能驗證你事先寫進去的定義與前提。如果 formalization 本身就錯了，Lean 仍可能忠實地證明一個「形式上正確、實際上答非所問」的命題。所以 **formal verification 是強力的邏輯檢查工具，peer review 則負責判斷問題設定、意義、新穎性與科學價值，兩者是互補關係。**
+
+==note end==
+
 ---
 
 ## 4. 「AI 解開 Millennium Problem」需要一個重要限定
@@ -342,6 +446,12 @@ OpenAI 的證明處理的是 Clay 官方 formulation 裡的 **C/D alternatives**
 
 這個 distinction 很重要。
 
+==note start==
+
+**OpenAI 的證明不是泛泛宣稱「解掉 Navier–Stokes」，而是針對 Clay 官方 formulation 裡的 C/D alternatives：證明一個一開始仍然平滑的流體，在存在平滑外力（smooth external force）的情況下，確實可能在有限時間內形成 singularity，也就是解失去原本的平滑性。** OpenAI 認為這已符合 Clay 官方題目的形式要求；而 Clay Mathematics Institute 的態度則非常審慎，只表示這個問題「**apparently been settled**」，也就是「看起來已經獲得解決」，但還沒有直接宣布正式結案。現在數學界仍需要進一步確認證明內容、問題 formulation 是否完全對應、成果的新穎性與優先權，以及最後 credit 應如何分配。因此最準確的說法是：**AI 已提出一份看起來符合 Clay 正式問題要求、而且可能真的解決問題的 formal proof，但數學共同體的正式驗證與最終認定程序仍在進行。**
+
+==note end==
+
 ---
 
 ## 5. 更有意思的是 priority controversy
@@ -363,6 +473,12 @@ OpenAI 後來表示經內部調查，Buckmaster 過去兩個月的 Codex prompts
 未來問題可能變成：
 
 > **如果我把未公開 conjecture、proof strategy、source code 放進 AI research assistant，而這家公司自己也用 AI 做研究，我要如何證明未來的 discovery 是 independently derived？**
+
+==note start==
+
+**當 AI 公司同時提供研究工具、又自己做前沿研究時，傳統的「研究優先權」問題會變得更複雜。** 以前大家主要擔心未公開論文、猜想、證明思路或程式碼會不會被拿去訓練模型；未來更棘手的問題是：如果研究者把尚未公開的想法交給 AI research assistant，而同一家公司的內部研究團隊後來做出相似成果，要怎麼證明那是**獨立發現（independently derived）**，而不是受到使用者輸入的間接影響。OpenAI 對這次事件表示 Buckmaster 的 Codex prompts 不可能影響內部模型，但那目前仍是公司的內部調查結論。這件事因此把問題從單純的「資料有沒有被拿去 training」，推進到更深一層的 **research provenance、priority、conflict of interest 與可稽核性**。
+
+==note end==
 
 ---
 
@@ -417,6 +533,32 @@ OpenAI 後來表示經內部調查，Buckmaster 過去兩個月的 Codex prompts
 
 **epistemic governance + evidence + attribution + AI-mediated research。**
 
+==note start==
+
+**當 AI 公司同時替大量研究者提供研究助理，又自己參與前沿科研時，未來只靠「我們沒有使用你的資料」這種聲明，可能不足以建立信任。** 更合理的做法，是建立完整的 **research provenance infrastructure**，把模型版本、訓練資料政策、prompt 紀錄、agent 行動軌跡、時間戳、資料集來源與中間產物都留下來，形成可追溯的 **scientific audit trail**。這樣未來若出現相似研究成果，才能更有依據地判斷是否屬於 **independent discovery**、研究成果應如何歸屬，以及 AI-assisted research 應揭露到什麼程度。長期來看，這不只是 authorship 問題，而是關於 **證據、歸屬、研究可信度與 AI 介入科研後的治理規則**。
+
+**Formal verification 普及後，peer review 很可能會從「幫你檢查每一步證明有沒有算錯」，轉向「判斷你證明的是不是對的問題、是不是重要、是不是新的，以及這個結果應該如何被理解」。** 換句話說，**機器逐漸接手 correctness，人類 reviewer 更集中處理 meaning、significance、novelty、assumptions 與 scientific judgment。** 所以 formal verification 不會取代 peer review，而是會把 peer review 往更高層次推。
+
+- **Research provenance infrastructure**：研究來源追蹤基礎設施；用來記錄「這個研究成果是怎麼一步一步產生的」。
+- **Provenance**：來源與歷程。簡單說就是「這個東西從哪裡來、經過哪些步驟才變成現在這樣」。
+- **Model checkpoint identity**：實際使用的是哪一個模型版本，避免只寫「用了某某模型」卻不知道具體版本。
+- **Model training cutoff**：模型訓練資料收錄到哪個時間點，可用來判斷模型理論上是否可能接觸過某些資訊。
+- **Fine-tuning lineage**：模型後續微調的歷史，例如用了哪些資料、經過哪些版本修改。
+- **User-data inclusion policy**：使用者輸入的資料會不會被拿去訓練、微調或其他用途的政策。
+- **Prompt logs**：研究過程中研究者曾經對 AI 下過哪些指令與問題的紀錄。
+- **Agent trajectories**：AI agent 完成任務時實際走過的步驟，例如搜尋了什麼、呼叫了什麼工具、做過哪些中間判斷。
+- **Intermediate artifacts**：研究過程中的中間產物，例如草稿、程式碼、證明片段、實驗結果。
+- **Dataset provenance**：資料集的來源、蒐集方式、版本與修改歷史。
+- **Scientific audit trail**：科研稽核軌跡；讓第三方能事後檢查研究成果是怎麼形成的。
+- **Independent discovery**：獨立發現；也就是兩邊在沒有互相取得對方未公開資訊的情況下，各自得到相似結果。
+- **Evidentiary standard**：證據標準；要拿出多強、多完整的證據，才足以證明某件事。
+- **Disclosure standard**：揭露標準；規定 AI-assisted research 至少要公開哪些模型、資料與研究過程資訊。
+- **Epistemic governance**：知識治理；關心的是「知識是怎麼產生、怎麼驗證、誰有資格相信、證據是否足夠」。
+- **Attribution**：成果歸屬；也就是研究貢獻最後應該算在誰身上。
+- **AI-mediated research**：由 AI 深度介入、協助或中介的研究活動。
+
+==note end==
+
 ---
 
 # 三、Anthropic 指控的「illicit distillation」：最重要的其實可能不是模型抄模型
@@ -443,6 +585,12 @@ Anthropic 還指稱 Moonshot 與 DeepSeek 曾把部分自己的使用者請求 *
 這些目前是 **Anthropic 的 attribution 與調查結果**，不是法院已確認的法律事實，這一點需要一直保留。The Batch 本身也使用「Anthropic accused/alleged」的方式報導。([DeepLearning.ai](https://www.deeplearning.ai/the-batch/some-kimi-and-deepseek-users-were-served-claude-instead-anthropic-says?utm_source=chatgpt.com "Anthropic's Accounts of Distillation, Gray-Market Transfer Stations, Straw Accounts, and User Fraud"))
 
 [Anthropic：Detecting and countering misuse of AI — September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026?utm_source=chatgpt.com)
+==note start==
+
+這件事表面上看是「AI 公司指控競爭對手用自己的模型輸出訓練其他模型」，但真正複雜的地方其實不只 **model distillation**。Anthropic 指稱多家中國 AI labs 大規模、未經授權地取得 Claude 輸出，甚至有部分 Kimi、DeepSeek 使用者的請求被轉送到 Claude，再把 Claude 的答案回傳給原使用者。如果屬實，問題就同時涉及 **模型輸出的使用權、服務條款、帳號與 API 規避、使用者是否被誤導、資料是否跨平台轉送，以及競爭對手能否利用另一家模型作為自己的後端服務或訓練來源**。不過目前這些仍主要是 Anthropic 的調查與歸因，並非法院已認定的法律事實，因此最值得關注的不是先判斷誰「抄了誰」，而是這類行為正在逼迫法律重新回答：**AI 模型的輸出究竟能不能被競爭者大規模利用、平台應揭露實際使用哪個模型到什麼程度，以及模型供應商對下游轉送與再利用應有多少控制權。**
+
+==note end==
+
 
 ---
 
@@ -473,6 +621,25 @@ Anthropic 所稱的 illicit distillation，是它自己定義的一個行為集�
 > industrial-scale、covert、unauthorized extraction，再搭配 fraudulent accounts、stolen API keys、proxy networks 等方式。
 
 這個 distinction 非常重要。([Anthropic](https://www.anthropic.com/threat-intelligence-report-september-2026 "Countering misuse of AI: September 2026 / Anthropic \ Anthropic"))
+
+==note start==
+
+這段最重要的是先把「蒸餾」和「違規蒸餾」分開看。**Distillation 本身是很正常的機器學習方法**：先讓能力較強、但成本較高的 teacher model 產生大量高品質答案，再拿這些答案去訓練較小、較便宜的 student model，希望把老師的一部分能力轉移過去。因此，**distillation 本身不等於非法抄襲**。Anthropic 所說的 **illicit distillation**，重點不在「用了蒸餾技術」本身，而在它指稱對方是以**大規模、隱蔽、未經授權**的方式取得模型輸出，並搭配假帳號、被竊 API key、proxy network 等手段規避限制。也就是說，爭議核心其實是**取得與使用這些模型輸出的方式是否被授權、是否規避平台限制**，而不是蒸餾技術本身有問題。
+
+- **Distillation / Knowledge distillation**：知識蒸餾；讓較小的模型學習較大模型的答案或行為，把一部分能力「濃縮」到小模型裡。
+- **Teacher model**：老師模型；能力較強、通常較大也較昂貴的模型，負責提供高品質示範。
+- **Student model**：學生模型；拿老師產生的資料來訓練，希望用更低成本做到接近老師的效果。
+- **Parameters**：模型參數；可以先理解成模型內部學到的「可調整數值」。參數越多，通常模型容量越大，但不代表一定比較聰明。
+- **Capability transfer**：能力轉移；把 teacher 已經展現出的部分能力，透過訓練方式讓 student 也學會。
+- **Illicit distillation**：Anthropic 用來描述「未經授權、規模化且刻意規避限制的蒸餾行為」的說法；不等於所有 distillation 都非法。
+- **Industrial-scale**：工業規模；不是少量測試，而是大批量、自動化、長時間進行。
+- **Covert**：隱蔽進行；刻意不讓平台或對方察覺真正用途。
+- **Unauthorized extraction**：未經授權大量取得模型輸出。
+- **Fraudulent accounts**：假帳號或以不實方式建立的帳號。
+- **Stolen API keys**：遭竊取或未經允許使用的 API 金鑰。不是去 Anthropic 的機房「偷 Claude 金鑰」，而是去攻擊那些已經合法持有 Claude API key 的公司、使用者或第三方服務，再把他們的憑證拿來用。
+- **Proxy networks**：代理網路；透過大量中介伺服器或轉送節點隱藏真正來源、分散流量或繞過限制。
+
+==note end==
 
 ---
 
@@ -507,6 +674,46 @@ Claude → thinking signature
 現在還要防：
 
 **capability exfiltration。** ([Anthropic](https://www.anthropic.com/threat-intelligence-report-september-2026 "Countering misuse of AI: September 2026 / Anthropic \ Anthropic"))
+
+==note start==
+
+**Anthropic 想保護的已經不只是資料，而是模型本身的能力。** Claude 不會直接把完整 hidden reasoning 交給使用者，而是用 **thinking signature** 這類受保護的方式延續推理；但 Anthropic 指稱 Moonshot 找到 **cross-session replay**，把前一個 session 的 signature 帶到新的 session，設法恢復較完整的 reasoning trace，再拿這些資料去做 supervised fine-tuning。如果這種做法成立，代表 AI 安全的威脅正在從傳統的 **data exfiltration（把資料偷出去）**，進一步變成 **capability exfiltration（把模型學會的解題能力、推理模式與行為抽取出去）**。真正被「帶走」的，不一定是原始資料，而可能是模型多年訓練累積出的能力。
+
+hidden reasoning 保護的是「不要直接展示內部思考」；攻擊者嘗試做的是，把既有的 hidden reasoning 偽裝成「我要你處理的一段內容」，再讓模型把它輸出。不是 Session B 不隱藏 reasoning，而是攻擊者試圖把 Session A 的舊 reasoning，從「隱藏思考」轉成「普通輸出內容」。
+
+
+
+- **Hidden reasoning**：模型內部真正的推理過程；通常不會完整直接顯示給使用者。
+- **Thinking signature**：可以把它想成「某段內部推理的受保護識別憑證」，讓系統之後能延續那段思考，但不直接把完整內容公開。
+- **Cross-session replay**：把前一個 session 留下的資訊或憑證，拿到另一個新的 session 重複使用。
+- **Reasoning trace**：模型解題時的推理軌跡，也就是從問題一路走到答案的中間步驟。
+- **Extraction**：抽取；設法把原本不直接提供的資訊、行為或能力取得出來。
+- **Supervised fine-tuning（SFT）**：監督式微調；拿大量「輸入＋理想答案／解題示範」去繼續訓練模型。模型已經先 pretrain 過了，現在再用較小、較有目的性的標註資料去調整它。
+	- **準備資料**  
+		- 把很多「輸入 → 理想輸出」整理成 dataset。
+	- **把文字轉成 token**  
+		- 模型實際吃的不是中文字，而是一串 token ID。
+	- **讓模型先回答一次**
+		- 模型會對下一個 token 給出機率分布。
+	- **比較模型答案和理想答案**  
+		- 用 loss 計算：模型現在離正確答案有多遠？
+	- **反向傳播（backpropagation）**  
+		- 根據 loss 計算每個參數應該往哪個方向調整。
+	- **更新模型參數**  
+		- 用 gradient descent / AdamW 之類 optimizer，把 weights 稍微改一點。
+	- **重複很多 batch / epoch**  
+		- 讓模型逐漸更常產生你希望的答案形式與解題方式。
+	- **Full fine-tuning**：整個模型參數都更新，效果強但很吃 GPU。
+		- Full fine-tuning = 把老師整套思考方式重新改造。  
+	- **LoRA / QLoRA**：不改全部參數，只額外訓練一小組低秩矩陣，用來修正原模型的行為，成本低很多，也是現在自己 fine-tune 開源 LLM 很常見的方法。
+		- 把原本的大矩陣先凍結不動，只另外加上一小組可訓練矩陣（可拆成兩個很小的矩陣）。
+		- LoRA = 不動老師原本能力，只另外教他一套「遇到法律問題時，請採用這種回答習慣」的補充規則。
+- **Data exfiltration**：資料外洩／資料竊取；把機密文件、資料庫內容、帳號資訊等偷出去。
+- **Capability exfiltration**：能力外流；不是偷原始資料，而是設法把模型的**推理方式、解題策略、工具使用能力或其他已訓練出的能力**抽取到另一個模型。
+- **Capability**：模型能做什麼，例如推理、寫程式、規劃、使用工具、修正錯誤等能力。
+- **Model security**：模型安全；不只保護資料，也包括防止模型被濫用、能力被抽取、行為被逆向工程。
+
+==note end==
 
 ---
 
@@ -558,6 +765,27 @@ Anthropic 指稱，被轉送的內容包括姓名、email、企業資料、crede
 > 「偷模型，所以侵害著作權。」
 
 那反而會把法律問題講窄。
+==note start==
+
+這段真正嚴重的地方，不一定是「A 偷學 B」，而是 **使用者以為自己把資料交給 Model A，實際上內容卻被悄悄轉送給 Model B**。一旦發生這種 **silent model routing**，問題就會從單純的模型競爭，擴大成資料治理與法律責任：使用者的文件到底被誰處理、是否曾被告知、敏感資料是否跨平台傳送、產品標示是否具有誤導性，以及平台是否透過假帳號、被盜憑證或規避限制來取得另一家模型服務。也因此，這類事件不能只用「偷模型、侵害著作權」來概括，因為它其實同時涉及 **契約、隱私、消費者透明、營業秘密、不公平競爭與存取控制規避**等不同法律問題。
+
+- **Silent model routing**：靜默模型轉送；使用者以為自己在用 Model A，但後台其實把問題轉給 Model B，而且沒有明確告知。
+- **Prompt**：使用者輸入給 AI 的內容，包括問題、文件、程式碼、公司資料等。
+- **Processor / recipient**：實際處理或接收資料的一方；法律上重點是使用者是否知道資料最後落到誰手上。
+- **Privacy / data protection**：隱私與資料保護；關心資料被誰蒐集、使用、轉送，以及是否符合告知與合法性要求。
+- **Consumer transparency**：消費者透明；產品實際怎麼運作，不能和使用者看到的標示差太多。
+- **Misleading representation**：誤導性表示；例如標示成某模型，實際卻主要由另一個模型回答。
+- **Trade secret**：營業秘密；企業具有商業價值、未公開且採取保密措施的資訊。
+- **Unfair competition**：不公平競爭；用不當方式取得或利用競爭對手的技術、資源或市場優勢。
+- **Model capability extraction**：模型能力抽取；大量取得另一個模型的輸出、推理模式或行為，再用來提升自己的模型。
+- **Computer misuse**：電腦系統濫用；泛指未經授權或超出授權範圍使用系統。
+- **Access-control circumvention**：規避存取控制；設法繞過帳號、地區、API 或其他使用限制。
+- **Fake accounts**：假帳號；以虛假身分或大量帳號規避平台限制。
+- **Stolen credentials**：被盜憑證；例如 API key、帳號密碼、session token 等被未經授權取得。
+- **Geographic restrictions**：地理限制；平台只允許特定國家或地區使用，卻被技術手段繞過。
+- **Terms of Service（ToS）**：服務條款；使用平台時同意遵守的規則。
+
+==note end==
 
 ---
 
@@ -584,6 +812,25 @@ Exchange 數量可以證明 Anthropic 所稱行為的規模，但不能直接推
 所以這裡合理的研究姿勢是：
 
 > **把 unauthorized extraction 的證據與競爭模型能力來源分開分析。**
+
+==note start==
+
+**Anthropic 的報告可以當成重要證據來源，但不能直接當成中立、完整的事實版本。** 因為 Anthropic 本身就是事件當事人，外界又看不到它全部的內部 telemetry，所以它對「誰做了什麼」的 attribution 仍需要第三方驗證；而且即使真的有 **151 million exchanges**，也只能說明被指稱的抽取行為規模很大，不能直接證明競爭模型有多少能力是從 Claude 蒸餾而來。The Batch 也提醒，中國 AI labs 本身在架構、訓練與工程上有大量獨立創新。因此比較嚴謹的做法，是把兩件事分開：**一方面判斷是否存在未經授權的大規模 extraction，另一方面獨立分析 Qwen、DeepSeek、Kimi 等模型的能力究竟來自哪些技術來源。** 不能從「可能有違規抽取」直接跳成「模型能力主要是抄來的」。
+
+- **Provider framing**：服務商自己的敘事方式；同一件事由不同當事人描述，重點與用詞可能不同。
+- **Interested party / 利益關係人**：事件結果會直接影響自身利益的一方，因此其說法需要特別注意立場。
+- **Attribution**：歸因；判斷某個行為到底是誰做的。
+- **Telemetry**：系統內部運作紀錄，例如 API 呼叫、帳號行為、流量模式、IP、session、時間戳等技術資料。
+- **Independent reproduction / verification**：第三方能不能用自己的方法與資料重現、驗證同樣的結論。
+- **Exchange**：一次或一組模型互動；數量大代表使用規模大，但不等於每次互動都有同樣訓練價值。
+- **Distillation contribution**：模型能力中有多少部分可以歸因於蒸餾；這通常很難直接量化。
+- **Architecture innovation**：模型架構上的創新，例如 attention、MoE、routing 等設計改進。
+- **Training innovation**：訓練方法上的創新，例如資料策略、loss 設計、RL、post-training 方法。
+- **Engineering innovation**：工程上的創新，例如推論效率、分散式訓練、記憶體最佳化、部署技巧。
+- **Unauthorized extraction**：未經授權的大規模取得另一個模型的輸出或能力。
+- **Causal attribution**：因果歸因；不只是看到兩件事同時存在，而是要證明「A 真的造成了 B」。這裡最難的就是不能因為有大量 Claude exchanges，就直接推論競爭模型能力主要因此而來。
+
+==note end==
 
 ---
 
@@ -616,6 +863,27 @@ Exchange 數量可以證明 Anthropic 所稱行為的規模，但不能直接推
 **是否需要建立 AI training-data provenance，標示 synthetic data 的 upstream model source？**
 
 這一組尤其適合 **CLSR / IJLIT**：技術機制夠具體，privacy、contract、competition、cybersecurity 都可以接進來。
+
+==note start==
+
+這組問題的研究價值很高，因為它已經不只是「AI 生成內容有沒有著作權」這種單一議題，而是直接碰到 **AI 服務背後到底是誰在處理資料、模型之間如何互相利用、使用者是否有被充分告知，以及訓練資料來源能不能被追溯**。例如，一個產品標示「Powered by Model A」，到底只是品牌名稱，還是代表實際推論也是由 Model A 完成？如果服務商偷偷把 prompt 轉送給另一家公司，資料保護法上的 controller、processor、subprocessor 又該怎麼分？另外，大量收集其他模型輸出，到底什麼時候只是正常 benchmark 或 interoperability，什麼時候才變成 unauthorized extraction？最後，如果 synthetic data 本身又是其他模型產生的，未來可能還需要建立 **training-data provenance**，追蹤資料究竟來自哪個 upstream model。這些問題同時連結 privacy、contract、competition、cybersecurity 與 AI governance，因此很適合發展成 CLSR 或 IJLIT 類型的研究題目。
+
+- **Model-routing disclosure duty**：模型轉送揭露義務；如果服務實際把使用者請求交給其他模型處理，是否應明確告知使用者。
+- **Powered by Model A**：表面上表示「由 Model A 驅動」，但法律上要進一步問：這代表品牌、主要模型，還是實際負責推論的模型。
+- **Model-output harvesting**：大量蒐集另一個模型的輸出，例如自動送入大量問題並保存答案。
+- **Interoperability**：互通性；不同系統、模型或平台能彼此合作、交換資料或共同運作。
+- **Benchmarking**：基準測試；用同一批題目比較不同模型的能力與表現。
+- **Unauthorized model extraction**：未經授權的模型能力抽取；透過大量輸出、reasoning 或其他方式，試圖把另一個模型的能力轉移出來。
+- **Data controller**：決定「為什麼處理資料、怎麼處理資料」的一方。
+- **Data processor**：依照 controller 指示實際處理資料的一方。
+- **Subprocessor**：processor 又委託的下一層資料處理者。
+- **Secretly forwards prompts**：沒有充分告知使用者，就把 prompt 轉送給另一家服務商處理。
+- **Training-data provenance**：訓練資料來源追蹤；記錄訓練資料從哪裡來、經過哪些處理、是否又是其他模型生成。
+- **Synthetic data**：人工或模型產生的資料，而不是直接從真實世界蒐集的原始資料。
+- **Upstream model source**：這筆 synthetic data 最初是由哪個上游模型產生。
+- **Competition law**：競爭法；關心企業是否透過不公平方式取得競爭優勢或限制市場競爭。
+
+==note end==
 
 ---
 
