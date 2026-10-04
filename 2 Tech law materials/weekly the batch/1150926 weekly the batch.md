@@ -365,6 +365,22 @@ account: 0.03
 
 不是 prose。
 
+==note start==
+
+這段的核心是：**很多 AI 任務其實不是「生成」，而是「判斷」。** 例如 email 分類、風險判定、模型路由、是否需要人工審查，最後真正需要的往往只是一個選項或分數；但現在常見做法卻是先讓 GPT / Claude 生成一大段文字，再把文字解析成結構化結果。Jev 的想法是把這條路徑縮短：**如果答案空間本來就已經事先定義好，就不要讓模型自由寫作，而是直接在候選選項之間做決策並輸出分數或機率。** 這樣可能更快、更便宜，也更容易控制輸出格式與後續系統流程。
+
+- **Jev**：TypeSafe AI 提出的模型，重點不是自由生成文字，而是直接在預先定義的選項中做判斷。
+- **System One Model**：TypeSafe AI 對 Jev 使用的名稱；強調快速、直接做決策，而不是進行長篇生成式推理。    
+- **Predefined options**：預先定義的選項；例如 `billing`、`technical`、`account`，模型只能從這些類別中選。
+- **Score / probability**：分數／機率；模型不是只回答「billing」，而是可能回傳 `billing: 0.93`，表示它對這個判斷的信心較高。
+- **Prose**：一般自然語言段落。Jev 的重點就是很多任務其實不需要先生成 prose。
+- **Parse**：解析；把模型產生的文字重新拆解成程式可以使用的結構化資料。
+- **JSON**：常見的結構化資料格式，例如 `{"category":"billing"}`，方便程式直接讀取。
+- **Structured output**：結構化輸出；答案有固定格式，讓後續系統可以直接處理，不必再猜模型文字的意思。
+- **Output space**：模型可能輸出的答案範圍。如果 output space 本來就只有幾個固定選項，就未必需要完整的生成式模型。
+
+==note end==
+
 ---
 
 # 技術深入：autoregressive generation vs parallel structured decision
@@ -472,6 +488,36 @@ else:
 
 這才是真正適合 software automation 的 interface。
 
+==note start==
+
+Jev 的技術重點不是「又做了一個分類器」，而是**把大型模型的語意理解能力，和可以直接交給軟體使用的結構化、可校準決策結合起來**。一般 LLM 採用 autoregressive generation，即使最後只需要回答 `yes`，仍然要一個 token 接一個 token 地生成；Jev 則事先限制答案只能落在特定的選項、分數或機率範圍內，因此可以直接做 structured decision，而不必先生成文字再解析。更重要的是 **calibration**：如果模型給某類答案 90% 的信心，理想上長期來看這些答案真的應該約有 90% 正確。這使模型輸出的 probability 不只是「自稱有多有把握」，而可以直接變成自動化系統的控制訊號，例如高信心就自動處理、中等信心交給其他模型、低信心送人工審查。這才是 Jev 對 agent 與 software automation 最有意思的地方。
+
+**LLM self-reported confidence = 語言上的自我描述**  
+**calibrated probability = 經大量歷史結果驗證後，有統計意義的機率**
+
+**Jev 的目標是 calibrated decision，不代表它在所有 domain 都已被證明完美校準。** 真正部署前，還是要看不同資料分布、domain shift、OOD 情況下 calibration 是否維持。
+**Domain shift** = 還是同一種工作，但環境變了。  
+**OOD** = 連題目本身都可能已經超出模型原本學過的世界。
+
+
+- **Autoregressive generation**：自回歸生成；模型每次產生下一個 token，都要根據前面已經產生的內容再決定下一個，因此答案是一步一步寫出來的。
+- **Generative decoding machinery**：生成式解碼機制；模型把內部計算結果逐 token 轉成文字的整套流程。即使答案只有 `yes`，傳統 LLM 仍然走這套機制。
+- **Output space**：模型允許輸出的答案範圍。例如只有 `A/B/C/D`，output space 就只有四種選擇。
+- **Unstructured state**：沒有固定格式的輸入資訊，例如一整封 email、一段使用者描述或大量系統狀態。
+- **Typed solution space**：預先規定好的答案類型。例如答案必須是四選一、1–5 分，或 0–1 之間的機率，而不是任意寫一段文字。
+- **Structured decision**：結構化決策；模型直接輸出程式可以使用的選項、分數或機率，而不是先產生自然語言。
+- **Parallel sampling**：不是像 LLM 那樣依序生成一長串 token，而是針對預先定義的決策空間直接計算或取樣結果，因此更適合固定格式的決策任務。
+	- **一次把整個 decision space 的結果算出來**。這就是它說的 **parallel sampling**
+	- 輸出維度彼此不需要按 token 順序生成，可以在同一次模型計算中一起得到
+- **RLCD（Reinforcement Learning for Calibrated Decisions）**：TypeSafe 對 Jev 訓練方法的稱呼，目標不只是讓模型「選對答案」，還希望它給出的信心水準具有較好的統計意義。
+- **Calibration**：信心校準；模型說自己有 90% 把握的案例，長期統計下真的應該大約有 90% 是正確的。
+- **Statistical calibration**：不是看單一題的 90% 準不準，而是看大量「模型都報 90%」的案例，實際正確率是否也接近 90%。
+- **LLM self-reported confidence**：LLM 在文字裡說「我有 95% 把握」。這通常只是生成出來的一句話，不代表經過統計校準的 95% probability。
+- **Confidence threshold**：信心門檻；系統可以依模型信心決定下一步，例如高於 95% 自動處理，70–95% 交給另一模型，其餘人工審查。
+- **Software automation interface**：讓軟體能直接根據 AI 輸出来執行規則的介面。相比一段自然語言，`fraud = 0.87` 這類結構化、可校準結果更容易安全地接進自動化流程。
+
+==note end==
+
 ---
 
 # 為什麼速度可以差這麼多？
@@ -507,6 +553,12 @@ $$
 一次把 decision variables 算出來。
 
 所以當 output 本來就很小時，autoregressive generation 其實是一種昂貴 overhead。
+
+==note start==
+
+Jev 之所以可能比一般 frontier LLM 快很多，關鍵不是它「算得比較聰明」，而是它根本**不用走完整的逐 token 生成流程**。一般 LLM 即使最後只需要輸出 `yes`、`billing` 或一個風險分數，仍然要依序產生 token，而且每個新 token 都依賴前面已經產生的內容；Jev 則把答案限制在預先定義好的 decision space，直接從輸入狀態一次算出各選項的分數或機率。當任務本來只需要一個分類、分數或 yes/no 決策時，省掉 autoregressive generation，就能大幅降低不必要的計算與延遲。因此它的速度優勢主要來自：**不要用一套為「寫長篇文字」設計的機制，去完成其實只需要「做一個決定」的工作。**
+
+==note end==
 
 ---
 
@@ -553,6 +605,12 @@ $$
 $$
 
 這個區別非常重要。
+
+==note start==
+
+TypeSafe 說 Jev「**can't hallucinate**」時，要非常小心地理解。它真正能保證的不是「模型一定判斷正確」，而是**模型不會輸出預先定義範圍以外的東西**。例如系統只允許 `A / B / C`，Jev 就不會突然回答 `elephant`，也不會產生格式錯誤的 JSON；這叫 **schema correctness**。但它仍然可能在 `A / B / C` 裡選錯，例如正確答案是 A，它卻高信心選了 B。因此更準確的說法是：**Jev 可以大幅降低「格式型 hallucination」，但不能消除「判斷錯誤」。** 這也是為什麼 calibration 仍然很重要：模型不只要輸出合法選項，還要讓自己的信心水準和實際正確率盡可能對得上。
+
+==note end==
 
 ---
 
@@ -609,6 +667,12 @@ if statement
 - escalation
 
 這是非常合理的 system architecture。
+
+==note start==
+
+這個方向值得注意，因為現在很多 AI 系統其實用了很繞的方式來做一個本來很簡單的決策：先讓 LLM 生成文字或 JSON，再經過 parser、validator 檢查格式，格式錯了就 retry，最後才把結果交給程式的 `if statement`。Jev 這類 decision model 想做的，是把中間這些生成、解析、驗證與重試步驟盡量拿掉，直接輸出程式可以使用的決策結果。長期來看，AI infrastructure 很可能因此出現更清楚的分工：**generative model 負責需要創造、推理與規劃的工作；decision model 負責分類、路由、打分、過濾、驗證與升級處理。** 這種架構的重點不是誰取代誰，而是讓不同模型各自處理最適合自己的工作，讓整個 AI system 更便宜、穩定，也更容易控制。
+
+==note end==
 
 ---
 
@@ -685,6 +749,28 @@ $$
 > **在行政自動化系統中，當 AI 不直接產出最終決定，而僅輸出 probabilistic classification 時，法律控制應著重模型本身、決策閾值，還是 surrounding workflow？**
 
 這個比泛泛談「AI 可解釋性」具體很多。
+
+==note start==
+
+TypeSafe 公布的巨大速度與成本優勢，主要來自自己設計的 workflow evaluation，本身可能存在任務選擇、reference answer 與評測方法上的偏差。因此現在比較合理的結論，不是「Jev 已經證明可以取代 LLM classification」，而是它提出了一個很值得追的架構問題：**如果任務最後只需要分類、打分或做 yes/no 決策，我們是否真的需要每次都動用 autoregressive generative model？** 更重要的是，一旦這類 probabilistic decision model 大量進入真實系統，治理焦點也會跟著改變：真正影響人民或使用者結果的，可能不只是模型本身，而是 **threshold 怎麼設、confidence 是否校準、什麼情況交給人工、失敗時怎麼 fallback，以及系統一開始把世界分成哪些類別。** 對行政自動化而言，法律要控制的對象因此可能不只是「AI model」，而是整套 **decision workflow**。
+
+- **Workflow evaluation**：拿一整套工作流程來測試模型，而不是只比較單一道題；結果很容易受到 workflow 怎麼設計影響。
+- **Reference answer**：評測時拿來當標準答案或比較基準的答案。
+- **Evaluation bias**：評測偏差；測試方法、資料或標準答案可能無意間比較有利於某一方。
+- **Caveat**：重要的限制條件或保留事項；看到研究結果時不能忽略。
+- **Architecture challenge**：對既有系統設計提出根本問題；這裡就是在問「為什麼所有 AI 任務都要用生成式 LLM？」
+- **Probabilistic classification**：不是只回答「是／否」，而是輸出一個機率，例如 `fraud = 0.83`。
+- **Decision threshold**：決策閾值；系統規定「機率高到多少才採取某個行動」。
+- **Confidence calibration**：信心校準；模型說 90% 有把握時，長期統計下是否真的約有 90% 正確。
+- **Fallback rule**：備援規則；模型不確定、失敗或結果異常時，下一步改由什麼系統或人處理。
+- **Human-review boundary**：人工審查邊界；規定哪些情況可以全自動、哪些情況必須交給人。
+- **Choice taxonomy**：系統事先設計好的分類架構；例如只有 `low / medium / high risk`，其實已經先決定系統「怎麼看世界」。
+- **Surrounding workflow**：模型周圍的整套決策流程，包括 threshold、routing、fallback、人工審查與後續動作。
+- **Administrative automation**：行政自動化；政府利用 AI 或其他系統協助分類、審查、排序或處理行政案件。
+- **Legal control**：法律控制；法律究竟要規範模型、決策門檻，還是整套工作流程。
+- **AI explainability**：AI 可解釋性；關心模型為什麼做出某個結果，但在這類 decision system 中，只談解釋可能還不夠，因為真正決定法律效果的還包括 threshold 和 workflow。
+
+==note end==
 
 ---
 
@@ -790,6 +876,20 @@ Jev 自己也正好很適合充當這個 gate。
 
 可能形成新的 agent architecture。
 
+==note start==
+
+未來 AI Agent 的競爭，重點不再只是「哪個單一模型最強」，而是**整個系統怎麼把工作分配給不同模型**。簡單、重複、低風險的任務交給便宜快速的小模型，困難或需要高品質推理的任務再交給強大的 frontier model；這樣可以同時兼顧**成本、速度與品質**。換句話說，AI 產品正在從「比模型能力」走向「比整套系統架構與協作能力」。
+
+- **Multi-model orchestration（多模型協作／編排）**：讓多個不同模型一起工作，各自負責最適合的任務，像一個有分工的團隊。
+- **Model routing（模型路由）**：像「派工員」，先判斷這個任務該交給哪一個模型。
+- **Cascade（級聯）**：先讓便宜的小模型處理；如果不夠有把握，再升級給更強、更貴的模型。
+- **Frontier model（前沿模型）**：目前能力最強的一級大型模型，通常推理與生成效果最好，但成本也較高。
+- **Decision model（決策模型）**：不是主要拿來寫長篇文字，而是做分類、判斷、選擇，例如決定「通過／不通過」、「重要／不重要」。
+- **Orchestrated system（編排式系統）**：不是只靠一個模型，而是把模型、工具、流程、驗證機制整合成一個完整 AI 系統。
+- **`r(x) = argmin C(m,x)` subject to `Q(m,x) ≥ q_min`**：白話就是「在品質至少達標的前提下，選出最便宜或最快的模型」。
+
+==note end==
+
 ---
 
 # 這裡真正重要的是「heterogeneous intelligence」
@@ -856,6 +956,12 @@ $$
 
 這也是為什麼最近單純 leaderboard 越來越難完整描述實際 AI capability。
 
+==note start==
+
+這裡真正重要的不是「多個 Agent」，而是 **heterogeneous intelligence（異質智慧）**：不要只是讓同一個大型模型扮演不同角色，而是把不同種類的 AI 元件組成一個系統，讓分類模型負責分類、搜尋模型負責找資料、小模型處理簡單任務、強推理模型處理難題、視覺模型看圖片、驗證模型檢查答案。這就像傳統軟體工程，不會要求一個元件包辦所有功能。因此未來真正要比較的，可能不是「Model A 比 Model B 強多少」，而是**哪一整套 AI 系統能以更低成本、更高可靠性完成真實工作**；AI 能力的評估單位，也會逐漸從單一模型轉向完整系統。
+
+==note end==
+
 ---
 
 # AI × Law / Governance
@@ -896,6 +1002,12 @@ Agent → executed action
 > **governance object 可能必須從「AI model」逐漸轉向「AI system」。**
 
 這個方向其實很適合你目前想找的「技術夠實、法律不要太法理」的研究路線。
+
+==note start==
+
+當 AI 從「單一模型」變成由分類器、路由器、不同模型與工具共同組成的 Agent 系統後，出錯時就不能只問「是哪個模型答錯」。真正的問題可能發生在**分類、模型選擇、門檻設定、失敗備援、人工介入或工具權限**任何一層。因此未來 AI 治理的對象很可能要從單純監管 **model**，進一步轉向監管整個 **AI system architecture**：不只是知道用了什麼模型，而是要知道「這個決策到底是怎麼一路形成並被執行的」。
+
+==note end==
 
 ---
 
@@ -1000,6 +1112,13 @@ $$
 也就是 **每單位成本究竟能可靠完成多少工作**。
 
 這是我認為本期最值得帶走的觀念。
+
+==note start==
+
+這一期最值得記住的不是某個單一模型又變強多少，而是 **AI 的進步方式正在改變**：過去主要靠把模型做大、做聰明，現在則越來越重視把不同能力拆開，讓便宜的小模型、專用模型、工具與最強的 frontier model 組成一套系統。簡單工作用便宜能力處理，困難工作才升級給昂貴模型。未來真正重要的指標因此可能不是「誰的 benchmark 分數最高」，而是**一套 AI 系統花同樣的錢、時間和人工監督，究竟能穩定完成多少真正有用的工作**。
+
+==note end==
+
 
 ---
 
