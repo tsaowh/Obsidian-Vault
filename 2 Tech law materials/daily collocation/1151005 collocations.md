@@ -44,7 +44,7 @@
 
 ## 4
 
-**表達：account for confounding factors**
+**表達：account for confounding（干擾） factors**
 
 **意思／語感：** 在研究設計或分析中，適當處理同時影響原因與結果、可能扭曲兩者關係的混淆因素。
 
@@ -100,7 +100,7 @@
 
 ## 8
 
-**表達：draw sweeping conclusions from**
+**表達：draw sweeping（廣泛的） conclusions from**
 
 **意思／語感：** 從範圍有限的資料中得出涵蓋面過廣、語氣過度確定的結論，通常帶有批評意味。
 
@@ -118,7 +118,7 @@
 
 **意思／語感：** 構成「表面上足以成立」的初步證據；若無相反證據，足以支持某項認定，但並非終局或不可反駁的證明。
 
-**例子：** Repeated deletion of audit logs may **constitute prima facie evidence of** an attempt to conceal unauthorized access.
+**例子：** Repeated deletion of audit logs may **constitute prima facie（初步證明） evidence of** an attempt to conceal unauthorized access.
 
 **翻譯：** 一再刪除稽核日誌，可能構成企圖掩飾未經授權存取的初步證據。
 
