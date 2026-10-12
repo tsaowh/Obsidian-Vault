@@ -643,6 +643,32 @@ Agent workload 恰恰是：
 
 所以可以專門把 input-side cost 壓下來。
 
+==note start==
+
+DeepSeek-V4.1-Flash 真正重要的，不只是 **KV cache 壓縮 437×**，而是它反映出 LLM workload 正從短對話轉向長時間 Agent 任務。Agent 會持續讀文件、呼叫工具、執行程式、接收結果，導致 context 越來越長，而模型為了避免每次重新計算整段歷史，需要保存大量 KV cache；當成千上萬個 Agent 同時運行時，真正昂貴的就不只是 GPU 運算，而是 HBM、RAM、SSD 與 memory bandwidth。DeepSeek 因此把「讀取長 context」與「生成新 token」拆成不同計算強度，讓 input/prefill 使用較少 active parameters、decode 再使用較多容量，等於針對 **input tokens 遠多於 output tokens 的 Agent workload** 特別優化成本結構。
+
+整體關係可以先看成：
+Agent 長時間工作 → Context 越來越長 → 模型需要處理更多 input tokens → 進入 Prefill 階段讀取這些內容 → Attention 計算前文關係 → 產生並保存 KV cache → KV cache 越來越大 → 吃掉 HBM / RAM → 還需要大量 memory bandwidth 搬資料 → Agent 執行成本上升
+
+然後 DeepSeek-V4.1-Flash 在做的是：
+大量 input → Prefill → 只啟用較少參數（約 8B）→ 降低「讀資料」成本
+真正生成 output → Decode → 啟用較多參數（約 16B）→ 保留生成品質
+
+- **KV cache**：模型把前面文字已經算過的 attention 中間結果先存起來，這樣生成下一個 token 時不用重新計算整段 context。好處是速度快，但對話越長，占用的記憶體也越大。
+- **Context length**：模型目前一次需要記住的文字長度，包括使用者輸入、文件、工具結果、程式碼與之前的對話。Agent 跑得越久，context 通常就越長。
+- **Attention**：模型判斷「目前這個 token 應該關注前面哪些資訊」的核心機制。KV cache 保存的就是這個過程中可重複利用的部分計算結果。
+- **HBM**：GPU 上非常高速但昂貴的記憶體。大型模型與長 context 很吃 HBM，所以即使計算能力足夠，記憶體容量也可能先成為瓶頸。
+- **Memory bandwidth**：資料在記憶體和運算單元之間搬動的速度。Agent context 很長時，模型可能不是「算不夠快」，而是「資料搬得不夠快」。
+- **MoE（Mixture of Experts）**：模型總參數很多，但每次只啟用其中一部分 expert。這讓模型可以擁有很大的總容量，同時避免每個 token 都使用全部參數。
+- **Active parameters**：每次處理 token 時實際被使用的參數量。DeepSeek 在讀 input 時只啟用約 8B，生成 output 時約 16B，目的是把大量 input token 的成本壓低。
+- **Prefill**：模型第一次讀入整段 prompt 或 context 的階段。Agent 常常需要反覆處理很長的 input，所以 prefill 成本會變得非常重要。
+- **Decode**：模型真正逐 token 產生答案的階段。這部分通常需要更高的模型能力，因為每一步都要決定下一個 token。
+- **Causal Encoder–Decoder（CED）**：DeepSeek 把「讀取 context」和「生成答案」用不同計算強度處理的架構。核心想法是：讀大量舊資訊，不一定需要和產生高品質新文字一樣昂貴。
+- **Decoder-only Transformer**：目前多數 LLM 使用的架構，讀 input 和生成 output 基本上都走同一套大型 backbone，因此兩種工作通常使用相近的模型計算能力。
+- **Input tokens ≫ output tokens**：Agent 往往會讀非常多資料，但最後只產生相對少的文字。例如讀幾十萬 token 的文件與工具紀錄，最後可能只輸出幾千 token。
+
+==note end==
+
 ---
 
 ## KV cache 怎麼縮？
