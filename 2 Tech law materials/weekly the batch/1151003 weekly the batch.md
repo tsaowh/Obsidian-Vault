@@ -658,13 +658,29 @@ Agent 長時間工作 → Context 越來越長 → 模型需要處理更多 inpu
 - **Context length**：模型目前一次需要記住的文字長度，包括使用者輸入、文件、工具結果、程式碼與之前的對話。Agent 跑得越久，context 通常就越長。
 - **Attention**：模型判斷「目前這個 token 應該關注前面哪些資訊」的核心機制。KV cache 保存的就是這個過程中可重複利用的部分計算結果。
 - **HBM**：GPU 上非常高速但昂貴的記憶體。大型模型與長 context 很吃 HBM，所以即使計算能力足夠，記憶體容量也可能先成為瓶頸。
+	- **HBM vs RAM vs SSD**：都是存資料的地方，但速度不同。HBM 最快、最貴、離 GPU 最近；RAM 次之；SSD 更慢但容量大。長 Agent 任務會讓「資料放哪裡」變成成本問題。
 - **Memory bandwidth**：資料在記憶體和運算單元之間搬動的速度。Agent context 很長時，模型可能不是「算不夠快」，而是「資料搬得不夠快」。
 - **MoE（Mixture of Experts）**：模型總參數很多，但每次只啟用其中一部分 expert。這讓模型可以擁有很大的總容量，同時避免每個 token 都使用全部參數。
-- **Active parameters**：每次處理 token 時實際被使用的參數量。DeepSeek 在讀 input 時只啟用約 8B，生成 output 時約 16B，目的是把大量 input token 的成本壓低。
+	- Expert 是「一組功能模組」；parameters 是構成這個模組的數值
+	- **Expert** = 一個部門
+	- **Parameters** = 這個部門裡的人力與能力配置
+	- **Router** = 派工主管
+	- **Active parameters** = 這次實際被叫來工作的那些部門中的參數
+	- **Active parameters**：每次處理 token 時實際被使用的參數量。DeepSeek 在讀 input 時只啟用約 8B，生成 output 時約 16B，目的是把大量 input token 的成本壓低。
 - **Prefill**：模型第一次讀入整段 prompt 或 context 的階段。Agent 常常需要反覆處理很長的 input，所以 prefill 成本會變得非常重要。
 - **Decode**：模型真正逐 token 產生答案的階段。這部分通常需要更高的模型能力，因為每一步都要決定下一個 token。
 - **Causal Encoder–Decoder（CED）**：DeepSeek 把「讀取 context」和「生成答案」用不同計算強度處理的架構。核心想法是：讀大量舊資訊，不一定需要和產生高品質新文字一樣昂貴。
+	- 累積式的內部理解狀態
+	- 每個 token 都會形成一組數值化的中間表示，代表「到這裡為止，我對前文的理解」。
+	- **Causal** 的意思就是（**causal** = 因果式、只能依賴先前資訊）：
+		- 每個舊 token 都像一張可能之後還要查的索引卡；如果太早丟掉，後面就可能找不到那個細節。
+		- 即 KV Cache 並不是把每個 token 的「完整腦內狀態」全部存下來，而是主要保存 Attention 後續還會用到的 Key 和 Value。
+		- 例子
+			- `狀態 A` 只根據「今天」
+			- `狀態 B` 只根據「今天下雨」 
+			- `狀態 C` 只根據「今天下雨所以」
 - **Decoder-only Transformer**：目前多數 LLM 使用的架構，讀 input 和生成 output 基本上都走同一套大型 backbone，因此兩種工作通常使用相近的模型計算能力。
+	- **CED vs decoder-only Transformer**：傳統 decoder-only 大致用同一套大模型處理「讀」和「寫」；CED 的核心思想則是把兩者拆開，**讀大量 context 可以便宜一點，真正輸出時再用比較多算力
 - **Input tokens ≫ output tokens**：Agent 往往會讀非常多資料，但最後只產生相對少的文字。例如讀幾十萬 token 的文件與工具紀錄，最後可能只輸出幾千 token。
 
 ==note end==
