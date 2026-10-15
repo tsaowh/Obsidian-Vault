@@ -732,6 +732,33 @@ DeepSeek 正在 architecture level 直接為 **input-heavy agent workload** 做�
 
 如果未來企業裡同時掛著十萬個 long-running agents，這種 optimization 的產業價值可能比 benchmark 多兩分大得多。
 
+==note start==
+
+DeepSeek-V4.1-Flash 真正重要的，不是單純把 KV cache 從 FP16 改成 FP4，而是從**模型架構、attention 設計、跨層 KV 重用、低精度儲存與短期 cache 重建**多個層次一起下手。CED 先降低大量 input 的 prefill 成本；CSA2 透過 compressed indexing、sparse attention 與 cross-layer KV reuse，減少需要保存與讀取的 global KV；FP4 再把每份 KV 存得更小；SWA Bounded Replay 則乾脆不長期保存部分短期 KV，需要時只重算最後一小段。這反映出 Agent 時代一個很重要的轉變：**未來比的可能不只是模型有多強，而是讓一條長時間 Agent 任務持續運作，到底要花多少計算、記憶體與資料搬移成本。**
+
+- **KV cache**：模型把前面 token 已經算好的 attention 資料存起來，之後生成新 token 時可以直接重用，不必把所有前文重新計算一次。
+- **Causal Encoder–Decoder（CED）**：把「大量讀 input」和「真正生成 output」拆開處理。讀資料時可以用較省的計算方式，真正寫答案時再投入較多模型能力。
+- **Compressed Sparse Attention 2（CSA2）**：是一整套讓長 context attention 更省的方法。它先用較精簡的表示判斷哪些位置重要，再只對少數 Top-K 位置做真正 attention，因此可以減少大量不必要的 KV 存取與計算。
+- **Compressed**：不是把文章做摘要，而是把「用來找重要位置的索引表示」做得比較小，讓模型可以更便宜地判斷哪些 token 值得看。
+- **Sparse Attention**：真正做 attention 時，不再看全部 context，而只看篩選出的少數重要位置。可以理解成「不是翻完整本書，只讀最相關的幾頁」。
+- **Cross-layer KV reuse**：CSA2 裡的重要機制之一。不同 Transformer layers 不必各自保存一整套新的 KV，可以重用前面 layer 已經建立的 KV，避免重複儲存。
+- **FP4 KV caching**：把已經決定要保存的 KV，用 4-bit 浮點格式儲存。也就是資料內容還是那些，但每份占用的記憶體更小。
+- **SWA（Sliding-Window Attention）**：只特別保留最近一小段 token 的局部 attention，而不是每次都處理完整歷史 context。
+- **SWA Bounded Replay**：部分短期 SWA KV 不需要永久保存；如果之後真的需要，就拿原始 token 把最近固定範圍重新算一次。也就是用少量重算，換掉大量長期儲存。
+- **Global KV cache**：為了讓模型能回頭查很久以前的 context，而需要長期保存的 KV。因為生命週期長，所以特別容易吃掉 HBM。
+- **HBM**：GPU 上非常高速但昂貴的記憶體。KV cache 能少占一點 HBM，就能同時服務更多長 context session。
+- **Persistent cache**：不能一直留在 GPU 的 cache，可以移到 host RAM 或 SSD 長期保存。雖然比較便宜，但之後搬回 GPU 也會產生延遲與頻寬成本。
+- **Memory hierarchy**：不同資料放在不同速度與成本的儲存層，例如 HBM → RAM → SSD。不是所有 cache 都值得一直放在最昂貴的 HBM。
+- **Prefill compute**：模型第一次讀進整段 prompt、文件與歷史 context 時所需的計算。Agent input 很長，因此 prefill 成本會越來越重要。
+- **Memory bandwidth**：KV 從記憶體搬到 GPU 運算單元的速度。即使資料裝得下，如果搬得太慢，推理還是會被拖慢。
+- **Cache transfer**：KV 在 HBM、RAM、SSD 之間移動所產生的成本與延遲。Agent session 很長時，這可能成為真正的系統瓶頸。
+- **Decode**：模型真正一個 token 一個 token 產生 output 的階段，和前面大量讀 input 的 prefill 不同。
+- **Input-heavy agent workload**：Agent 會讀非常多資料、工具輸出與歷史紀錄，但最後只產生相對少的文字，所以 input 成本會比傳統聊天更重要。
+- **Long-running agent trajectory**：Agent 從開始任務、搜尋、call tool、讀結果、修正，到最後完成任務的整條執行過程，可能持續幾十分鐘甚至幾小時。
+- **Cost per long-running agent trajectory**：不是只算「生成 1,000 tokens 多少錢」，而是把 prefill、KV storage、memory bandwidth、cache transfer、decode 等整條 Agent 工作成本全部算進來。
+
+==note end==
+
 ---
 
 ## Critical assessment
