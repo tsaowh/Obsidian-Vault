@@ -908,6 +908,21 @@ interaction_status = IDLE
 
 Google 官方文件本身就把 travel、technical support、多工具 workflow 當主要 use cases。[Google AI for Developers](https://ai.google.dev/gemini-api/docs/live-api/thinking?utm_source=chatgpt.com)
 
+==note start==
+
+Gemini 3.8 Live Extended Thinking 真正的改變，不只是聲音更自然或 benchmark 更高，而是**對話流程與 Agent 執行流程開始分離**。以前 voice agent 呼叫工具時，往往必須等工具回傳結果才能繼續說話；現在模型可以一邊維持即時對話，一邊在背景 reasoning、呼叫工具與等待結果，等資料回來後再自然地更新後續回答。因此「語音講完」已經不代表「整個任務完成」，client 必須另外追蹤背景 interaction 的狀態。這代表 voice AI 正從 **speech interface + chatbot**，進一步變成 **real-time conversational interface + asynchronous agent runtime**；工具延遲不再必然等於對話停頓，會讓客服、技術支援、訂票與多工具 workflow 更接近真人協作方式。
+
+- **Speech-to-Speech**：AI 直接接收語音並產生語音回應，而不是讓使用者明顯感受到「語音轉文字 → LLM → 文字轉語音」三個分離階段。
+- **Extended Thinking**：模型可以在需要時進行較長、較複雜的 reasoning，而不是為了維持即時語音速度，每次都只能快速回答。
+- **Asynchronous agent**：Agent 不必「做完一件事才能做下一件事」。例如背景正在查航班時，前景仍可以繼續和你確認日期、預算等其他資訊。
+- **Conversation stream**：模型和使用者正在進行的即時對話，例如說話、回應與追問。重點是它可以持續進行，不必等背景工具全部完成。
+- **Task execution stream**：背景真正完成任務的流程，例如 reasoning、查資料、call API、等待工具結果、執行 workflow。它可以和 conversation stream 同時運作。
+- **Non-blocking asynchronous call**：呼叫工具後不必停在原地等待結果。系統可以先做其他事情，等工具完成後再處理回傳資料。
+- **State machine**：client 用來追蹤「系統現在處在哪個狀態」的邏輯，例如正在聽使用者、正在說話、正在等待工具、背景任務仍在執行或整個任務已完成。
+- **Multimodal assistance**：Agent 不只處理文字或聲音，也可能同時理解圖片、影片、畫面或其他形式的資訊，再搭配工具完成任務。
+
+==note end==
+
 ---
 
 ## Critical assessment
@@ -946,6 +961,30 @@ developer 必須正確處理：
 
 它把 latency 問題轉成了 **concurrency/state-management problem**。
 
+==note start==
+
+Gemini 3.8 Live 的 asynchronous agent 架構確實能減少「等工具回來時整段沉默」的問題，但代價是系統狀態會變得複雜很多。同步 Agent 通常是「送出指令 → 等結果 → 再往下做」，而非同步 Agent 可能同時存在使用者說話、工具執行、模型回應、使用者插話與新工具啟動等多條流程。這代表 latency 雖然被改善，卻轉化成 **concurrency 與 state management 的工程問題**：系統必須知道哪些任務還有效、哪些結果已過時、使用者的新指令是否覆蓋舊指令，以及某些動作是否仍獲得授權。
+
+**同步 Agent：慢，但狀態簡單。**
+**非同步 Agent：體驗快，但狀態複雜。**
+
+**Asynchronous agent 並沒有把 latency 問題消失，而是把它轉化成 concurrency、state management 與 authorization 問題。**
+
+- **State complexity**：系統同時要記住很多「現在進行到哪裡」的狀態，例如哪個 tool 還在跑、使用者是否改口、哪個結果還能不能用。流程越非同步，狀態越難管理。
+- **Synchronous agent**：一次只做一件事，前一個步驟完成後才進下一步。好處是流程簡單，缺點是等待工具時使用者也只能等。
+- **Asynchronous agent**：多件事可以同時進行，例如 Agent 一邊和你說話，一邊在背景查資料。體驗更流暢，但系統要處理多條同時存在的工作流程。
+- **Concurrency**：多個任務在同一段時間內同時進行，例如 Tool A 還沒跑完，Tool B 已經開始，使用者又同時提出新要求。
+- **Cancellation**：使用者改變主意後，系統要能取消已經不需要的背景任務，否則工具可能仍然繼續執行舊指令。
+- **Stale tool result**：工具回傳的結果已經過時。例如使用者原本要查東京機票，但中途改成大阪；這時東京搜尋結果回來，就不能再直接拿來用。
+- **Overlapping intentions**：使用者的新舊意圖同時存在或互相衝突，例如前一句說「幫我訂」，下一句又說「先不要訂，只查價格」。系統必須判斷哪個指令才是目前有效的。
+- **Interruption**：使用者在 Agent 還沒講完或背景工作還沒完成時插話。系統必須決定是暫停、取消、修改，還是繼續原本任務。
+- **Action authorization**：即使 Agent 已經知道下一步要做什麼，也不代表它仍然有權執行。像付款、下單、刪除資料等動作，可能需要重新確認使用者授權。
+- **Race condition**：兩個事件幾乎同時發生，最後結果取決於誰先被處理。例如使用者取消訂單的同時，訂單 API 剛好回傳成功，系統就必須有明確規則處理這種衝突。
+- **State management**：系統用來追蹤所有任務、工具、使用者意圖與執行進度的機制。非同步 Agent 做得好不好，很大程度取決於這一層是否可靠。
+- **Latency**：從使用者提出要求到系統產生結果之間的等待時間。非同步設計不一定讓工具本身變快，而是讓使用者不必在等待期間完全停住。
+
+==note end==
+
 ---
 
 ## AI × Law / Governance
@@ -969,6 +1008,31 @@ developer 必須正確處理：
 > **對 asynchronous action-taking agents，什麼時候應要求明確顯示 pending actions、取得額外 authorization，或提供 cancellation window？**
 
 這條研究線比泛泛講「voice AI privacy」更扎實。
+
+
+==note start==
+
+Asynchronous agent 帶來一個新的治理問題：**「AI 已經講完」不等於「AI 已經做完」。** 當 voice agent 可以一邊與使用者對話，一邊在背景查帳戶、修改資料、下單、發訊息或呼叫其他系統時，使用者可能以為某個 interaction 已經結束，但實際上仍有 action 正在執行。因此治理重點不只是揭露「你正在跟 AI 說話」，而是如何讓使用者知道 **AI 現在正在做什麼、哪些動作仍在 pending、哪些動作即將產生外部效果，以及是否還來得及取消**。這可能使 pending-action disclosure、額外 authorization 與 cancellation window 成為 action-taking agents 很重要的治理設計。
+
+**對話與執行非同步 → 使用者看到的狀態 ≠ Agent 真正的執行狀態 → 使用者可能不知道背景 action 仍在進行 → 同意、控制與撤回變得困難 → 需要更清楚的 pending-action disclosure、authorization 與 cancellation 機制**
+
+**當 Agent 可以在使用者繼續對話甚至改變心意的同時，持續在背景對外採取行動，法律與產品設計應在哪些時間點要求揭露、確認與可撤回性？**
+
+- **Asynchronous action-taking agent**：不只回答問題，而且能在背景同時執行實際動作的 Agent。即使它正在和你聊天，另一邊可能還在查資料、修改帳戶或呼叫 API。
+- **Conversation state**：使用者感受到的「對話現在進行到哪裡」，例如 AI 已經回答完、開始談下一個問題。但這不一定代表背景工作也完成了。
+- **Execution state**：Agent 真正的任務執行狀態，例如某個訂單仍在送出、某個工具仍在執行，或某個資料修改尚未完成。
+- **Pending action**：已經開始準備或送出、但尚未完成的動作。例如 AI 已經啟動訂票流程，但航空公司的系統還沒回覆。
+- **Pending-action disclosure**：介面清楚告訴使用者「目前還有哪些動作正在背景執行」，避免使用者誤以為事情已經結束。
+- **Action-taking agent**：不只是提供資訊，而是可以對外部世界產生實際效果的 AI，例如寄信、付款、下單、修改資料或取消預約。
+- **Authorization**：使用者授權 Agent 執行某個動作。對高影響行為而言，「之前說過可以」未必代表情境改變後仍然可以直接執行。
+- **Additional authorization**：當動作具有較高風險、金錢效果或不可逆性時，在真正執行前再向使用者確認一次，例如「確定要支付 NT$20,000 嗎？」
+- **Cancellation window**：Agent 已準備執行某項行動後，保留一段讓使用者可以撤回或取消的時間。概念上就像寄信後的「取消傳送」。
+- **External effect**：AI 的行為不只停留在聊天畫面，而是真的改變外部世界，例如錢被扣掉、訊息被寄出、資料被刪除或訂單成立。
+- **User awareness**：使用者是否真正知道 Agent 此刻正在執行什麼。非同步 Agent 的重要問題是，背景 action 可能比使用者的認知多走好幾步。
+- **State transparency**：系統是否清楚呈現 Agent 的實際狀態，例如「正在查詢」、「等待付款確認」、「尚未送出」、「已完成」，而不是只用自然語言讓使用者自己猜。
+- **Human-in-the-loop**：在重要行動真正執行前，仍保留人類確認、修改或取消的機會。Agent 越能自主採取行動，這種控制點的位置就越重要。
+
+==note end==
 
 ---
 
@@ -1044,6 +1108,67 @@ Xiaomi 表示它把 RL training 擴大到：
 
 我們常把後者誤算成前者。
 
+==note start==
+
+MiMo-V2.6 真正值得注意的，不是它短暫成為某個 open-weight leaderboard 第一名，而是 **Xiaomi 把「Agent 到底怎麼被訓練出來」的部分 RL infrastructure 也一起公開**。除了 model weights，它還釋出大量 RL task environments、training framework、trajectory collection、reward evaluation、policy optimization 與 agent harness，讓外界更容易研究「模型能力究竟來自哪裡」。這也凸顯一個很重要的問題：Agent benchmark 的分數往往不是單純反映模型本身，而是 **model capability + harness capability + environment design + reward design** 的共同結果。因此未來評估 Agent，不能只看最後排行榜，而要拆解模型、訓練流程與執行框架各自貢獻了多少能力。
+
+**模型本身 + RL 訓練環境 + Reward 設計 + Agent harness = 最後看到的 Agent 表現**
+
+**MiMo-V2.6 的價值不只在於「模型變強」，而在於它讓外界更容易研究：Agent 的能力到底是模型學出來的，還是被整套訓練與執行系統放大的。**
+
+- **Open-weight**：模型權重可以下載，使用者能自行部署與研究。這比只能透過 API 使用的 closed model 更方便做重現與深入分析。
+	- open-weight 你可以自己：
+		- 固定同一個模型版本；
+		- 改 inference 參數；
+		- 換 agent harness；
+		- 測不同 system prompt；
+		- 做大量重複實驗；
+		- 分析某些 layer / activation；
+		- 微調模型；
+		- 甚至拿掉或改 safeguards。
+	- Open-weight ≠ 完全 open-source，也不等於完整可重現
+		- 若訓練資料與訓練流程未公開，仍不代表整個模型可以完整重現
+- **RL（Reinforcement Learning）**：讓模型在環境中執行任務，根據結果拿到 reward，再透過大量嘗試慢慢學會哪些行為比較有效。
+- **RL task environment**：讓 Agent 練習的「模擬工作場所」。例如 coding environment 會讓模型修改程式、執行測試，再根據結果判斷是否成功。
+- **RL training framework**：負責把模型、環境、reward、資料收集與模型更新串起來的整套訓練系統，不只是單一演算法。
+- **Trajectory**：Agent 從開始任務到結束的完整行動紀錄，例如「看題目 → 搜尋 → call tool → 收到錯誤 → 修改策略 → 成功」。RL 會利用這些過程來學習。
+- **Trajectory collection**：大量收集 Agent 執行任務的完整過程，之後用來分析哪些策略成功、哪些步驟失敗，以及如何進一步訓練模型。
+- **Reward evaluation**：判斷 Agent 這次任務到底做得好不好，並轉成 reward。若 reward 設計不好，模型可能學會「拿高分」而不是「真正把事情做好」。
+- **Policy optimization**：根據 reward 更新模型的行為策略，讓未來遇到類似任務時，更容易選到成功的行動。
+- **Reward loophole / reward hacking**：模型找到評分機制的漏洞，表面上拿到高分，但沒有真正完成目標。例如修改測試程式，讓錯誤答案看起來像通過測試。
+- **Agent harness**：包在模型外面的執行框架，負責讓模型使用工具、保存狀態、執行程式與決定下一步。相同模型換不同 harness，表現可能差很多。
+	- harness 常會包含這些東西：
+		- **Tool calling**：讓模型能呼叫瀏覽器、terminal、資料庫、API。
+		- **State / memory management**：記住目前做到哪裡、哪些資訊已確認。
+		- **Planning loop**：決定下一步該做什麼。
+		- **Retry / error handling**：工具失敗時怎麼重試或換方法。
+		- **Prompt / system instructions**：規範模型怎麼做事。
+		- **Termination logic**：什麼時候算任務完成。
+	- 模型 = 很聰明的員工
+	- Agent harness = 公司給他的 SOP、電腦、權限、工具、工作台和專案管理系統
+- **Long-horizon task**：需要很多步驟才能完成的長任務，例如寫大型程式、進行資安測試或深入研究。這類任務的難點不只是單次推理，而是長時間維持策略與狀態。
+	- `規劃 → 搜尋 → 看結果 → 發現錯誤 → 改策略 → 再搜尋 → 驗證 → 整理 → 完成`
+- **Long-horizon reward signal**：不是每做一步就知道對不對，而是可能要等很多步之後才知道整體任務是否成功，因此 reward 很難設計。
+	- 任務很長，分數很晚才拿到，所以很難知道中間哪些行為真正值得獎勵
+	- 如果 reward 設計不好，Agent 可能學會走捷徑或鑽漏洞
+- **Grader compute**：額外使用模型或程式去評分 Agent 的結果。投入更多 grader compute，可以更仔細判斷結果是否真的正確，而不只是看表面輸出。
+	- Grader = 老師；grader compute = 老師願意花多少時間、查多少資料、找幾個人一起複核這份考卷
+	- Grader 是「誰來判分」；grader compute 是「為了把分判準，願意花多少算力」。
+- **Sparse MoE**：模型總參數非常大，但每個 token 只啟用少數 expert，因此可以擁有很大的模型容量，而不必每次都動用全部參數。
+	- 模型裡有很多 expert，但每次處理一個 token 時，只啟用其中少數幾個，而不是全部一起跑
+- **Hybrid Sliding Window Attention / Global Attention**：部分 attention 只看附近 token，降低成本；部分 attention 則可以看更遠的 context，用來保留長距離資訊。
+	- 平常只看附近，省成本；真的需要時，仍保留看很遠的能力。
+- **Multi-Token Prediction**：模型一次不只預測下一個 token，也學習預測後面多個 token，可用來改善訓練效率或推理速度。
+	- **訓練更有效率**：模型被迫學會更長一點的未來結構，不只顧眼前下一個 token。
+	- **可以加速推理**：如果搭配 speculative decoding，先一次猜好幾個 token，再由主模型快速驗證，通過的就直接接受
+- **Speculative decoder**：先快速猜出一串可能的 token，再由主模型驗證哪些可以直接接受，目的是加速生成。
+- **Harness capability**：Agent 外部框架本身帶來的能力，例如更好的工具選擇、memory management 或 retry 機制。Benchmark 分數高，有時不只是模型本身更強。
+- **Confounder**：讓你誤判因果關係的干擾因素。Agent benchmark 裡，harness 就可能是 confounder，因為你以為在測模型，實際上同時也在測整套 Agent 系統。
+	- 干擾你判斷真正原因的第三個因素
+	- 你以為是 A 造成 B，但其實還有別的因素 C 在攪局。
+
+==note end==
+
 ---
 
 ## 為什麼值得注意？
@@ -1101,6 +1226,44 @@ Xiaomi 的很多 benchmark 與 cost-performance 敘事來自 Xiaomi 自己，尤
 它與 cyber-capability diffusion 有長期治理關係，尤其 environments 裡包含 vulnerability reproduction，但單看這項 release，我不會再獨立生一個「AI 法律責任」題目。
 
 主要仍是技術與產業訊號。
+
+==note start==
+
+MiMo-V2.6 最值得注意的，不是短暫拿到 open-weight leaderboard 第一，而是 **open ecosystem 開始從「公開模型權重」往「公開模型改進方法」延伸**。除了 weights，Xiaomi 還釋出 RL environments、agent harness、training framework、trajectory collection 與 reward/evaluation infrastructure，代表 frontier capability 的 diffusion 未來可能不只發生在模型本身，也會發生在 **model-improvement recipe**：其他團隊不只拿得到強模型，也更容易學會「怎麼把 Agent 訓練得更強」。不過，Xiaomi 自家的 benchmark 與成本敘事仍須保留看待，排行榜表現也不等於 production reliability；因此這一則更合理的結論不是「open model 已追平 closed frontier」，而是 **open agentic RL stack 正逐漸成熟，而且變強的方法本身也正在擴散**。
+
+以前的開放比較像：
+
+**「我把做好的模型給你。」**
+
+現在開始變成：
+
+**「我連模型怎麼練、在哪裡練、怎麼評分、怎麼讓它使用工具的方法，也給你一部分。」**
+
+所以最值得記的一句是：
+
+**MiMo-V2.6 更長期的訊號不是「open model 又拿第一」，而是「把 Agent 變強的方法本身，也開始 open diffusion」。**
+
+- **Open ecosystem**：不只是模型能下載，而是周邊的訓練工具、環境、評測方法與 Agent framework 也逐漸公開，讓其他團隊更容易接著研究與改進。
+- **Frontier diffusion**：原本只掌握在少數最前沿 AI 實驗室的能力或技術，逐漸擴散到更多公司、研究團隊甚至個人手上。
+- **Model-improvement recipe**：把模型變強的「配方」，包括用什麼任務訓練、怎麼設計 environment、怎麼收集 trajectory、怎麼給 reward，以及怎麼更新模型。它不是單一演算法，而是一整套實務方法。
+- **Training environment**：讓 Agent 練習的工作環境，例如寫程式、查資料、操作工具或進行資安任務；模型會在裡面反覆嘗試並獲得回饋。
+- **Agent harness**：包在模型外面的工作框架，提供工具、記憶、流程控制與 retry 等能力。**相同模型換不同 harness，Agent 表現可能差很多**。
+- **RL pipeline**：**從「Agent 做任務」一路到「根據結果更新模型」的完整流程**，通常包含 trajectory 收集、reward 計算、資料整理與 policy optimization。
+- **Reward / evaluation infrastructure**：負責判斷 Agent 到底有沒有把事情做好的一整套評分系統。**評分越可靠，RL 才越不容易把模型訓練成只會鑽評分漏洞**。
+- **Open agentic RL stack**：不只公開模型，而是把訓練 Agent 所需的 environment、harness、reward、RL framework 等整套技術堆疊也逐漸開放。
+	- **RL stack**：整套強化學習技術堆疊，包括 environment、trajectory、reward、grader、policy optimization、agent harness 等
+	- 以前 open-weight 比較像：
+		- 「我把成品車給你。」
+	- Open agentic RL stack 則更像：
+		- 「我連測試場、駕駛訓練課程、評分規則、維修工具和訓練流程，也一起給你。」
+- **Cost-performance claim**：例如「成本只有競爭對手的 1/20」這類主張。**這種數字高度取決於**模型價格、硬體、token 長度、任務種類與測試方法，**不能直接推廣成所有情境都成立**。
+- **Evaluation assumptions**：做 benchmark 或成本比較時預先設定的條件，例如允許模型重試幾次、用什麼 harness、給多少 token 或算力；**假設不同，最後結果也可能差很多**。
+- **Production reliability**：不是 benchmark 偶爾做成功，而是**模型部署到真實環境後，長時間、反覆使用仍能穩定完成任務**，不會頻繁重複 call tool、卡住或做出錯誤操作。
+- **Multi-round tool use**：Agent 在同一個任務裡需要多次呼叫工具，例如搜尋 → 看結果 → 再搜尋 → 執行程式 → 修正。**輪數越多，錯誤和狀態管理問題越容易累積**。
+- **Tool-call repetition**：Agent **不必要地重複**呼叫同一個工具或執行相同操作。**Benchmark 分數可能很好，但如果實際部署常發生這種問題，成本與可靠性都會受影響**。
+- **Leaderboard capability ≠ production reliability**：排行榜測的是特定條件下能不能完成任務；真實部署還要看穩定性、成本、錯誤恢復與長時間工具使用，因此兩者不能直接畫上等號。
+
+==note end==
 
 ---
 
